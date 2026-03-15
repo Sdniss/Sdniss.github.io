@@ -1,0 +1,22 @@
+
+
+<nav class="navbar">
+  <div class="nav-container">
+    <ul class="nav-links">
+      <li>
+        <a href="/"
+           data-nav="home"
+          class="{% if page.nav == 'home' %}active{% endif %}">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="/chinese/"
+           data-nav="chinese"
+          class="{% if page.nav == 'chinese' %}active{% endif %}">
+          Chinese 中文
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
