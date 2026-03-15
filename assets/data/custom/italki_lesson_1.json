@@ -1,0 +1,173 @@
+[
+  {
+    "simplified": "科学家",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "kē xué jiā" },
+        "meanings": ["Scientist"]
+      }
+    ]
+  },
+  {
+    "simplified": "有",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "yǒu" },
+        "meanings": ["To have", "There is"]
+      }
+    ]
+  },
+  {
+    "simplified": "几个",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "jǐ gè" },
+        "meanings": ["A few", "How many?"]
+      }
+    ]
+  },
+  {
+    "simplified": "女朋友",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "nǚ péng you" },
+        "meanings": ["Girlfriend"]
+      }
+    ]
+  },
+  {
+    "simplified": "宝宝",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "bǎo bao" },
+        "meanings": ["Baby"]
+      }
+    ]
+  },
+  {
+    "simplified": "星期",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "xīng qī" },
+        "meanings": ["Week"]
+      }
+    ]
+  },
+  {
+    "simplified": "两个",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "liǎng gè" },
+        "meanings": ["Two (of something)"]
+      }
+    ]
+  },
+  {
+    "simplified": "他 / 她",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "tā" },
+        "meanings": ["He / She"]
+      }
+    ]
+  },
+  {
+    "simplified": "不好意思",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "bù hǎo yì si" },
+        "meanings": ["Excuse me", "Sorry (mild)"]
+      }
+    ]
+  },
+  {
+    "simplified": "对",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "duì" },
+        "meanings": ["Correct", "Right"]
+      }
+    ]
+  },
+  {
+    "simplified": "住在",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "zhù zài" },
+        "meanings": ["To live in/at"]
+      }
+    ]
+  },
+  {
+    "simplified": "农村",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "nóng cūn" },
+        "meanings": ["Countryside", "Village"]
+      }
+    ]
+  },
+  {
+    "simplified": "喜欢",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "xǐ huan" },
+        "meanings": ["To like"]
+      }
+    ]
+  },
+  {
+    "simplified": "欢迎回来",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "huān yíng huí lái" },
+        "meanings": ["Welcome back"]
+      }
+    ]
+  },
+  {
+    "simplified": "老师",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "lǎo shī" },
+        "meanings": ["Teacher"]
+      }
+    ]
+  },
+  {
+    "simplified": "你好",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "nǐ hǎo" },
+        "meanings": ["Hello (Literally: 'You good')"]
+      }
+    ]
+  },
+  {
+    "simplified": "你叫什么名字",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Nǐ jiào shénme míngzi" },
+        "meanings": ["What is your name?"]
+      }
+    ]
+  },
+  {
+    "simplified": "我是",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Wǒ shì" },
+        "meanings": ["I am"]
+      }
+    ]
+  },
+  {
+    "simplified": "这是什么",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Zhè shì shénme" },
+        "meanings": ["What is this?"]
+      }
+    ]
+  }
+]

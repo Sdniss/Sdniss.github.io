@@ -1,29 +1,37 @@
 ---
 layout: default
-title: Chinese
+title: Chinese Learning Journey
 nav: chinese
 permalink: /chinese/
 ---
 
-<section class="section">
-  <div class="intro">
-    <h1>Welcome to my website!</h1>
-  </div>
+<div style="max-width: 800px; margin: auto; font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6;">
 
-  <div class="app-shell">
-    <div id="progress-bar"><div id="progress-fill"></div></div>
+    <header style="text-align: center; padding: 40px 0;">
+        <h1 style="color: #264653; font-size: 2.5rem;"> My journey in learning Mandarin </h1>
+        <p style="color: #2A9D8F; font-style: italic;">Documenting the transition from "Ni Hao" to scientific fluency.</p>
+    </header>
 
-    <div class="avatar-chat">
-        🤖 <span id="avatar-msg">Nǐ hǎo Kaili! Ready to study?</span>
+    <div style="background: #264653; color: white; padding: 30px; border-radius: 20px; text-align: center; margin-bottom: 50px; box-shadow: 0 10px 20px rgba(38, 70, 83, 0.2);">
+        <h2 style="margin-top: 0;">三色 (Sān Sè) Flashcards</h2>
+        <p>3-face flash card system (Hanzi > Pinyin > English)</p>
+        <a href="/chinese/flashcards/" style="display: inline-block; background: #E9C46A; color: #264653; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: transform 0.2s;">
+            🚀 Open Flashcards
+        </a>
     </div>
 
-    <div id="card" onclick="flipCard()">
-        <h1 id="card-text">...</h1>
-        <p id="card-subtext">Loading...</p>
-    </div>
+    <section>
+        <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px; color: #264653;">Recent Learning Logs</h3>
 
-    <button class="btn-next" onclick="nextCard()">Next Word →</button>
-  </div>
+        <ul style="list-style: none; padding: 0;">
+            {% for post in site.categories.chinese %}
+            <li style="margin-bottom: 20px; padding: 15px; border-radius: 10px; background: #f9f9f9;">
+                <span style="font-size: 0.8rem; color: #666;">{{ post.date | date: "%B %d, %Y" }}</span><br>
+                <a href="{{ post.url }}" style="color: #264653; font-weight: bold; text-decoration: none; font-size: 1.2rem;">{{ post.title }}</a>
+                <p style="margin: 5px 0 0; font-size: 0.9rem; color: #444;">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
 
-  <script src="/assets/js/app.js"></script>
-</section>
+</div>

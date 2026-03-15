@@ -271,6 +271,13 @@ body {
   text-align: center;
 }
 
+#card-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 90%; /* Keeps text away from the edges */
+    text-align: center;
+}
+
 /* Footer design */
 .site-footer {
   background: var(--card-background);
@@ -330,4 +337,18 @@ body {
 .event-card a {
   color: var(--primary-color);
   text-decoration: none;
+}
+
+/* Posts */
+/* Scientist's Layout: Adds breathing room to the left of blog content */
+article.post {
+    padding-left: 5%;   /* Uses a percentage so it looks good on mobile too */
+    padding-right: 5%;
+    max-width: 900px;   /* Keeps lines from getting too long to read */
+    margin-left: 0;     /* Ensures it stays left-biased if the theme centers it */
+}
+
+/* Adjust headings specifically if they feel too crowded */
+.post h1, .post h2, .post h3 {
+    margin-left: -2px; /* Slight optical adjustment for larger text */
 }
