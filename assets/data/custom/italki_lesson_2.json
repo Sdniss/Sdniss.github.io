@@ -1,0 +1,200 @@
+[
+  {
+    "simplified": "比利时",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Bǐlìshí" },
+        "meanings": ["Belgium"]
+      }
+    ]
+  },
+  {
+    "simplified": "你今天怎么样",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "nǐ jīn tiān zěn me yàng" },
+        "meanings": ["How are you today?"]
+      }
+    ]
+  },
+  {
+    "simplified": "也",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Yě" },
+        "meanings": ["Also"]
+      }
+    ]
+  },
+  {
+    "simplified": "发音",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Fāyīn" },
+        "meanings": ["Pronunciation", "To pronounce"]
+      }
+    ]
+  },
+  {
+    "simplified": "再说一遍",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Zàishuō yībiàn" },
+        "meanings": ["Say it again"]
+      }
+    ]
+  },
+  {
+    "simplified": "明白",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Míngbái" },
+        "meanings": ["Clear", "To understand"]
+      }
+    ]
+  },
+  {
+    "simplified": "做",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Zuò" },
+        "meanings": ["To do"]
+      }
+    ]
+  },
+  {
+    "simplified": "解决问题",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "jiě jué wèn tí" },
+        "meanings": ["Solve the problem"]
+      }
+    ]
+  },
+  {
+    "simplified": "科学",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "kē xué" },
+        "meanings": ["Science"]
+      }
+    ]
+  },
+  {
+    "simplified": "挑战",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "tiǎo zhàn" },
+        "meanings": ["Challenge"]
+      }
+    ]
+  },
+  {
+    "simplified": "不知道",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Bù zhīdào" },
+        "meanings": ["Don't know"]
+      }
+    ]
+  },
+  {
+    "simplified": "不用谢",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Bùyòng xiè" },
+        "meanings": ["You are welcome"]
+      }
+    ]
+  },
+  {
+    "simplified": "你是科学家吗？",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Nǐ shì kēxuéjiā ma?" },
+        "meanings": ["Are you a scientist?"]
+      }
+    ]
+  },
+  {
+    "simplified": "是，我是科学家。",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Shì, wǒ shì kēxuéjiā." },
+        "meanings": ["Yes, I am a scientist."]
+      }
+    ]
+  },
+  {
+    "simplified": "你住在比利时吗？",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Nǐ zhù zài Bǐlìshí ma?" },
+        "meanings": ["Do you live in Belgium?"]
+      }
+    ]
+  },
+  {
+    "simplified": "对，我住在比利时。",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Duì, wǒ zhù zài Bǐlìshí." },
+        "meanings": ["Correct, I live in Belgium."]
+      }
+    ]
+  },
+  {
+    "simplified": "你明白吗？",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Nǐ míngbai ma?" },
+        "meanings": ["Do you understand?"]
+      }
+    ]
+  },
+  {
+    "simplified": "不好意思，我不明白。",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Bù hǎoyìsi, wǒ bù míngbai." },
+        "meanings": ["Sorry, I don't understand."]
+      }
+    ]
+  },
+  {
+    "simplified": "你喜欢解决问题吗？",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Nǐ xǐhuan jiějué wèntí ma?" },
+        "meanings": ["Do you like solving problems?"]
+      }
+    ]
+  },
+  {
+    "simplified": "我很喜欢！这是个挑战。",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Wǒ hěn xǐhuan! Zhè shì gè tiǎozhàn." },
+        "meanings": ["I like it very much! It is a challenge."]
+      }
+    ]
+  },
+  {
+    "simplified": "谢谢你的科学课！",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Xièxiè nǐ de kēxué kè!" },
+        "meanings": ["Thanks for your science lesson!"]
+      }
+    ]
+  },
+  {
+    "simplified": "不用谢，下星期见！",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "Bùyòng xiè, xià xīngqī jiàn!" },
+        "meanings": ["You are welcome, see you next week!"]
+      }
+    ]
+  }
+]
