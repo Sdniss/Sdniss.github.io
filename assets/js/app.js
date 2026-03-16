@@ -2,136 +2,53 @@ let myCards = [];
 let currentIndex = 0;
 let side = 0;
 let voices = [];
+let sessionCorrect = 0;
+let sessionTotal = 0;
+let hasVoted = false;
 
-// Change the base path to your new structure
 const DATA_BASE_PATH = '/assets/data/';
 
+/**
+ * 1. Score & Database Logic
+ */
+function recordResult(isCorrect) {
+    hasVoted = true;
 
-async function changeDeck(subPath) {
-    currentIndex = 0;
-    side = 0;
+    if (isCorrect) sessionCorrect++;
+    sessionTotal++;
 
-    // subPath will be something like "hsk-data/1.json"
-    const fullPath = `${DATA_BASE_PATH}${subPath}`;
-    console.log(`Fetching from: ${fullPath}`);
+    document.getElementById('session-score').innerText = `${sessionCorrect} / ${sessionTotal}`;
 
-    try {
-        // Adding a cache-buster (?v=...) ensures you see updates immediately after pushing to GitHub
-        const response = await fetch(`${fullPath}?v=${Date.now()}`);
+    saveToDatabase(isCorrect);
 
-        if (!response.ok) throw new Error(`File not found: ${fullPath}`);
-
-        const data = await response.json();
-
-        // Safety check: ensure data is an array
-        myCards = Array.isArray(data) ? data : [];
-
-        updateUI();
-        console.log(`Loaded ${myCards.length} cards.`);
-    } catch (e) {
-        console.error("Deck load error:", e);
-        // Show the error on the card so you know exactly what happened
-        document.getElementById('card-text').innerText = "⚠️ File not found";
-        document.getElementById('card-subtext').innerText = subPath;
+    // SCIENTIST'S LOGIC: If we just voted on the last card, show the end screen.
+    if (currentIndex === myCards.length - 1) {
+        showEndScreen();
+    } else {
+        nextCard();
     }
 }
 
-/**
- * 1. Initial Load: Setup voices, sliders, and fetch the deck
- */
+function saveToDatabase(isCorrect) {
+    const current = myCards[currentIndex];
+    if (!current) return;
 
-async function initApp() {
-    // Setup slider labels
-    const sliders = ['rate', 'pitch', 'volume'];
-    sliders.forEach(id => {
-        const slider = document.getElementById(`${id}-slider`);
-        const display = document.getElementById(`${id}-val`);
-        if (slider && display) {
-            slider.addEventListener('input', () => {
-                display.innerText = slider.value;
-            });
-        }
-    });
+    let stats = JSON.parse(localStorage.getItem('sanse_stats')) || {};
+    const id = current.simplified;
 
-    // Handle voice loading (different browsers load these at different times)
-    window.speechSynthesis.onvoiceschanged = populateVoiceList;
-    populateVoiceList(); // Initial try
-
-    const selector = document.getElementById('json-select');
-    if (selector) {
-        // This triggers the first load automatically based on the HTML default
-        changeDeck(selector.value);
-    }
-}
-
-/**
- * 2. Voice Management: Populates the dropdown menu
- */
-function populateVoiceList() {
-    voices = window.speechSynthesis.getVoices();
-    const voiceSelect = document.getElementById('voice-select');
-    if (!voiceSelect) return;
-
-    voiceSelect.innerHTML = '';
-
-    // 1. Filter for all Chinese voices (CN, HK, TW, etc.)
-    const zhVoices = voices.filter(v => v.lang.includes('zh'));
-
-    zhVoices.forEach((voice) => {
-        const option = document.createElement('option');
-        option.textContent = `${voice.name} (${voice.lang})`;
-        option.setAttribute('data-name', voice.name);
-
-        // 2. Logic to set the default to zh-CN
-        // We look for 'zh-CN' or 'zh_CN' specifically.
-        // We also prefer Google or Online Neural voices if available.
-        const isCN = voice.lang === 'zh-CN' || voice.lang === 'zh_CN';
-        const isGoogle = voice.name.includes('Google');
-
-        if (isCN && isGoogle) {
-            option.selected = true;
-        } else if (isCN && !voiceSelect.querySelector('[selected]')) {
-            // Fallback: if no Google CN voice yet, pick any CN voice as default
-            option.selected = true;
-        }
-
-        voiceSelect.appendChild(option);
-    });
-}
-
-/**
- * 3. Audio Logic: Reads the Chinese text using slider & dropdown settings
- */
-function playAudio() {
-    window.speechSynthesis.cancel();
-
-    if (!myCards[currentIndex]) return;
-
-    const utterance = new SpeechSynthesisUtterance(myCards[currentIndex].simplified);
-
-    // Grab values from DOM
-    const rate = document.getElementById('rate-slider')?.value || 0.8;
-    const pitch = document.getElementById('pitch-slider')?.value || 1.1;
-    const volume = document.getElementById('volume-slider')?.value || 1.0;
-    const voiceSelect = document.getElementById('voice-select');
-
-    utterance.lang = 'zh-CN';
-    utterance.rate = rate;
-    utterance.pitch = pitch;
-    utterance.volume = volume;
-
-    // Apply the specific voice from the switcher
-    if (voiceSelect && voiceSelect.selectedOptions.length > 0) {
-        const selectedVoiceName = voiceSelect.selectedOptions[0].getAttribute('data-name');
-        const selectedVoice = voices.find(v => v.name === selectedVoiceName);
-        if (selectedVoice) utterance.voice = selectedVoice;
+    if (!stats[id]) {
+        stats[id] = { correct: 0, wrong: 0, lastSeen: Date.now() };
     }
 
-    window.speechSynthesis.speak(utterance);
+    if (isCorrect) stats[id].correct++;
+    else stats[id].wrong++;
+
+    stats[id].lastSeen = Date.now();
+    localStorage.setItem('sanse_stats', JSON.stringify(stats));
 }
 
 /**
- * 4. UI Engine: Handles flipping and navigation
+ * 2. Navigation & UI
  */
 function flipCard() {
     side = (side + 1) % 3;
@@ -140,9 +57,15 @@ function flipCard() {
 }
 
 function nextCard() {
+    if (!hasVoted) {
+        alert("Please indicate if you got it Correct or Wrong before proceeding! 🧠");
+        return;
+    }
+
     if (currentIndex < myCards.length - 1) {
         currentIndex++;
         side = 0;
+        hasVoted = false; // Reset for the new card
         updateUI();
     }
 }
@@ -155,58 +78,142 @@ function prevCard() {
     }
 }
 
-/**
- * 5. Update UI: Manages alignment, scaling, and data paths
- */
 function updateUI() {
     const textEl = document.getElementById('card-text');
     const subEl = document.getElementById('card-subtext');
     const progressEl = document.getElementById('progress-fill');
-
+    const cardEl = document.getElementById('card');
     const current = myCards[currentIndex];
+
     if (!current) return;
 
-    let textEl_txt = "";
-    let subEl_txt = "";
-
     // Data Path Logic
+    let displayTxt = "";
+    let subTxt = "";
+
     if (side === 0) {
-        textEl_txt = current.simplified;
+        displayTxt = current.simplified;
         textEl.style.textAlign = "center";
-        subEl_txt = "Hanzi (Tap for Pinyin)";
+        //subTxt = "Hanzi (Tap for Pinyin)";
     } else if (side === 1) {
-        textEl_txt = current.forms[0].transcriptions.pinyin;
+        displayTxt = current.forms[0].transcriptions.pinyin;
         textEl.style.textAlign = "center";
-        subEl_txt = "Pinyin (Tap for English)";
+        //subTxt = "Pinyin (Tap for English)";
     } else {
-        textEl_txt = '- ' + current.forms[0].meanings.join("\n- ");
-        textEl.style.textAlign = "left";
-        subEl_txt = "English (Tap for Hanzi)";
+        displayTxt = current.forms[0].meanings.join(", ");
+        textEl.style.textAlign = "center";
+        //subTxt = "English (Tap for Hanzi)";
     }
 
-    // Dynamic Font Scaling
-    const charCount = textEl_txt.length;
-    let fontSize = "4rem";
-    if (charCount > 10) fontSize = "3rem";
-    if (charCount > 20) fontSize = "2rem";
-    if (charCount > 40) fontSize = "1.5rem";
+    // Dynamic Scaling
+    const charCount = displayTxt.length;
+    textEl.style.fontSize = charCount > 20 ? "1.8rem" : charCount > 10 ? "2.5rem" : "4rem";
 
-    textEl.style.fontSize = fontSize;
+    textEl.innerText = displayTxt;
+    subEl.innerText = subTxt;
 
-    // Only update if the element actually exists
-        if (textEl) {
-            textEl.style.fontSize = fontSize;
-            textEl.innerText = textEl_txt;
-        }
-
-        if (subEl) {
-            subEl.innerText = subEl_txt;
-        }
-
-        if (progressEl && myCards.length > 0) {
-            progressEl.style.width = ((currentIndex + 1) / myCards.length * 100) + "%";
-        }
+    // Progress Bar
+    if (progressEl) {
+        progressEl.style.width = ((currentIndex + 1) / myCards.length * 100) + "%";
+    }
 }
 
-// Start the app
+/**
+ * 3. Deck & Initialization
+ */
+async function changeDeck(subPath) {
+    // 1. Reset Progress & Score variables
+    currentIndex = 0;
+    side = 0;
+    hasVoted = false;
+    sessionCorrect = 0;
+    sessionTotal = 0;
+
+    // 2. Reset the UI text
+    const scoreEl = document.getElementById('session-score');
+    if (scoreEl) scoreEl.innerText = "0 / 0";
+
+    // 3. Hide End Screen (if it was visible from a previous deck)
+    const endScreen = document.getElementById('end-screen');
+    if (endScreen) endScreen.style.display = 'none';
+
+    // 4. Ensure the card is visible again
+    const cardEl = document.getElementById('card');
+    if (cardEl) cardEl.style.visibility = 'visible';
+
+    const fullPath = `${DATA_BASE_PATH}${subPath}`;
+
+    try {
+        const response = await fetch(`${fullPath}?v=${Date.now()}`);
+        const data = await response.json();
+        myCards = Array.isArray(data) ? data : [];
+        updateUI();
+    } catch (e) {
+        console.error("Load error", e);
+        document.getElementById('card-text').innerText = "⚠️ Error";
+    }
+}
+
+// Rest of your initApp and voice logic remains the same...
+// Make sure to call initApp() at the end.
+async function initApp() {
+    const sliders = ['rate', 'pitch', 'volume'];
+    sliders.forEach(id => {
+        const slider = document.getElementById(`${id}-slider`);
+        const display = document.getElementById(`${id}-val`);
+        if (slider && display) {
+            slider.addEventListener('input', () => display.innerText = slider.value);
+        }
+    });
+
+    window.speechSynthesis.onvoiceschanged = populateVoiceList;
+    populateVoiceList();
+
+    const selector = document.getElementById('json-select');
+    if (selector) changeDeck(selector.value);
+}
+
+function populateVoiceList() {
+    voices = window.speechSynthesis.getVoices();
+    const voiceSelect = document.getElementById('voice-select');
+    if (!voiceSelect) return;
+    voiceSelect.innerHTML = '';
+    voices.filter(v => v.lang.includes('zh')).forEach(voice => {
+        const option = document.createElement('option');
+        option.textContent = voice.name;
+        option.setAttribute('data-name', voice.name);
+        if (voice.lang === 'zh-CN' && voice.name.includes('Google')) option.selected = true;
+        voiceSelect.appendChild(option);
+    });
+}
+
+function playAudio() {
+    window.speechSynthesis.cancel();
+    if (!myCards[currentIndex]) return;
+    const utterance = new SpeechSynthesisUtterance(myCards[currentIndex].simplified);
+    utterance.rate = document.getElementById('rate-slider')?.value || 0.8;
+    const voiceName = document.getElementById('voice-select')?.selectedOptions[0]?.getAttribute('data-name');
+    const selectedVoice = voices.find(v => v.name === voiceName);
+    if (selectedVoice) utterance.voice = selectedVoice;
+    window.speechSynthesis.speak(utterance);
+}
+
+function showEndScreen() {
+    const endScreen = document.getElementById('end-screen');
+    const finalPercent = document.getElementById('final-percentage');
+    const finalScoreText = document.getElementById('final-score-text');
+
+    if (endScreen) {
+        // Calculate accuracy
+        const percentage = Math.round((sessionCorrect / sessionTotal) * 100);
+
+        // Update text
+        finalPercent.innerText = `${percentage}%`;
+        finalScoreText.innerText = `Correct: ${sessionCorrect} | Total: ${sessionTotal}`;
+
+        // Show the screen
+        endScreen.style.display = 'flex';
+    }
+}
+
 initApp();

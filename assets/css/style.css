@@ -278,6 +278,14 @@ body {
     text-align: center;
 }
 
+.card-indicator {
+    display: flex;
+    width: 100%;
+    height: 10px;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
 /* Footer design */
 .site-footer {
   background: var(--card-background);
