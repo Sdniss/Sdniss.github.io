@@ -8,8 +8,8 @@ permalink: /chinese/flashcards/
 <div class="app-container" style="max-width: 500px; margin: auto; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 
     <div class="deck-selector" style="margin-bottom: 20px;">
-        <label for="json-select" style="font-weight: bold; display: block; margin-bottom: 5px;">Select Deck:</label>
-        <select id="json-select" onchange="changeDeck(this.value)" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+        <label for="json-select" style="font-weight: bold; display: block; margin-bottom: 5px; font-size: 0.8rem; text-align: left;">Standard Decks:</label>
+        <select id="json-select" onchange="changeDeck(this.value)" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; background: white;">
             <optgroup label="HSK Standard Lists">
                 <option value="hsk-data/1.json">HSK Level 1</option>
             </optgroup>
@@ -36,43 +36,66 @@ permalink: /chinese/flashcards/
     </div>
 
     <div style="position: relative; width: 100%; height: 320px; margin-bottom: 30px;">
-
         <div id="end-screen" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #264653; color: white; border-radius: 25px; flex-direction: column; justify-content: center; align-items: center; z-index: 20; box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: 0.3s;">
             <h2 style="margin: 0; font-size: 1.5rem;">Deck Complete! 🎉</h2>
             <div style="font-size: 3.5rem; font-weight: bold; color: #E9C46A; margin: 10px 0;" id="final-percentage">0%</div>
             <p id="final-score-text" style="opacity: 0.9; margin-bottom: 20px;">You got 0 out of 0 correct.</p>
-            <button onclick="location.reload()" style="background: #E9C46A; color: #264653; border: none; padding: 12px 30px; border-radius: 12px; cursor: pointer; font-weight: bold; transition: transform 0.2s;">Restart Session</button>
+            <button onclick="location.reload()" style="background: #E9C46A; color: #264653; border: none; padding: 12px 30px; border-radius: 12px; cursor: pointer; font-weight: bold;">Restart Session</button>
         </div>
 
-        <div id="card" onclick="flipCard()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: white; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; border: 1px solid #eee; transition: background 0.3s, transform 0.2s; z-index: 10;">
-
+        <div id="card" onclick="flipCard()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: white; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; border: 1px solid #eee; transition: background 0.3s; z-index: 10;">
             <button onclick="event.stopPropagation(); playAudio();" style="position: absolute; top: 20px; right: 20px; background: #f0f0f0; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 18px; z-index: 15;">🔊</button>
-
             <h1 id="card-text" style="font-size: 4rem; margin: 0; color: #264653; padding: 0 20px; word-wrap: break-word;">...</h1>
             <p id="card-subtext" style="color: #666; font-size: 0.9rem; position: absolute; bottom: 20px;">Tap to flip</p>
         </div>
-
     </div>
 
-    <details style="margin-top: 30px; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 12px; border: 1px solid #eee;">
-        <summary style="cursor: pointer; color: #264653; font-weight: bold; padding: 5px;">🎙️ Voice & Audio Settings</summary>
-        <div class="audio-controls" style="font-size: 0.8rem; margin-top: 10px; padding: 10px;">
+    <details style="margin-top: 30px; text-align: left; background: #f9f9f9; padding: 15px; border-radius: 12px; border: 1px solid #eee;">
+        <summary style="cursor: pointer; color: #264653; font-weight: bold; padding: 5px;">⚙️ Advanced Settings</summary>
+
+        <div id="api-settings" style="margin-top: 15px; border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 15px;">
+            <label style="font-weight: bold; display: block; font-size: 0.8rem; color: #264653;">Gemini API Key:</label>
+            <div style="display: flex; gap: 10px; margin-top: 5px;">
+                <input type="password" id="api-key-input" placeholder="Paste key here..." style="flex: 1; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+                <button onclick="saveApiKey()" style="background: #2A9D8F; color: white; border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; font-weight: bold;">Save</button>
+            </div>
+            <p id="key-status" style="font-size: 0.7rem; color: #666; margin-top: 5px;">Key status: Checking...</p>
+        </div>
+
+        <div class="audio-controls" style="font-size: 0.8rem;">
             <div style="margin-bottom: 10px;">
-                <label>Speed (Rate): <span id="rate-val">0.8</span></label>
+                <label>Speed: <span id="rate-val">0.8</span></label>
                 <input type="range" id="rate-slider" min="0.1" max="2" step="0.1" value="0.8" style="width: 100%;">
             </div>
             <div style="margin-bottom: 10px;">
-                <label>Tone (Pitch): <span id="pitch-val">1.1</span></label>
+                <label>Tone: <span id="pitch-val">1.1</span></label>
                 <input type="range" id="pitch-slider" min="0" max="2" step="0.1" value="1.1" style="width: 100%;">
-            </div>
-            <div style="margin-bottom: 15px;">
-                <label>Volume: <span id="volume-val">1.0</span></label>
-                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1.0" style="width: 100%;">
             </div>
             <label style="display: block; margin-bottom: 5px;">Voice Selection:</label>
             <select id="voice-select" style="width: 100%; padding: 5px; border-radius: 5px; border: 1px solid #ccc;"></select>
         </div>
     </details>
+
+    <div id="persona-section" style="margin-bottom: 30px; background: #fdfdfd; padding: 20px; border-radius: 20px; border: 1px dashed #2A9D8F; text-align: left;">
+        <h3 style="color: #264653; margin-top: 0; font-size: 1.1rem;">🗺️ Personal Learning Map</h3>
+        <p style="font-size: 0.8rem; color: #666; margin-bottom: 10px;">Describe your job, hobbies, or life in Belgium to generate custom decks.</p>
+
+        <textarea id="persona-input" placeholder="e.g., I am a scientist in Belgium who enjoys hiking and cooking pasta..." style="width: 100%; height: 80px; border-radius: 10px; border: 1px solid #ddd; padding: 10px; font-family: inherit; font-size: 0.9rem; resize: none;"></textarea>
+
+        <button id="generate-btn"  onclick="generateAILesson()" style="width: 100%; margin-top: 10px; background: #264653; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.2s;">
+            Generate Personalized Decks
+        </button>
+        <div id="theme-map" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px;"></div>
+    </div>
+</div>
+
+<div id="session-log-container" style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+    <h4 style="color: #264653; font-size: 0.9rem; margin-bottom: 10px; display: flex; justify-content: space-between;">
+        <span>📜 Generation History</span>
+        <button onclick="clearHistory()" style="background:none; border:none; color:#e76f51; cursor:pointer; font-size: 0.7rem;">Clear All</button>
+    </h4>
+    <div id="session-log-list" style="display: flex; flex-direction: column; gap: 8px;">
+        </div>
 </div>
 
 <script src="/assets/js/app.js"></script>
