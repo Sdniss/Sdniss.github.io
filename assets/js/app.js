@@ -12,6 +12,12 @@ const DATA_BASE_PATH = '/assets/data/';
  * 1. Score & Database Logic
  */
 function recordResult(isCorrect) {
+    // 1. Check if the deck is already finished
+    const endScreen = document.getElementById('end-screen');
+    if (endScreen && endScreen.style.display === 'flex') {
+        return; // Do nothing if the end screen is showing
+    }
+
     hasVoted = true;
 
     if (isCorrect) sessionCorrect++;
@@ -21,7 +27,6 @@ function recordResult(isCorrect) {
 
     saveToDatabase(isCorrect);
 
-    // SCIENTIST'S LOGIC: If we just voted on the last card, show the end screen.
     if (currentIndex === myCards.length - 1) {
         showEndScreen();
     } else {
@@ -57,6 +62,9 @@ function flipCard() {
 }
 
 function nextCard() {
+    // Prevent moving if end screen is visible
+    if (document.getElementById('end-screen').style.display === 'flex') return;
+
     if (!hasVoted) {
         alert("Please indicate if you got it Correct or Wrong before proceeding! 🧠");
         return;
@@ -65,15 +73,7 @@ function nextCard() {
     if (currentIndex < myCards.length - 1) {
         currentIndex++;
         side = 0;
-        hasVoted = false; // Reset for the new card
-        updateUI();
-    }
-}
-
-function prevCard() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        side = 0;
+        hasVoted = false;
         updateUI();
     }
 }
@@ -128,6 +128,11 @@ async function changeDeck(subPath) {
     hasVoted = false;
     sessionCorrect = 0;
     sessionTotal = 0;
+
+    document.querySelectorAll('button[onclick^="recordResult"]').forEach(btn => {
+        btn.style.opacity = "1";
+        btn.style.cursor = "pointer";
+    });
 
     // 2. Reset the UI text
     const scoreEl = document.getElementById('session-score');
@@ -204,6 +209,12 @@ function showEndScreen() {
     const finalScoreText = document.getElementById('final-score-text');
 
     if (endScreen) {
+        // Dim the buttons to show they are inactive
+        document.querySelectorAll('button[onclick^="recordResult"]').forEach(btn => {
+            btn.style.opacity = "0.5";
+            btn.style.cursor = "default";
+        });
+
         // Calculate accuracy
         const percentage = Math.round((sessionCorrect / sessionTotal) * 100);
 
