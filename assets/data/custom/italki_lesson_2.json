@@ -27,6 +27,150 @@
     ]
   },
   {
+    "simplified": "这是什么",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "zhè shì shénme" },
+        "meanings": ["What is this?"]
+      }
+    ]
+  },
+  {
+    "simplified": "书",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "shū" },
+        "meanings": ["Book"]
+      }
+    ]
+  },
+  {
+    "simplified": "桌子",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "zhuōzi" },
+        "meanings": ["Table", "Desk"]
+      }
+    ]
+  },
+  {
+    "simplified": "包",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "bāo" },
+        "meanings": ["Bag", "Backpack"]
+      }
+    ]
+  },
+  {
+    "simplified": "蜡笔",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "làbǐ" },
+        "meanings": ["Crayon"]
+      }
+    ]
+  },
+  {
+    "simplified": "铅笔",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "qiānbǐ" },
+        "meanings": ["Pencil"]
+      }
+    ]
+  },
+  {
+    "simplified": "椅子",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "yǐzi" },
+        "meanings": ["Chair"]
+      }
+    ]
+  },
+  {
+    "simplified": "沙里",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "shālǐ" },
+        "meanings": ["Shali (Name)"]
+      }
+    ]
+  },
+  {
+    "simplified": "同学们",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "tóngxuémen" },
+        "meanings": ["Classmates", "Students"]
+      }
+    ]
+  },
+  {
+    "simplified": "休息时间到了",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "xiūxi shíjiān dào le" },
+        "meanings": ["It is time for a break"]
+      }
+    ]
+  },
+  {
+    "simplified": "我们画画吧",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "wǒmen huàhuà ba" },
+        "meanings": ["Let's draw pictures"]
+      }
+    ]
+  },
+  {
+    "simplified": "我们唱歌吧",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "wǒmen chànggē ba" },
+        "meanings": ["Let's sing songs"]
+      }
+    ]
+  },
+  {
+    "simplified": "我们玩游戏吧",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "wǒmen wán yóuxì ba" },
+        "meanings": ["Let's play a game"]
+      }
+    ]
+  },
+  {
+    "simplified": "好的",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "hǎo de" },
+        "meanings": ["Okay", "Fine"]
+      }
+    ]
+  },
+  {
+    "simplified": "轮到我了",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "lún dào wǒ le" },
+        "meanings": ["It's my turn"]
+      }
+    ]
+  },
+  {
+    "simplified": "我们涂颜色吧",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "wǒmen tú yánsè ba" },
+        "meanings": ["Let's color"]
+      }
+    ]
+  },
+  {
     "simplified": "再说一遍",
     "forms": [
       {
@@ -122,15 +266,6 @@
       {
         "transcriptions": { "pinyin": "tiǎozhàn" },
         "meanings": ["Challenge"]
-      }
-    ]
-  },
-  {
-    "simplified": "科学课",
-    "forms": [
-      {
-        "transcriptions": { "pinyin": "kēxué kè" },
-        "meanings": ["Science class/lesson"]
       }
     ]
   },
