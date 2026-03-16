@@ -108,38 +108,38 @@
     ]
   },
   {
-    "simplified": "休息时间到了",
+    "simplified": "休息时间",
     "forms": [
       {
-        "transcriptions": { "pinyin": "xiūxi shíjiān dào le" },
-        "meanings": ["It is time for a break"]
+        "transcriptions": { "pinyin": "xiūxi shíjiān" },
+        "meanings": ["Break time", "Rest time"]
       }
     ]
   },
   {
-    "simplified": "我们画画吧",
+    "simplified": "画画",
     "forms": [
       {
-        "transcriptions": { "pinyin": "wǒmen huàhuà ba" },
-        "meanings": ["Let's draw pictures"]
+        "transcriptions": { "pinyin": "huàhuà" },
+        "meanings": ["To draw", "To paint"]
       }
     ]
   },
   {
-    "simplified": "我们唱歌吧",
+    "simplified": "唱歌",
     "forms": [
       {
-        "transcriptions": { "pinyin": "wǒmen chànggē ba" },
-        "meanings": ["Let's sing songs"]
+        "transcriptions": { "pinyin": "chànggē" },
+        "meanings": ["To sing"]
       }
     ]
   },
   {
-    "simplified": "我们玩游戏吧",
+    "simplified": "玩游戏",
     "forms": [
       {
-        "transcriptions": { "pinyin": "wǒmen wán yóuxì ba" },
-        "meanings": ["Let's play a game"]
+        "transcriptions": { "pinyin": "wán yóuxì" },
+        "meanings": ["To play games"]
       }
     ]
   },
@@ -162,11 +162,11 @@
     ]
   },
   {
-    "simplified": "我们涂颜色吧",
+    "simplified": "涂颜色",
     "forms": [
       {
-        "transcriptions": { "pinyin": "wǒmen tú yánsè ba" },
-        "meanings": ["Let's color"]
+        "transcriptions": { "pinyin": "tú yánsè" },
+        "meanings": ["To color"]
       }
     ]
   },
@@ -180,20 +180,11 @@
     ]
   },
   {
-    "simplified": "解决",
+    "simplified": "解决问题",
     "forms": [
       {
-        "transcriptions": { "pinyin": "jiějué" },
-        "meanings": ["To solve", "To resolve"]
-      }
-    ]
-  },
-  {
-    "simplified": "问题",
-    "forms": [
-      {
-        "transcriptions": { "pinyin": "wèntí" },
-        "meanings": ["Problem", "Question"]
+        "transcriptions": { "pinyin": "jiějué wèntí" },
+        "meanings": ["To solve problems"]
       }
     ]
   },
