@@ -11,7 +11,6 @@ Big thanks to Lukas Behammer for his contribution to the iAIMS website, on which
 
   --bright-transparent: rgba(255, 255, 255, 0.05);
   --dark-transparent: rgba(0, 0, 0, 0.05);
-
   --button-shadow: 1px 1px 4px 0 var(--dark);
 }
 
@@ -369,4 +368,84 @@ article.post {
 /* Adjust headings specifically if they feel too crowded */
 .post h1, .post h2, .post h3 {
     margin-left: -2px; /* Slight optical adjustment for larger text */
+}
+
+/* Footer design */
+.site-footer {
+  background: var(--card-background);
+  width: 100%;
+  box-shadow: 0 0 40px 1px var(--secondary);
+  position: relative;
+  bottom: 0;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.footer-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--main-text-color);
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-right {
+  font-size: 0.85rem;
+  color: var(--main-text-color);
+}
+
+/*Icon colors*/
+/* Icon colors */
+.fa-youtube {
+  color: #cc181e;
+}
+
+.fa-discord {
+  color: #7289da;
+}
+
+.fa-github {
+  color: #000000;
+}
+
+.member-icon {
+  color: #666666;
+}
+
+.member-links .fa-github {
+  color: #666666;
+}
+
+
+.fa-heart {
+  color: var(--secondary);
 }
