@@ -55,44 +55,40 @@ permalink: /
     }
 
     // Helper function to load parts and keep them aligned
-    function loadBrainPart(id, url, isTransparent, color, opacity = 1.0) {
+    function loadBrainPart(id, url, isTransparent, color) {
         loader.load(url, function (geometry) {
             const material = new THREE.MeshPhongMaterial({
                 color: color,
-                specular: 0x111111,
-                shininess: 200,
                 transparent: isTransparent,
-                opacity: isTransparent ? 0.15 : 1.0, // 15% visibility for the shell
-                side: THREE.DoubleSide // Makes the back of the transparent shell visible
+                opacity: isTransparent ? 0.15 : 1.0,
+                side: THREE.DoubleSide,
+                // CRITICAL FOR TRANSPARENCY:
+                depthWrite: !isTransparent, // Tells Three.js to draw objects behind the GM
             });
 
             const mesh = new THREE.Mesh(geometry, material);
-
-            // Store the mesh in our object using the 'id'
             brainMeshes[id] = mesh;
-
-            // 1. CRITICAL: Do NOT use geometry.center() here.
-            // We want to keep the original NIfTI/Slicer coordinates.
-
-            // 2. Correct the Medical-to-Web axis mismatch
             mesh.rotation.x = -Math.PI / 2;
-
             brainGroup.add(mesh);
 
-            // 3. Center the WHOLE group after adding a part
-            // This ensures the brain stays in the middle of the "camera"
+            // Re-centering logic
             const box = new THREE.Box3().setFromObject(brainGroup);
             const center = box.getCenter(new THREE.Vector3());
-            brainGroup.position.x = -center.x;
-            brainGroup.position.y = -center.y;
-            brainGroup.position.z = -center.z;
+            brainGroup.position.set(-center.x, -center.y, -center.z);
         });
+    }
+
+    // Adjust camera distance for mobile
+    if (window.innerWidth < 768) {
+        camera.position.z = 300; // Move back on phones
+    } else {
+        camera.position.z = 200;
     }
 
     // --- LOAD YOUR STRUCTURES HERE ---
     // Example: Outer shell (GM) and Ventricles
     // Color source: https://loading.io/color/feature/Pastel-8/
-    loadBrainPart('gray_matter', '/assets/models/Segmentation_GM.stl', true, 0xffffff, 0.2); // Translucent Grey Matter
+    loadBrainPart('gray_matter', '/assets/models/Segmentation_GM.stl', true, 0x505050, 0.2); // Translucent Grey Matter
     loadBrainPart('brainstem', '/assets/models/Segmentation_brainstem.stl', false, 0xf89c74, 1.0);
     loadBrainPart('corpus_callosum', '/assets/models/Segmentation_corpuscallosum.stl', false, 0xf6cf71, 1.0);
     loadBrainPart('lateral_ventricles', '/assets/models/Segmentation_lateral_ventricles_BLUE.stl', false, 0x66ccff, 1.0);

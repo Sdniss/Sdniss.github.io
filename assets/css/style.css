@@ -52,6 +52,17 @@ html, html[data-theme="dark"] {
     --main-text-color: var(--light);
     --card-background: var(--bright-transparent);
   }
+  /* On Mobile: Make text even smaller and adjust box height */
+  @media (max-width: 768px) {
+      .typewriter h1 {
+          font-size: 16px; /* Fixed readable size on mobile */
+      }
+      #controls {
+          scale: 0.8; /* Shrink the menu on mobile */
+          left: 10px !important;
+          top: 10px !important;
+      }
+  }
 
   html, html[data-theme="light"] {
     --primary-color: var(--primary);
@@ -472,6 +483,8 @@ article.post {
 .typewriter h1 {
   width: fit-content;      /* Makes the box only as wide as the text */
   color: #bbbbbb;
+  /* Scales font based on screen width */
+  font-size: 2.5vw;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
