@@ -5,8 +5,121 @@ nav: home
 permalink: /
 ---
 
-<section class="section">
-  <div class="intro">
-    <h1>Welcome to my website!</h1>
-  </div>
-</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+<div style="position: relative; width: 100%; height: 500px; background: #111; overflow: hidden;">
+    <header color="white">
+        <div class="typewriter"; color="white">
+            <h1>Hi, I am Stijn. Welcome to my creative space.</h1>
+        </div>
+    </header>
+    <div id="controls" style="position: absolute; top: 30px; left: 20px; z-index: 10; background: rgba(0,0,0,0.6); padding: 15px; border-radius: 8px; color: white; font-family: sans-serif; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);">
+        <h3 style="margin: 0 0 10px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Stijn's brain</h3>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('gray_matter', this.checked)"> Grey Matter</label>
+            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('brainstem', this.checked)"> Brainstem</label>
+            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('corpus_callosum', this.checked)"> Corpus Callosum</label>
+            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('hippocampus_left', this.checked)"> Hippocampus left</label>
+            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('hippocampus_right', this.checked)"> Hippocampus right</label>
+            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('lateral_ventricles', this.checked)"> Lateral Ventricles</label>
+            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('thalami', this.checked)"> Thalami</label>
+            </div>
+    </div>
+
+    <div id="brain-container"></div>
+</div>
+
+<script>
+    const container = document.getElementById('brain-container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 2000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    // This group holds all brain parts so they rotate together
+    const brainGroup = new THREE.Group();
+    scene.add(brainGroup);
+
+    const loader = new THREE.STLLoader();
+    // This object will store our meshes so the toggle function can find them
+    const brainMeshes = {};
+
+    // Toggle function called by the checkboxes
+    function toggleMesh(id, isVisible) {
+        if (brainMeshes[id]) {
+            brainMeshes[id].visible = isVisible;
+        }
+    }
+
+    // Helper function to load parts and keep them aligned
+    function loadBrainPart(id, url, isTransparent, color, opacity = 1.0) {
+        loader.load(url, function (geometry) {
+            const material = new THREE.MeshPhongMaterial({
+                color: color,
+                specular: 0x111111,
+                shininess: 200,
+                transparent: isTransparent,
+                opacity: isTransparent ? 0.15 : 1.0, // 15% visibility for the shell
+                side: THREE.DoubleSide // Makes the back of the transparent shell visible
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+
+            // Store the mesh in our object using the 'id'
+            brainMeshes[id] = mesh;
+
+            // 1. CRITICAL: Do NOT use geometry.center() here.
+            // We want to keep the original NIfTI/Slicer coordinates.
+
+            // 2. Correct the Medical-to-Web axis mismatch
+            mesh.rotation.x = -Math.PI / 2;
+
+            brainGroup.add(mesh);
+
+            // 3. Center the WHOLE group after adding a part
+            // This ensures the brain stays in the middle of the "camera"
+            const box = new THREE.Box3().setFromObject(brainGroup);
+            const center = box.getCenter(new THREE.Vector3());
+            brainGroup.position.x = -center.x;
+            brainGroup.position.y = -center.y;
+            brainGroup.position.z = -center.z;
+        });
+    }
+
+    // --- LOAD YOUR STRUCTURES HERE ---
+    // Example: Outer shell (GM) and Ventricles
+    // Color source: https://loading.io/color/feature/Pastel-8/
+    loadBrainPart('gray_matter', '/assets/models/Segmentation_GM.stl', true, 0xffffff, 0.2); // Translucent Grey Matter
+    loadBrainPart('brainstem', '/assets/models/Segmentation_brainstem.stl', false, 0xf89c74, 1.0);
+    loadBrainPart('corpus_callosum', '/assets/models/Segmentation_corpuscallosum.stl', false, 0xf6cf71, 1.0);
+    loadBrainPart('lateral_ventricles', '/assets/models/Segmentation_lateral_ventricles_BLUE.stl', false, 0x66ccff, 1.0);
+    loadBrainPart('hippocampus_left', '/assets/models/Segmentation_left_hippocampus.stl', false, 0xdcb0f2, 1.0);
+    loadBrainPart('hippocampus_right', '/assets/models/Segmentation_right_hippocampus.stl', false, 0xdcb0f2, 1.0);
+    loadBrainPart('thalami', '/assets/models/Segmentation_thalamus.stl', false, 0x87c55f, 1.0);
+
+    // Add Lights
+    const light = new THREE.DirectionalLight(0xffffff, 0.5);
+    light.position.set(1, 1, 5);
+    scene.add(light);
+    scene.add(new THREE.AmbientLight(0x404040, 2));
+
+    camera.position.z = 200; // Adjust this if the brain is too big/small
+
+    function animate() {
+        requestAnimationFrame(animate);
+        // Rotate the group (the whole head), not individual meshes
+        brainGroup.rotation.y += 0.005;
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    // Responsiveness
+    window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+</script>
