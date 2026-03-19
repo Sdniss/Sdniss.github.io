@@ -8,26 +8,33 @@ permalink: /
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
 
-<div style="position: relative; width: 100%; height: 500px; background: #111; overflow: hidden;">
-    <header color="white">
-        <div class="typewriter"; color="white">
-            <h1>Hi, I am Stijn. Welcome to my creative space.</h1>
+<div class="brain-stage">
+    <header class="typewriter-header">
+        <div class="typewriter">
+            <p></p> <!-- Whitespace -->
+            <h1>Welcome to my creative space.</h1>
         </div>
     </header>
-    <div id="controls" style="position: absolute; top: 30px; left: 20px; z-index: 10; background: rgba(0,0,0,0.6); padding: 15px; border-radius: 8px; color: white; font-family: sans-serif; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);">
-        <h3 style="margin: 0 0 10px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Stijn's brain</h3>
-        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
-            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('gray_matter', this.checked)"> Grey Matter</label>
-            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('brainstem', this.checked)"> Brainstem</label>
-            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('corpus_callosum', this.checked)"> Corpus Callosum</label>
-            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('hippocampus_left', this.checked)"> Hippocampus left</label>
-            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('hippocampus_right', this.checked)"> Hippocampus right</label>
-            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('lateral_ventricles', this.checked)"> Lateral Ventricles</label>
-            <label style="cursor: pointer;"><input type="checkbox" checked onchange="toggleMesh('thalami', this.checked)"> Thalami</label>
-            </div>
-    </div>
-
     <div id="brain-container"></div>
+</div>
+
+<div class="legend-outer">
+    <div class="legend-inner">
+        <div class="legend-header">
+            <span class="dot"></span>
+            <h3>Stijn's exploded brain</h3>
+        </div>
+
+        <div class="control-grid">
+            <label><input type="checkbox" checked onchange="toggleMesh('gray_matter', this.checked)"> Grey Matter</label>
+            <label><input type="checkbox" checked onchange="toggleMesh('brainstem', this.checked)"> Brainstem</label>
+            <label><input type="checkbox" checked onchange="toggleMesh('corpus_callosum', this.checked)"> Corpus Callosum</label>
+            <label><input type="checkbox" checked onchange="toggleMesh('lateral_ventricles', this.checked)"> Ventricles</label>
+            <label><input type="checkbox" checked onchange="toggleMesh('hippocampus_left', this.checked)"> Hippocampus (L)</label>
+            <label><input type="checkbox" checked onchange="toggleMesh('hippocampus_right', this.checked)"> Hippocampus (R)</label>
+            <label><input type="checkbox" checked onchange="toggleMesh('thalami', this.checked)"> Thalami</label>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -88,7 +95,7 @@ permalink: /
     // --- LOAD YOUR STRUCTURES HERE ---
     // Example: Outer shell (GM) and Ventricles
     // Color source: https://loading.io/color/feature/Pastel-8/
-    loadBrainPart('gray_matter', '/assets/models/Segmentation_GM.stl', true, 0x505050, 0.2); // Translucent Grey Matter
+    loadBrainPart('gray_matter', '/assets/models/Segmentation_GM.stl', true, 0xeeeeee, 0.2); // Translucent Grey Matter
     loadBrainPart('brainstem', '/assets/models/Segmentation_brainstem.stl', false, 0xf89c74, 1.0);
     loadBrainPart('corpus_callosum', '/assets/models/Segmentation_corpuscallosum.stl', false, 0xf6cf71, 1.0);
     loadBrainPart('lateral_ventricles', '/assets/models/Segmentation_lateral_ventricles_BLUE.stl', false, 0x66ccff, 1.0);
