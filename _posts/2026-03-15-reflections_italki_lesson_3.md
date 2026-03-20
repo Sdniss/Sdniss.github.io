@@ -33,11 +33,11 @@ Assignment:
 - Video 6-7 Little Fox Chinese.
 - 3 questions
 
-| Q (Chinese) | Q (Pinyin) | Q (English) | A (Chinese) | A (Pinyin) | A (English) |
-| ----------- | ---------- | ----------- | ----------- | ---------- | ----------- |
-|             |            |             |             |            |             |
-|             |            |             |             |            |             |
-|             |            |             |             |            |             |
+| Q (Chinese) | Q (Pinyin) | Q (English) | A (Chinese) | A (Pinyin) | A (English) | 
+| ----- | ----- | ----- | ----- | ----- | ----- | 
+| **这是红色的吗？** | zhè shì hóng sè de ma? | Is this red? | **是，这是红色的。** | shì, zhè shì hóng sè de. | Yes, this is red. | 
+| **你喜欢蓝色吗？** | nǐ xǐ huan lán sè ma? | Do you like blue? | **我不喜欢蓝色。** | wǒ bù xǐ huan lán sè. | I don't like blue. | 
+| **那是黄色的书吗？** | nà shì huáng sè de shū ma? | Is that a yellow book? | **不是，那是绿色的。** | bú shì, nà shì lǜ sè de. | No, that is green. |
 
 ---
 
