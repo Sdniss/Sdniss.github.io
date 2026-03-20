@@ -26,7 +26,7 @@ After some exciting first steps in Chinese and feeling myself rise to mount stup
 | **都可以** | dōu kě yǐ  | anything is okay / all are okay |
 | **当然**   | dāng rán   | of course / certainly           |
 
-# Preparation for lesson 3
+# Preparation for lesson 4
 
 Assignment:
 
