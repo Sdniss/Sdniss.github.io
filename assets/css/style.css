@@ -563,6 +563,7 @@ article.post {
 }
 
 .pipeline-inner {
+    background-color: #eeeeee;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 30px;
@@ -576,7 +577,7 @@ article.post {
 
 .predict-btn {
     background: orange;
-    color: #111;
+    color: #eeeeee;
     padding: 15px 40px;
     border: none;
     border-radius: 50px;
@@ -628,5 +629,5 @@ article.post {
 .age-display {
     font-size: 48px;
     font-weight: bold;
-    color: white;
+    color: #666666;
 }
