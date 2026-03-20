@@ -37,11 +37,38 @@ permalink: /
     </div>
 </div>
 
+<div class="pipeline-outer">
+    <div class="pipeline-inner">
+        <button class="predict-btn" id="run-predict" onclick="startInference()">
+            Predict Stijn's brain age
+        </button>
+
+        <div id="status-tracker" class="status-container">
+            <div id="step-1" class="step">○ Sending POST request to Hugging Face...</div>
+            <div id="step-2" class="step">○ Remote server is loading Stijn's brain image...</div>
+            <div id="step-3" class="step">○ 3D CNN Forward Pass on NIfTI volume ...</div>
+            <div id="step-4" class="step">○ Receiving JSON response & Decoding Result...</div>
+        </div>
+
+        <div id="final-result">
+            <p style="color: #aaa; margin-bottom: 5px;">Brain Age</p>
+            <div class="age-display"><span id="age-val">--</span></div>
+            <p style="color: orange; font-size: 11px; margin-top: 10px; letter-spacing: 1px;">CONNECTION SECURE • API 200 OK</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 15px;">
+            <a href="https://huggingface.co/spaces/sdenisse/brainage" target="_blank">
+                <img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/powered-by-huggingface-light.svg" alt="Built with Spaces" width="200px">
+            </a>
+        </div>
+    </div>
+</div>
+
 <script>
     const container = document.getElementById('brain-container');
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 2000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
@@ -117,6 +144,7 @@ permalink: /
         brainGroup.rotation.y += 0.005;
         renderer.render(scene, camera);
     }
+
     animate();
 
     // Responsiveness
@@ -125,4 +153,68 @@ permalink: /
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
     });
+</script>
+
+<script>
+    async function startInference() {
+        const btn = document.getElementById('run-predict');
+        const tracker = document.getElementById('status-tracker');
+        const resultDiv = document.getElementById('final-result');
+        const ageVal = document.getElementById('age-val');
+
+        // UI Reset
+        btn.disabled = true;
+        btn.innerText = "Connecting...";
+        tracker.style.display = "block";
+        resultDiv.style.display = "none";
+
+        // Helper to add "fake" educational delay
+        const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+        try {
+            // STEP 1: Connection via Dynamic Import
+            const el1 = document.getElementById('step-1');
+
+            // This line is the magic: it loads the module inside a regular function
+            const {Client} = await import("https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js");
+
+            // Connect to your space
+            const client = await Client.connect("sdenisse/brainage");
+            await sleep(1000); // Simulate heavy I/O
+            el1.className = "step completed";
+            el1.innerHTML = "✓ POST request sent to Hugging Face.";
+
+            // Change "/predict_stijn_age" to "/predict" if you see an error here
+            const result = await client.predict("/predict_stijn_age", {});
+
+            await sleep(1000); // Simulate heavy I/O
+            document.getElementById('step-2').className = "step completed";
+            document.getElementById('step-2').innerHTML = "✓ Brain volume loaded.";
+
+            await sleep(2000); // Simulate heavy I/O
+            document.getElementById('step-3').className = "step completed";
+            document.getElementById('step-3').innerHTML = "✓ Forward pass on Stijn's brain complete.";
+
+            // STEP 4: Roger That
+            await sleep(1000); // Simulate heavy I/O
+            document.getElementById('step-4').className = "step completed";
+            document.getElementById('step-4').innerHTML = "✓ JSON received and result dececoded";
+
+            // Show result
+            const predictedAge = result.data[0];
+            ageVal.innerText = typeof predictedAge === 'number' ? predictedAge.toFixed(2) : predictedAge;
+
+            resultDiv.style.display = "block";
+            btn.innerText = "Transmission Complete";
+
+        } catch (error) {
+            console.error("DETAILED ERROR:", error);
+            document.getElementById('step-1').innerHTML = "✖ Signal Loss: " + error.message;
+            btn.disabled = false;
+            btn.innerText = "Retry Transmission";
+        }
+    }
+
+    // Explicitly make it global for the button's onclick
+    window.startInference = startInference;
 </script>

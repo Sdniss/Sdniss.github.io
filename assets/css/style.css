@@ -570,3 +570,76 @@ article.post {
   from, to { border-color: transparent }
   50% { border-color: orange; }
 }
+
+/* Pipeline UI Styling */
+.pipeline-outer {
+    width: 100%;
+    background: #111;
+    padding: 0 20px 40px 20px;
+    border-radius: 0 0 12px 12px;
+    margin-top: -1px; /* Stitch to the legend box */
+}
+
+.pipeline-inner {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.predict-btn {
+    background: orange;
+    color: #111;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s, background 0.2s;
+    display: block;
+    margin: 0 auto 30px auto;
+}
+
+.predict-btn:hover {
+    transform: scale(1.05);
+    background: #ffb347;
+}
+
+.predict-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.status-container {
+    display: none; /* Hidden until button click */
+    font-family: 'Courier New', monospace;
+    color: #888;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.step {
+    margin: 10px 0;
+    transition: color 0.3s;
+}
+
+.step.active { color: orange; }
+.step.completed { color: #2A9D8F; }
+
+#final-result {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    display: none;
+}
+
+.age-display {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+}
