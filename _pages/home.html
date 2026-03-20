@@ -34,7 +34,12 @@ permalink: /
             <label><input type="checkbox" checked onchange="toggleMesh('hippocampus_right', this.checked)"> Hippocampus (R)</label>
             <label><input type="checkbox" checked onchange="toggleMesh('thalami', this.checked)"> Thalami</label>
         </div>
+
+
     </div>
+    <p style="font-size:12px"; align="right">
+        * Brain segmentations by <a href="https://www.icometrix.com/" style="color:orange">ico<b>metrix</b></a>
+    </p>
 </div>
 
 <div class="pipeline-outer">
@@ -54,6 +59,16 @@ permalink: /
             <p style="color: #aaa; margin-bottom: 5px;">Brain Age</p>
             <div class="age-display"><span id="age-val">--</span></div>
             <p style="color: orange; font-size: 11px; margin-top: 10px; letter-spacing: 1px;">CONNECTION SECURE • API 200 OK</p>
+            <h3 align="left"; style="color: #aaa">A bit of background</h3>
+            <p align="left"; style="color: #aaa; font-size: 16px">
+                This brain age model was trained on data from three open source datasets, distributed across three centers across Europe.
+                For more information, please refer to <a href="https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1691088/full">Denissen et al. 2026</a>.
+                I was 27 years old at the time my brain MRI was acquired, so my brain is looking too old! I hope that my <a href="/triathlon/">triathlon training</a>, which I started afterwards, is paying off now!
+                Nonetheless, brain age models, especially those relying on deep neural networks such as this one, are known to have poor generalisability,
+                meaning that they do not work very well on data from other centers, scanners, ...<br>
+                <br>
+                So take the prediction with a pinch of salt, but I thought it's cool to show that AI research can be transformed into an interface that users can try!
+            </p>
         </div>
 
         <div style="text-align: center; margin-bottom: 15px;">

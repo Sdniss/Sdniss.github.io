@@ -574,19 +574,22 @@ article.post {
 /* Pipeline UI Styling */
 .pipeline-outer {
     width: 100%;
-    background: #111;
     padding: 0 20px 40px 20px;
     border-radius: 0 0 12px 12px;
     margin-top: -1px; /* Stitch to the legend box */
 }
 
 .pipeline-inner {
-    background: rgba(255, 255, 255, 0.03);
+    background: #222222;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 30px;
     max-width: 800px;
     margin: 0 auto;
+}
+
+.pipeline-inner a {
+    color: orange;
 }
 
 .predict-btn {
@@ -625,6 +628,7 @@ article.post {
 .step {
     margin: 10px 0;
     transition: color 0.3s;
+    font-size: 16px;
 }
 
 .step.active { color: orange; }
@@ -636,6 +640,7 @@ article.post {
     border-top: 1px solid #333;
     padding-top: 20px;
     display: none;
+    font-size: 20px
 }
 
 .age-display {
