@@ -1,0 +1,200 @@
+[
+  {
+    "simplified": "红色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "hóngsè" },
+        "meanings": ["Red"]
+      }
+    ]
+  },
+  {
+    "simplified": "蓝色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "lánsè" },
+        "meanings": ["Blue"]
+      }
+    ]
+  },
+  {
+    "simplified": "黄色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "huángsè" },
+        "meanings": ["Yellow"]
+      }
+    ]
+  },
+  {
+    "simplified": "绿色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "lǜsè" },
+        "meanings": ["Green"]
+      }
+    ]
+  },
+  {
+    "simplified": "橙色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "chéngsè" },
+        "meanings": ["Orange"]
+      }
+    ]
+  },
+  {
+    "simplified": "紫色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "zǐsè" },
+        "meanings": ["Purple"]
+      }
+    ]
+  },
+  {
+    "simplified": "黑色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "hēisè" },
+        "meanings": ["Black"]
+      }
+    ]
+  },
+  {
+    "simplified": "白色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "báisè" },
+        "meanings": ["White"]
+      }
+    ]
+  },
+  {
+    "simplified": "这是什么颜色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "zhè shì shénme yánsè" },
+        "meanings": ["What color is this?"]
+      }
+    ]
+  },
+  {
+    "simplified": "零",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "líng" },
+        "meanings": ["Zero", "0"]
+      }
+    ]
+  },
+  {
+    "simplified": "一",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "yī" },
+        "meanings": ["One", "1"]
+      }
+    ]
+  },
+  {
+    "simplified": "二",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "èr" },
+        "meanings": ["Two", "2"]
+      }
+    ]
+  },
+  {
+    "simplified": "三",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "sān" },
+        "meanings": ["Three", "3"]
+      }
+    ]
+  },
+  {
+    "simplified": "四",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "sì" },
+        "meanings": ["Four", "4"]
+      }
+    ]
+  },
+  {
+    "simplified": "五",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "wǔ" },
+        "meanings": ["Five", "5"]
+      }
+    ]
+  },
+  {
+    "simplified": "六",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "liù" },
+        "meanings": ["Six", "6"]
+      }
+    ]
+  },
+  {
+    "simplified": "七",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "qī" },
+        "meanings": ["Seven", "7"]
+      }
+    ]
+  },
+  {
+    "simplified": "八",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "bā" },
+        "meanings": ["Eight", "8"]
+      }
+    ]
+  },
+  {
+    "simplified": "九",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "jiǔ" },
+        "meanings": ["Nine", "9"]
+      }
+    ]
+  },
+  {
+    "simplified": "十",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "shí" },
+        "meanings": ["Ten", "10"]
+      }
+    ]
+  },
+  {
+    "simplified": "你几岁了",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "nǐ jǐ suì le" },
+        "meanings": ["How old are you? (for children)"]
+      }
+    ]
+  },
+  {
+    "simplified": "你多大了",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "nǐ duō dà le" },
+        "meanings": ["How old are you? (general/adults)"]
+      }
+    ]
+  }
+]
