@@ -463,7 +463,7 @@ article.post {
 /* --- Legend Outer (The decoupled container) --- */
 .legend-outer {
     width: 100%;
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 0 20px;
     border-radius: 12px 12px 12px 12px; /* Rounded bottom only */
     margin-bottom: 30px;
 }
@@ -563,7 +563,6 @@ article.post {
 }
 
 .pipeline-inner {
-    background: #222222;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 30px;
