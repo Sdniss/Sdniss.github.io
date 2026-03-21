@@ -16,6 +16,7 @@
   description: "This was truly a joy. I enjoyed approaching this triathlon modestly, in contrast to the Leuven Marathon where I started way too quick, and slowed down halfway.
   Couldn't be more proud of this result, and loved the experience! Next time: swimming under 1 hour :)"
   link: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj3IEgk2sq6mZ9hQ6W5b5TnxFWQGPc0ZV_tO_MUQPFzJIvw59Bb5RetxKRxXL8MA/pubhtml?gid=1593702242&single=true"
+  nr: "629"
   photos:
     - "2025_Challenge_Almere_5.jpeg"
     - "2025_Challenge_Almere_1.jpeg"
@@ -41,6 +42,7 @@
     t2: "00:03:00.7"
     run: "01:37:24"
   description: "Very humid. Excellent preparation for full distance in September. Note: Official times not available. Extracted from Garmin."
+  nr: ""
   photos:
     - "2025_Ironbikes_1.jpg"
 
@@ -61,6 +63,7 @@
     run: "00:45:20"
   description: "Swimming was a true joy. Started quick, so I did not end up in the mass. Mindful focusing on technique, just lovely."
   link: "https://www.tdleuven.be/wp-content/uploads/2025/05/Uitslag-CTL2025-IND.pdf"
+  nr: "215"
   photos:
     - "2025_City_triathlon_Leuven_2.JPG"
     - "2025_City_triathlon_Leuven_1.JPG"
