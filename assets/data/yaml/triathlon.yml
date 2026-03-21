@@ -16,11 +16,11 @@
   description: "Swimming was a true joy. Started quick, so I did not end up in the mass. Mindful focusing on technique, just lovely."
   link: "https://www.tdleuven.be/wp-content/uploads/2025/05/Uitslag-CTL2025-IND.pdf"
   photos:
-    - "City_triathlon_Leuven_2.JPG"
-    - "City_triathlon_Leuven_1.JPG"
-    - "City_triathlon_Leuven_3.JPG"
-    - "City_triathlon_Leuven_4.JPG"
-    - "City_triathlon_Leuven_5.JPG"
+    - "2025_City_triathlon_Leuven_2.JPG"
+    - "2025_City_triathlon_Leuven_1.JPG"
+    - "2025_City_triathlon_Leuven_3.JPG"
+    - "2025_City_triathlon_Leuven_4.JPG"
+    - "2025_City_triathlon_Leuven_5.JPG"
 
 - event: "Iron Bikes 100 Triatlon"
   date: 2025-06-14
@@ -40,6 +40,26 @@
   description: "Very humid. Excellent preparation for full distance in September. Note: Official times not available. Extracted from Garmin."
   photos:
     - "2025_Ironbikes_1.jpg"
+
+- event: "Triathlon Heerjansdam"
+  date: 2024-08-25
+  location: "Heerjansdam, NL"
+  type: "Quarter distance"
+  distance:
+    swim: "1km"
+    bike: "40km"
+    run: "10km"
+  results:
+    total_time: "02:20:04"
+    swim: "00:16:58"
+    t1: "00:03:02.7"
+    bike: "01:12:33"
+    t2: "00:01:40.9"
+    run: "00:45:49"
+  description: "Fun triathlon in the Netherlands. Well organised by a local club. Felt very inclusive!"
+  photos:
+    - "2024_Heerjansdam_Triathlon.jpg"
+
 
 - event: "Cave Triathlon"
   date: 2024-07-28
