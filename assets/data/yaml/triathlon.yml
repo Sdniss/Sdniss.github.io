@@ -7,13 +7,13 @@
     bike: "80km"
     run: "18km"
   results:
-    total_time: ""
-    swim: "00:31:07"
-    t1: ""
-    bike: "02:38:54"
-    t2: ""
-    run: "01:37:23"
-  description: "Very humid. Excellent preparation for full distance in September."
+    total_time: "04:53:09"
+    swim: "00:31:08"
+    t1: "00:02:40.2"
+    bike: "02:38:56"
+    t2: "03:00.7"
+    run: "01:37:24"
+  description: "Very humid. Excellent preparation for full distance in September. Note: Official times not available. Extracted from Garmin."
   photos:
     - "2025_Ironbikes_1.jpg"
 
@@ -71,8 +71,13 @@
     bike: "27km"
     run: "5km"
   results:
-    total_time: "01:31:44"
-  description: "My first triathlon event!"
+    total_time: "01:31:45"
+    swim: "00:15:52"
+    t1: "00:03:18.2"
+    bike: "00:48:56"
+    t2: "00:01:51.1"
+    run: "00:21:47"
+  description: "My first triathlon event! Note: Times of different segments not available. Extracted from Garmin"
 
 - event: "Prague Marathon"
   date: 2023-05-07
