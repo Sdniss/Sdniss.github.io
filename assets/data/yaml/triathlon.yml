@@ -1,3 +1,27 @@
+- event: "Leuven City Triathlon"
+  date: 2025-05-11
+  location: "Leuven, BE"
+  type: "Quarter distance"
+  distance:
+    swim: "0.7km"
+    bike: "38km"
+    run: "10km"
+  results:
+    total_time: "02:03:14"
+    swim: "00:10:05"
+    t1: "00:02:38"
+    bike: "01:03:41"
+    t2: "00:01:28"
+    run: "00:45:20"
+  description: "Swimming was a true joy. Started quick, so I did not end up in the mass. Mindful focusing on technique, just lovely."
+  link: "https://www.tdleuven.be/wp-content/uploads/2025/05/Uitslag-CTL2025-IND.pdf"
+  photos:
+    - "City_triathlon_Leuven_2.JPG"
+    - "City_triathlon_Leuven_1.JPG"
+    - "City_triathlon_Leuven_3.JPG"
+    - "City_triathlon_Leuven_4.JPG"
+    - "City_triathlon_Leuven_5.JPG"
+
 - event: "Iron Bikes 100 Triatlon"
   date: 2025-06-14
   location: "Hazewinkel, BE"
