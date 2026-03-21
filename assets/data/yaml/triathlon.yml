@@ -26,6 +26,20 @@
     - "2025_Challenge_Almere_6.jpeg"
     - "2025_Challenge_Almere_7.jpeg"
 
+- event: "Trio Triathlon Kortrijk"
+  date: 2025-06-15
+  location: "Kortrijk, BE"
+  type: "Swim Sprint"
+  distance:
+    swim: "1km"
+  link: "http://results.b-nys.com/print?type=scratch&event=2912"
+  nr: "616"
+  results:
+    total_time: "00:13:37"
+  description: "Trio triathlon with team Tshabalala Bafana Bafana. A dream team with my buddy's Nicolas D'Hoore (Bike) and Joran Dutoo (Run). Had a ton of fun <3"
+  photos:
+    - "2025_Trio_Triathlon_Kortrijk.jpg"
+
 - event: "Iron Bikes 100 Triatlon"
   date: 2025-06-14
   location: "Hazewinkel, BE"
