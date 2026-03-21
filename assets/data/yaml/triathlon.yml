@@ -1,3 +1,22 @@
+- event: "Iron Bikes 100 Triatlon"
+  date: 2025-06-14
+  location: "Hazewinkel, BE"
+  type: "Half distance"
+  distance:
+    swim: "2km"
+    bike: "80km"
+    run: "18km"
+  results:
+    total_time: ""
+    swim: "00:31:07"
+    t1: ""
+    bike: "02:38:54"
+    t2: ""
+    run: "01:37:23"
+  description: "Very humid. Excellent preparation for full distance in September."
+  photos:
+    - "2025_Ironbikes_1.jpg"
+
 - event: "Cave Triathlon"
   date: 2024-07-28
   location: "Kanne, BE"
