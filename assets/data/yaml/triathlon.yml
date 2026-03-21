@@ -19,6 +19,20 @@
   photos:
     - "Cave_triathlon_1.jpg"
 
+- event: "Hageland Plas Triathlon"
+  date: 2024-07-28
+  location: "Aarschot, BE"
+  link: "https://aatt.be/?page_id=464"
+  nr: "539"
+  type: "Sprint Triathlon"
+  distance:
+    swim: "750m"
+    bike: "27km"
+    run: "5km"
+  results:
+    total_time: "01:31:44"
+  description: "My first triathlon event!"
+
 - event: "Prague Marathon"
   date: 2023-05-07
   location: "Prague, CZ"
