@@ -70,6 +70,24 @@
     - "2025_City_triathlon_Leuven_3.JPG"
     - "2025_City_triathlon_Leuven_4.JPG"
 
+- event: "Marathon Brussels-Leuven"
+  date: 2025-04-13
+  location: "Brussels, BE"
+  type: "Marathon"
+  distance:
+    run: "42km"
+  link: "https://www.acn-timing.com/?lng=EN#/events/2157860289051328/ctx/20250412_ek/generic/199032_14/home/LIVEMARA14"
+  nr: "6928"
+  results:
+    total_time: "03:54:23"
+  description: "This marathon was a tough one. The hilly start, combined with starting way to fast, caused the second half to be tough.
+  The ambience was nonetheless truly magnificent!"
+  photos:
+    - "2025_Marathon_BXL-LEU_4.jpg"
+    - "2025_Marathon_BXL-LEU_1.jpg"
+    - "2025_Marathon_BXL-LEU_2.jpg"
+    - "2025_Marathon_BXL-LEU_3.jpg"
+
 - event: "Triathlon Heerjansdam"
   date: 2024-08-25
   location: "Heerjansdam, NL"
