@@ -186,6 +186,10 @@
     t2: "00:01:51.1"
     run: "00:21:47"
   description: "My first triathlon event! Note: Times of different segments not available. Extracted from Garmin"
+  photos:
+    - "2024_Plastriatlon_1.jpeg"
+    - "2024_Plastriatlon_2.jpeg"
+    - "2024_Plastriatlon_3.jpeg"
 
 - event: "Prague Marathon"
   date: 2023-05-07
