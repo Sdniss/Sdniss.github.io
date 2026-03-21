@@ -1,0 +1,258 @@
+---
+layout: default
+title: Triathlon
+nav: triathlon
+permalink: /triathlon/
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Log | Multisport Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .race-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .race-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .split-badge {
+            background: #f1f5f9;
+            border-left: 3px solid #cbd5e1;
+        }
+
+        .type-tag {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.65rem;
+            font-weight: 900;
+        }
+
+        .distance-chip {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 99px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .gallery-container::-webkit-scrollbar {
+            height: 4px;
+        }
+        .gallery-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .main-photo-transition {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="text-slate-900 pb-20">
+
+    <main class="max-w-5xl mx-auto px-6 pt-12">
+
+        <!-- Updated Top Stats: Distances -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="text-yellow-600 text-[10px] font-black uppercase mb-1 flex items-center gap-2">
+                    <i class="fas fa-person-swimming"></i> Total Swim
+                </div>
+                <div id="stat-swim" class="text-3xl font-black">--</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="text-yellow-600 text-[10px] font-black uppercase mb-1 flex items-center gap-2">
+                    <i class="fas fa-bicycle"></i> Total Bike
+                </div>
+                <div id="stat-bike" class="text-3xl font-black text-slate-800">--</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                <div class="text-yellow-600 text-[10px] font-black uppercase mb-1 flex items-center gap-2">
+                    <i class="fas fa-person-running"></i> Total Run
+                </div>
+                <div id="stat-run" class="text-3xl font-black text-slate-800">--</div>
+            </div>
+        </div>
+
+        <div id="loading-indicator" class="flex justify-center py-20">
+            <i class="fas fa-circle-notch fa-spin text-blue-600 text-3xl"></i>
+        </div>
+
+        <div class="space-y-10" id="race-container">
+            <!-- Dynamic Injection -->
+        </div>
+    </main>
+
+    <script>
+        const yamlUrl = "{{ site.baseurl }}/assets/data/yaml/triathlon.yml";
+        const photosPath = "{{ site.baseurl }}/assets/photos/";
+
+        async function loadRaceData() {
+            try {
+                const response = await fetch(yamlUrl);
+                const yamlText = await response.text();
+                const raceData = jsyaml.load(yamlText);
+
+                if (raceData && Array.isArray(raceData)) {
+                    renderRaces(raceData);
+                    calculateStats(raceData);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('race-container').innerHTML = `<div class="p-8 text-center text-slate-400 border-2 border-dashed rounded-xl">Error loading YAML data.</div>`;
+            } finally {
+                document.getElementById('loading-indicator').style.display = 'none';
+            }
+        }
+
+        function calculateStats(data) {
+            let totalSwim = 0;
+            let totalBike = 0;
+            let totalRun = 0;
+
+            data.forEach(r => {
+                if (r.distance) {
+                    if (r.distance.swim) totalSwim += parseFloat(r.distance.swim) || 0;
+                    if (r.distance.bike) totalBike += parseFloat(r.distance.bike) || 0;
+                    if (r.distance.run) totalRun += parseFloat(r.distance.run) || 0;
+                }
+            });
+
+            // Using common units (assuming km in YAML, but swim might be m/km)
+            document.getElementById('stat-swim').textContent = `${totalSwim.toFixed(1)} km`;
+            document.getElementById('stat-bike').textContent = `${totalBike.toFixed(0)} km`;
+            document.getElementById('stat-run').textContent = `${totalRun.toFixed(1)} km`;
+        }
+
+        function swapPhoto(imgElement, newSrc) {
+            const mainImg = imgElement.closest('.race-card').querySelector('.main-race-photo');
+            mainImg.style.opacity = '0';
+            setTimeout(() => {
+                mainImg.src = newSrc;
+                mainImg.style.opacity = '1';
+            }, 300);
+        }
+
+        function renderRaces(data) {
+            const container = document.getElementById('race-container');
+            container.innerHTML = '';
+
+            data.forEach((race, index) => {
+                const dateObj = new Date(race.date);
+                const formattedDate = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                const photos = Array.isArray(race.photos) ? race.photos : [];
+                const firstPhoto = photos.length > 0 ? `${photosPath}${photos[0]}` : 'https://images.unsplash.com/photo-1530549387074-d5629d75b734?auto=format&fit=crop&w=800&q=80';
+
+                // Distance Chips
+                let distanceHtml = '';
+                if (race.distance) {
+                    distanceHtml = `<div class="flex flex-wrap gap-2 mb-4">`;
+                    if (race.distance.swim) distanceHtml += `<span class="distance-chip"><i class="fas fa-person-swimming"></i> ${race.distance.swim}</span>`;
+                    if (race.distance.bike) distanceHtml += `<span class="distance-chip"><i class="fas fa-bicycle"></i> ${race.distance.bike}</span>`;
+                    if (race.distance.run) distanceHtml += `<span class="distance-chip"><i class="fas fa-person-running"></i> ${race.distance.run}</span>`;
+                    distanceHtml += `</div>`;
+                }
+
+                const card = document.createElement('div');
+                card.className = "race-card bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col md:flex-row";
+
+                card.innerHTML = `
+                    <!-- Left: Featured Photo -->
+                    <div class="w-full md:w-80 bg-slate-900 relative overflow-hidden h-64 md:h-auto">
+                        <img src="${firstPhoto}"
+                             class="main-race-photo w-full h-full object-cover main-photo-transition"
+                             onerror="this.src='https://images.unsplash.com/photo-1530549387074-d5629d75b734?auto=format&fit=crop&w=800&q=80'" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="type-tag bg-yellow-600 text-white px-2 py-1 rounded shadow-lg">${race.type || 'Race'}</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="p-6 md:p-8 flex-1 flex flex-col">
+                        <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-4">
+                            <div>
+                                <h3 class="text-2xl font-black tracking-tight text-slate-800">${race.event}</h3>
+                                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-400 text-sm font-medium mt-1">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> ${formattedDate}</span>
+                                    <span><i class="fas fa-location-dot mr-1"></i> ${race.location || 'Unknown'}</span>
+                                    ${race.nr ? `<span><i class="fas fa-hashtag mr-1"></i> Bib ${race.nr}</span>` : ''}
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 px-4 py-2 rounded-xl border border-slate-100 text-right min-w-[120px]">
+                                <div class="text-[9px] font-black uppercase text-slate-400 tracking-widest">Final Time</div>
+                                <div class="text-xl font-black mono text-yellow-600">${(race.results && race.results.total_time) || '--:--:--'}</div>
+                            </div>
+                        </div>
+
+                        ${distanceHtml}
+
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                            ${race.description || 'No detailed description available for this event.'}
+                        </p>
+
+                        <!-- Splits Grid -->
+                        ${race.results && race.results.swim ? `
+                        <div class="grid grid-cols-3 gap-3 mb-8">
+                            <div class="split-badge p-2.5 rounded-lg border-l-yellow-400">
+                                <div class="text-[9px] uppercase font-black text-slate-400">Swim Split</div>
+                                <div class="mono text-xs font-bold text-slate-700">${race.results.swim}</div>
+                            </div>
+                            <div class="split-badge p-2.5 rounded-lg border-l-yellow-400">
+                                <div class="text-[9px] uppercase font-black text-slate-400">Bike Split</div>
+                                <div class="mono text-xs font-bold text-slate-700">${race.results.bike}</div>
+                            </div>
+                            <div class="split-badge p-2.5 rounded-lg border-l-yellow-400">
+                                <div class="text-[9px] uppercase font-black text-slate-400">Run Split</div>
+                                <div class="mono text-xs font-bold text-slate-700">${race.results.run}</div>
+                            </div>
+                        </div>
+                        ` : ''}
+
+                        <!-- Gallery & Link -->
+                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-slate-50">
+                            <div class="flex gap-2 gallery-container overflow-x-auto max-w-[60%] py-1">
+                                ${photos.map(p => `
+                                    <img src="${photosPath}${p}"
+                                         onclick="swapPhoto(this, '${photosPath}${p}')"
+                                         class="w-12 h-12 rounded-md border-2 border-transparent hover:border-yellow-500 cursor-pointer object-cover transition-all"
+                                         onerror="this.style.display='none'" />
+                                `).join('')}
+                            </div>
+                            ${race.link ? `
+                                <a href="${race.link}" target="_blank" class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-yellow-600 transition-colors">
+                                    Results <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        window.onload = loadRaceData;
+    </script>
+</body>
+</html>

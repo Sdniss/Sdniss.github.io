@@ -1,0 +1,35 @@
+- event: "Cave Triatlon"
+  date: 2024-07-28
+  location: "Kanne, BE"
+  link: "https://my.raceresult.com/300197/results#2_C53F7C"
+  nr: "112"
+  type: "Sprint Triathlon"
+  distance:
+    swim: "1.9km"
+    bike: "90km"
+    run: "21km"
+  results:
+    total_time: "05:25:50"
+    swim: "00:33:22"
+    t1: "0:03:58"
+    bike: "02:46:55"
+    t2: "00:03:49"
+    run: "01:57:46"
+  description: "A triathlon through a cave."
+  photos:
+    - "Cave_triathlon_1.jpg"
+
+- event: "Prague Marathon"
+  date: 2023-05-07
+  location: "Prague, CZ"
+  type: "Marathon"
+  distance:
+    run: "42km"
+  link: "https://www.runczech.com/en/result-detail?result_id=52499"
+  nr: "5282"
+  results:
+    total_time: "04:07:35"
+  description: "My first marathon."
+  photos:
+    - "Prague_marathon_1.jpg"
+    - "Prague_marathon_2.jpg"
