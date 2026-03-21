@@ -1,3 +1,49 @@
+- event: "Challenge Almere-Amsterdam"
+  date: 2025-09-13
+  location: "Almere, NL"
+  type: "Full Distance"
+  distance:
+    swim: "3.8km"
+    bike: "180km"
+    run: "42.2km"
+  results:
+    total_time: "11:15:39"
+    swim: "01:00:55"
+    t1: "00:05:50"
+    bike: "05:55:51"
+    t2: "00:11:14"
+    run: "04:01:51"
+  description: "This was truly a joy. I enjoyed approaching this triathlon modestly, in contrast to the Leuven Marathon where I started way too quick, and slowed down halfway.
+  Couldn't be more proud of this result, and loved the experience! Next time: swimming under 1 hour :)"
+  link: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj3IEgk2sq6mZ9hQ6W5b5TnxFWQGPc0ZV_tO_MUQPFzJIvw59Bb5RetxKRxXL8MA/pubhtml?gid=1593702242&single=true"
+  photos:
+    - "2025_Challenge_Almere_5.jpeg"
+    - "2025_Challenge_Almere_1.jpeg"
+    - "2025_Challenge_Almere_2.jpeg"
+    - "2025_Challenge_Almere_3.jpeg"
+    - "2025_Challenge_Almere_4.jpeg"
+    - "2025_Challenge_Almere_6.jpeg"
+    - "2025_Challenge_Almere_7.jpeg"
+
+- event: "Iron Bikes 100 Triatlon"
+  date: 2025-06-14
+  location: "Hazewinkel, BE"
+  type: "Half distance"
+  distance:
+    swim: "2km"
+    bike: "80km"
+    run: "18km"
+  results:
+    total_time: "04:53:09"
+    swim: "00:31:08"
+    t1: "00:02:40.2"
+    bike: "02:38:56"
+    t2: "00:03:00.7"
+    run: "01:37:24"
+  description: "Very humid. Excellent preparation for full distance in September. Note: Official times not available. Extracted from Garmin."
+  photos:
+    - "2025_Ironbikes_1.jpg"
+
 - event: "Leuven City Triathlon"
   date: 2025-05-11
   location: "Leuven, BE"
@@ -20,26 +66,6 @@
     - "2025_City_triathlon_Leuven_1.JPG"
     - "2025_City_triathlon_Leuven_3.JPG"
     - "2025_City_triathlon_Leuven_4.JPG"
-    - "2025_City_triathlon_Leuven_5.JPG"
-
-- event: "Iron Bikes 100 Triatlon"
-  date: 2025-06-14
-  location: "Hazewinkel, BE"
-  type: "Half distance"
-  distance:
-    swim: "2km"
-    bike: "80km"
-    run: "18km"
-  results:
-    total_time: "04:53:09"
-    swim: "00:31:08"
-    t1: "00:02:40.2"
-    bike: "02:38:56"
-    t2: "00:03:00.7"
-    run: "01:37:24"
-  description: "Very humid. Excellent preparation for full distance in September. Note: Official times not available. Extracted from Garmin."
-  photos:
-    - "2025_Ironbikes_1.jpg"
 
 - event: "Triathlon Heerjansdam"
   date: 2024-08-25
