@@ -17,7 +17,29 @@
     run: "01:57:46"
   description: "A triathlon through a cave."
   photos:
-    - "Cave_triathlon_1.jpg"
+    - "2024_Cave_triathlon_1.jpg"
+
+- event: "Maastriatlon"
+  date: 2024-07-28
+  location: "Kinrooi, BE"
+  link: "http://results.b-nys.com/print?type=scratch&event=2635"
+  nr: "823"
+  type: "Sprint Triathlon"
+  distance:
+    swim: "500m"
+    bike: "20km"
+    run: "5km"
+  results:
+    total_time: "01:11:00"
+    swim: "00:09:03"
+    t1: "00:02:28"
+    bike: "00:34:16"
+    t2: "00:01:43"
+    run: "00:23:28"
+  description: "A spicy triathlon (drafting), in which I discovered that swimming was my best leg."
+  photos:
+    - "2024_Kinrooi_triatlon_1.jpg"
+    - "2024_Kinrooi_triatlon_2.jpg"
 
 - event: "Hageland Plas Triathlon"
   date: 2023-07-16
@@ -45,5 +67,5 @@
     total_time: "04:07:35"
   description: "My first marathon."
   photos:
-    - "Prague_marathon_1.jpg"
-    - "Prague_marathon_2.jpg"
+    - "2023_Prague_marathon_1.jpg"
+    - "2023_Prague_marathon_2.jpg"
