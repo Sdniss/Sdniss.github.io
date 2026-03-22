@@ -2,7 +2,11 @@
   <summary class="pill-summary">
     <div class="icon-circle"><i class="fa-solid fa-{{ include.icon }}"></i></div>
     <div class="text-wrap">
-      <span class="pill-title">{{ include.title | truncate: 40 }}</span>
+      {% if include.cat == "Publication" %}
+        <span class="pill-title">{{ include.subtitle | truncate: 40 }}</span>
+      {% else %}
+        <span class="pill-title">{{ include.title | truncate: 40 }}</span>
+      {% endif %}
       <span class="pill-cat">{{ include.cat }}</span>
 
       {% if include.if_factor %}
