@@ -54,7 +54,11 @@
     </div>
 
     {% if include.item.link %}
-      <a href="{{ include.item.link }}" target="_blank" class="pill-link">More information →</a>
+      {% if include.cat == "Publication" %}
+        <a href="{{ include.item.link }}" target="_blank" class="pill-link">Link Publisher Website →</a>
+      {% else %}
+        <a href="{{ include.item.link }}" target="_blank" class="pill-link">More information →</a>
+      {% endif %}
     {% endif %}
   </div>
 </details>
