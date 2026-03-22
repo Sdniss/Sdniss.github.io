@@ -1,0 +1,99 @@
+section_title: "Science communication and media"
+intro: >
+  Over the years, I experimented with different forms of science communication, 
+  tailored for different audiences including physiotherapists, patients with MS, 
+  and even children. My idea to turn a paper into a song was particularly well received; 
+  SciMingo asked me to perform live at the final of the Flemish Thesis Prize 
+  at the Brussels city hall. Finally, I poured my PhD into a 3 minute song, 
+  performing it live when I received the ‘PhD of The Year’ award.
+
+entries:
+  - title: "3 minute thesis competition Vietnam"
+    role: "Jury member, explaining research in 3\""
+    type: "Event"
+    date: "2025"
+    link: "https://aiptit3mtcompetition.pages.dev/"
+
+  - title: "Vergeet Dementie"
+    role: "Interviewed by authors Ms. Ceuleers and Prof. Engelborghs + Text contribution: layman summary of brain age"
+    type: "Event"
+    date: "2025"
+    link: "https://ertsberg.be/boek/vergeet-dementie/"
+
+  - title: "De Specialist"
+    role: "Interview on smartphone symptom screening (also in other media channels)"
+    type: "Interview"
+    date: "2025"
+    link: "https://www.despecialist.eu/nl/nieuws/nieuwe-vub-app-moet-helpen-bij-snellere-screening-multiple-sclerose.html"
+
+  - title: "Award ceremony 'PhD of The Year'"
+    role: "PhD in a 3-minute song"
+    type: "Video"
+    date: "2024"
+    link: "https://www.youtube.com/watch?v=g00caqB9VlA"
+
+  - title: "Het Nieuwsblad"
+    role: "Interview on brain age"
+    type: "Interview"
+    date: "2024"
+    link: "https://www.nieuwsblad.be/natuur-en-wetenschap/onze-man-gaat-onder-de-mri-scanner-en-laat-zijn-hersenleeftijd-bepalen-we-hebben-je-binnenste-gezien/55321745.html"
+
+  - title: "VUB PhD day"
+    role: "Live performance 'A paper in a song'"
+    type: "Video"
+    date: "2023"
+    link: "https://www.youtube.com/watch?v=R6r3SouhEjE"
+
+  - title: "Book presentation 'A question of truth'"
+    role: "Interview Brussels city hall"
+    type: "Interview"
+    date: "2023"
+    link: ""
+
+  - title: "Award ceremony Flemish Thesis Prize (SciMingo)"
+    role: "Live performance 'A paper in a song'"
+    type: "Video"
+    date: "2022"
+    link: "https://x.com/SciMingo/status/1605284188780957698"
+
+  - title: "KNGF Fysiopraxis"
+    role: "Oefentherapie voorkomt vallen na een CVA"
+    type: "Article"
+    date: "2022"
+    link: "https://issuu.com/kngfdefysiotherapeut/docs/fysiopraxis-_mei2022"
+
+  - title: "Children's university VUB"
+    role: "How old is my brain?"
+    type: "Event"
+    date: "2021"
+    link: "https://vubkinderuniversiteit.be/ku21-workshop-hoe-oud-is-mijn-brein/"
+
+  - title: "YouTube channel"
+    role: "A paper in a song"
+    type: "Website"
+    date: "2021"
+    link: "https://www.youtube.com/@apaperinasong1222"
+
+  - title: "Artsenkrant"
+    role: "Interview about ACTRIMS 2021 presentation (brain age)"
+    type: "Interview"
+    date: "2021"
+    link: "https://artsenkrant.pmg.be/nl/dossier/EAKbe2118W19_00"
+
+  - title: "Wetenschap Brussel + EOS (Cognition)"
+    role: "Hersenspinsels: een editie over cognitie"
+    type: "Article"
+    date: "2021"
+    link: "https://www.eoswetenschap.eu/technologie/hersenspinsels-een-editie-over-cognitie"
+
+  - title: "Haelio Neurology"
+    role: "Interview about ACTRIMS 2021 presentation (brain age)"
+    type: "Interview"
+    date: "2021"
+    link: "https://www.healio.com/news/neurology/20210225/brain-age-serves-as-sensitive-marker-for-information-processing-speed-in-ms"
+
+  - title: "Wetenschap Brussel + EOS (AI)"
+    role: "Hersenspinsels: artificiële intelligentie"
+    type: "Article"
+    date: "2020"
+    link: "https://www.eoswetenschap.eu/technologie/hersenspinsels-artificiele-intelligentie"

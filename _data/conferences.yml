@@ -1,0 +1,49 @@
+section_title: "Conferences"
+intro: "I presented at 7 international conferences in multiple sclerosis and neurorehabilitation, including two invited talks at the largest MS conference worldwide (ECTRIMS)."
+entries:
+  - org: "ECTRIMS"
+    title: "Invited: Will AI shift decision making in favor of the PwMS in the next decade?"
+    location: "Barcelona (ES)"
+    year: 2025
+    invited: true
+
+  - org: "BVNV"
+    title: "Artificiële intelligentie in MS"
+    location: "Blankenberge (B)"
+    year: 2025
+
+  - org: "NNR"
+    title: "Surfing the smartphone wave to support clinical practice"
+    location: "Maastricht (NL)"
+    year: 2025
+
+  - org: "ECTRIMS"
+    title: "Invited talk: What artificial intelligence tools are ready for MS clinical practice"
+    location: "Copenhagen (DK)"
+    year: 2024
+    invited: true
+
+  - org: "IMSCOGS"
+    title: "Brain age as a surrogate marker for IPS in MS"
+    location: "Bordeaux (FR)"
+    year: 2022
+
+  - org: "ACTRIMS"
+    title: "Brain age in MS: An explainable principal component of brain MRI and potential sensitive cognitive biomarker"
+    location: "Virtual"
+    year: 2021
+
+  - org: "NNR"
+    title: "Interventions for preventing falls in people after stroke"
+    location: "Maastricht (NL)"
+    year: 2019
+
+  - org: "RIMS"
+    title: "The impact of cognitive dysfunction on locomotor rehabilitation potential in MS"
+    location: "Ljubljana (Sl)"
+    year: 2019
+
+  - org: "RIMS"
+    title: "The effects of multidisciplinary rehabilitation in MS"
+    location: "Ljubljana (Sl)"
+    year: 2019

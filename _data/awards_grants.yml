@@ -1,0 +1,33 @@
+section_title: "Awards and grants"
+intro_text: >
+  The list below includes personal grants. The two research lines on brain age and 
+  federated learning from my PhD also resulted in 2 Chinese Scholarship Council (CSC) 
+  grants, an internal VUB proof-of-concept grant (75.000) and a successful FWO senior 
+  project of my promoter Prof. Guy Nagels (G0A2Q25N). In the latter, I orchestrated 
+  the writing of 2 research groups and played a key role in the project design and writing.
+
+entries:
+  - award: "PhD Thesis of the Year"
+    organization: "VUB UMCOR"
+    amount: "€ 600"
+    date: "2024"
+
+  - award: "FWO junior postdoc"
+    organization: "Fonds Wetenschappelijk onderzoek. 12A6U25N"
+    amount: "± € 300.000"
+    date: "2024"
+
+  - award: "Travel grant"
+    organization: "ECTRIMS conference"
+    amount: "€ 400"
+    date: "2023"
+
+  - award: "FWO Travel grant"
+    organization: "Research stay 3 maanden in Praag, Tsjechië. V412023N"
+    amount: "€ 5.808"
+    date: "2023"
+
+  - award: "Baekeland Grant"
+    organization: "Vlaams agentschap innoveren & ondernemen (VLAIO). HBC.2019.2579"
+    amount: "€ 279.475"
+    date: "2019"

@@ -1,0 +1,25 @@
+section_title: "Reviewer"
+intro: >
+  I regularly serve as a peer-reviewer for impactful journals at the intersection of 
+  neuroscience, neurology, and artificial intelligence.
+
+journals:
+  - name: "Nature Translational Psychiatry"
+    publisher: "Nature Portfolio"
+    tags: ["Psychiatry", "Neuroscience"]
+
+  - name: "Imaging Neuroscience"
+    publisher: "MIT Press"
+    tags: ["Neuroimaging"]
+
+  - name: "Multiple Sclerosis and Related Disorders"
+    publisher: "Elsevier"
+    tags: ["Neurology", "MS"]
+
+  - name: "Brain Communications"
+    publisher: "Oxford University Press"
+    tags: ["Neurology"]
+
+  - name: "Frontiers in Neurology"
+    publisher: "Frontiers"
+    tags: ["Neurology"]

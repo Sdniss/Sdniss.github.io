@@ -1,0 +1,187 @@
+section_title: "Publications"
+entries:
+  - authors: "Denissen S, Laton J, Grothe M, ..., Nagels G"
+    year: 2026
+    title: "Real-world federated learning for brain imaging scientists"
+    journal: "Front. Digit. Health"
+    volume_issue: "8:1691088"
+    journal_metrics:
+      year: "2024"
+      if: "3.8"
+      q-factor: "Q1"
+    joint_first: false
+
+  - authors: "Sosa A, O’Neill KA, Billiet T, Chen J, Couvreur L, Denissen S, ..., Krupp L"
+    year: 2025
+    title: "Incorporating measures of cognitive processing speed and brain volume in clinical management of pediatric onset MS"
+    journal: "Pediatric Neurology"
+    journal_metrics:
+      year: "2024"
+      if: "2.1"
+      q-factor: "Q2"
+    joint_first: false
+
+  - authors: "Huynh, T.N., ... Denissen, S., Long, T.Q., Trung, N.L. and Nagels, G."
+    year: 2025
+    title: "Latent Representation Learning from 3D Brain MRI for Interpretable Prediction in Multiple Sclerosis"
+    journal: "arXiv preprint"
+    volume_issue: "arXiv:2510.00051"
+    joint_first: false
+
+  - authors: "Denissen S*, Van Laethem D*, Baijot, J, ..., Nagels, G"
+    year: 2025
+    title: "A New Smartphone-Based Cognitive Screening Battery for Multiple Sclerosis (icognition): Validation Study"
+    journal: "Journal of Medical Internet Research"
+    volume_issue: "27, e53503"
+    journal_metrics:
+      year: "2024"
+      if: "6.0"
+      q-factor: "Q1"
+    joint_first: true
+
+  - authors: "De Keersmaecker E, Guida S, Denissen S, ..., Swinnen E"
+    year: 2025
+    title: "Virtual reality for multiple sclerosis rehabilitation"
+    journal: "Cochrane Database of Systematic Reviews"
+    volume_issue: "(1)"
+    journal_metrics:
+      year: "2024"
+      if: "9.4"
+      q-factor: "Q1"
+    joint_first: false
+
+  - authors: "Wittens MMJ*, Denissen S*, Sima DM, ..., Engelborghs S"
+    year: 2024
+    title: "Brain age as a biomarker for pathological versus healthy ageing–a REMEMBER study"
+    journal: "Alzheimer's research & therapy"
+    volume_issue: "16.1 (2024): 128"
+    journal_metrics:
+      year: "2024"
+      if: "7.6"
+      q-factor: "Q1"
+    joint_first: true
+
+  - authors: "Van Laethem D*, Denissen S*, Costers L, ..., Nagels G"
+    year: 2024
+    title: "The Finger Dexterity Test: Validation study of a smartphone-based manual dexterity assessment"
+    journal: "Multiple Sclerosis Journal"
+    volume_issue: "30(1), 121-130"
+    journal_metrics:
+      year: "2024"
+      if: "5.0"
+      q-factor: "Q1"
+    joint_first: true
+
+  - authors: "Denissen S, Van Schependom J, Nagels G"
+    year: 2023
+    title: "Medical diagnosis and a new kid in town: AI"
+    journal: "Book chapter in VUB book 'A question of truth'"
+    link: "https://pim-qa.asp.xcs.be/assets/Chapters/17464/19578/13_a_question_of_truth.pdf"
+    joint_first: false
+
+  - authors: "Thijs L, Voets E, Denissen S, ..., Verheyden G"
+    year: 2023
+    title: "Trunk training for improving activities in people with stroke"
+    journal: "Stroke"
+    volume_issue: "54(9), e427-e428"
+    journal_metrics:
+      year: "2023"
+      if: "7.9"
+      q-factor: "Q1"
+    joint_first: false
+
+  - authors: "Thijs L, Voets E, Denissen S, ..., Verheyden G"
+    year: 2023
+    title: "Trunk training for improving activities in people with stroke"
+    journal: "Cochrane Database of Systematic Reviews"
+    volume_issue: "(3)"
+    journal_metrics:
+      year: "2023"
+      if: "8.8"
+      q-factor: "Q1"
+    joint_first: false
+
+  - authors: "Baijot J, Van Laethem D, Denissen S, ..., Van Schependom, J"
+    year: 2022
+    title: "Radial diffusivity reflects general decline rather than specific cognitive deterioration in multiple sclerosis"
+    journal: "Scientific Reports"
+    volume_issue: "12(1), 21771"
+    journal_metrics:
+      year: "2022"
+      if: "4.6"
+      q-factor: "Q2"
+    joint_first: false
+
+  - authors: "Denissen S and Nagels G"
+    year: 2022
+    title: "Artificial intelligence will change MS care within the next 10 years: Yes"
+    journal: "Multiple Sclerosis Journal"
+    volume_issue: "28(14): e53503"
+    journal_metrics:
+      year: "2022"
+      if: "5.8"
+      q-factor: "Q1"
+    joint_first: false
+
+  - authors: "Denissen S, Engemann DA, De Cock A, ..., Nagels G"
+    year: 2022
+    title: "Brain age as a surrogate marker for cognitive performance in multiple sclerosis"
+    journal: "European journal of neurology"
+    volume_issue: "29(10): 3039-3049"
+    journal_metrics:
+      year: "2022"
+      if: "5.1"
+      q-factor: "Q1"
+    joint_first: false
+
+  - authors: "Denissen S, Chen OY, De Mey J, ..., Nagels, G"
+    year: 2021
+    title: "Towards multimodal machine learning prediction of individual cognitive evolution in multiple sclerosis"
+    journal: "Journal of personalized medicine"
+    volume_issue: "11(12), 1349"
+    journal_metrics:
+      year: "2021"
+      if: "3.508"
+      q-factor: "Q2"
+    joint_first: false
+
+  - authors: "Baijot J*, Denissen S*, Costers L, ..., Van Schependom J"
+    year: 2021
+    title: "Signal quality as Achilles’ heel of graph theory in functional magnetic resonance imaging in multiple sclerosis"
+    journal: "Scientific Reports"
+    volume_issue: "11(1), 7376"
+    journal_metrics:
+      year: "2021"
+      if: "4.997"
+      q-factor: "Q2"
+    joint_first: true
+
+  - authors: "Denissen S, Staring W, Kunkel D, ..., Verheyden GS"
+    year: 2020
+    title: "Interventions for preventing falls in people after stroke"
+    journal: "Stroke"
+    volume_issue: "51 (3), e47-e48"
+    journal_metrics:
+      year: "2020"
+      if: "7.914"
+      q-factor: "Q1"
+    joint_first: false
+
+  - authors: "Denissen S, De Cock A, Meurrens T, ..., Nagels G"
+    year: 2019
+    title: "The Impact of Cognitive Dysfunction on Locomotor Rehabilitation Potential in Multiple Sclerosis"
+    journal: "Journal of central nervous system disease"
+    volume_issue: "11, 1179573519884041"
+    journal_metrics: "Not yet in 2019"
+    joint_first: false
+
+  - authors: "Denissen S, Staring W, Kunkel D, ..., Verheyden GS"
+    year: 2019
+    title: "Interventions for preventing falls in people after stroke"
+    journal: "Cochrane database of systematic reviews"
+    volume_issue: "(10)"
+    journal_metrics:
+      year: "2019"
+      if: "7.89"
+      q-factor: "Q1"
+    joint_first: false

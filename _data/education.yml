@@ -1,0 +1,30 @@
+section_title: "Education"
+entries:
+  - degree: "PhD Medical Sciences"
+    institution: "Vrije Universiteit Brussel"
+    location: "Brussels"
+    start_date: "2019"
+    end_date: "2022"
+    cvitems:
+      - "Title: Structural brain damage and cognition in MS: an AI approach"
+      - "Promoters: Prof. Dr. ir. Guy Nagels, Dr. Diana Sima, Prof. Dr. ir. Jeroen Van Schependom"
+      - "Personal grant: VLAIO Baekeland (HBC.2019.2579)"
+      - "Defense date: 30/01/2024"
+
+  - degree: "MSc Rehabilitation Sciences"
+    institution: "KU Leuven"
+    location: "Leuven"
+    start_date: "2015"
+    end_date: "2018"
+    cvitems:
+      - "Thesis: Trunk rehabilitation in the different recovery phases post-stroke: a systematic review and meta-analysis"
+      - "Promoter: Prof. Dr. Geert Verheyden"
+      - "Track: Neurorehabilitation"
+      - "Note: I was selected for a research internship on brain stimulation under supervision of Prof. Koen Cuypers."
+
+  - degree: "BSc Rehabilitation Sciences"
+    institution: "KU Leuven"
+    location: "Leuven"
+    start_date: "2012"
+    end_date: "2015"
+    cvitems: [] # Empty as per .tex file
