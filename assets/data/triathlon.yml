@@ -187,6 +187,7 @@
     run: "00:21:47"
   description: "My first triathlon event! Note: Times of different segments not available. Extracted from Garmin"
   photos:
+    - "2023_Plastriatlon_4.jpg"
     - "2023_Plastriatlon_1.jpeg"
     - "2023_Plastriatlon_2.jpeg"
     - "2023_Plastriatlon_3.jpeg"
