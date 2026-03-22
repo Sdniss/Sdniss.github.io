@@ -134,13 +134,13 @@ permalink: /academic_journey/
           {% endif %}
 
           {% if should_show %}
-            {% include node_pill.html cat="Mentoring" student_type="Master" icon="graduation-cap" color="#6f42c1" title=item.name subtitle=item.field detail=item.topic %}
+            {% include node_pill.html cat="Mentoring" student_type="Master" icon="graduation-cap" color="#6f42c1" title=item.name subtitle=item.field detail=item.topic item=item %}
           {% endif %}
         {% endfor %}
 
         {% for item in site.data.teaching.entries %}
           {% if item.dates contains year %}
-            {% include node_pill.html cat="Teaching" icon="chalkboard-user" color="#6f42c1" title=item.course subtitle=item.location detail=item.role %}
+            {% include node_pill.html cat="Teaching" icon="chalkboard-user" color="#6f42c1" title=item.course subtitle=item.location detail=item.role item=item %}
           {% endif %}
         {% endfor %}
 
