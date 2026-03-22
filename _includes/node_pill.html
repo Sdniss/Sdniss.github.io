@@ -1,0 +1,46 @@
+<details class="node-pill" style="--accent: {{ include.color }};">
+  <summary class="pill-summary">
+    <div class="icon-circle"><i class="fa-solid fa-{{ include.icon }}"></i></div>
+    <div class="text-wrap">
+      <span class="pill-title">{{ include.title | truncate: 40 }}</span>
+      <span class="pill-cat">{{ include.cat }}</span>
+
+      {% if include.if_factor %}
+        <span class="mini-metrics">
+          <i class="fa-solid fa-chart-line"></i> IF {{ include.if_factor }}
+          {% if include.q_factor %} • {{ include.q_factor }}{% endif %}
+        </span>
+      {% endif %}
+    </div>
+  </summary>
+
+  <div class="pill-content">
+    <div class="content-header">
+      <h4>{{ include.title }}</h4>
+      <p class="pill-subtitle">{{ include.subtitle }}</p>
+    </div>
+
+    <div class="pill-body">
+      <p><strong>Authors:</strong> {{ include.detail }}</p>
+
+      {% if include.if_factor %}
+        <div class="metrics-expanded">
+          <div class="metric-box">
+            <span class="m-label">Impact Factor</span>
+            <span class="m-val">{{ include.if_factor }}</span>
+          </div>
+          {% if include.q_factor %}
+          <div class="metric-box">
+            <span class="m-label">Quartile</span>
+            <span class="m-val">{{ include.q_factor }}</span>
+          </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if include.item.link %}
+      <a href="{{ include.item.link }}" target="_blank" class="pill-link">View Publication →</a>
+    {% endif %}
+  </div>
+</details>

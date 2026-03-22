@@ -631,3 +631,77 @@ article.post {
     font-weight: bold;
     color: #666666;
 }
+
+/* Academic journey */
+/* Central Vertical Line */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #007bff;
+  top: 0; bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+/* Node Container */
+.timeline-node {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Alternating Sides */
+.left { left: 0; text-align: right; }
+.right { left: 50%; text-align: left; }
+
+/* The "Dots" on the line */
+.timeline-node::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px; /* For left nodes */
+  background-color: white;
+  border: 4px solid #007bff;
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.right::after { left: -10px; }
+
+/* Content Box & Hover Effect */
+.content-box {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 10px;
+}
+
+.content-box:hover {
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.content-box:hover .hover-details {
+  max-height: 200px; /* Adjust based on content length */
+}
