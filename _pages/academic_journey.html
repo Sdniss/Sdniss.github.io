@@ -63,7 +63,7 @@ permalink: /academic_journey/
                color="#0984e3"
                title=item.title
                subtitle=item.journal
-               detail=item.authors
+               authors=item.authors
                if_factor=item.journal_metrics.if
                q_factor=item.journal_metrics.q-factor
                item=item %}
@@ -80,7 +80,7 @@ permalink: /academic_journey/
         {% for item in site.data.awards_grants.entries %}
           {% capture hd %}{{ item.date }}{% endcapture %}
           {% if hd == year %}
-            {% include node_pill.html cat="Award" icon="trophy" color="#fdcb6e" title=item.award subtitle=item.organization detail=item.amount %}
+            {% include node_pill.html cat="Award" icon="trophy" color="#fdcb6e" title=item.award subtitle=item.organization amount=item.amount %}
           {% endif %}
         {% endfor %}
 

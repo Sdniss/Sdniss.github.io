@@ -21,7 +21,17 @@
     </div>
 
     <div class="pill-body">
-      <p><strong>Authors:</strong> {{ include.detail }}</p>
+      {% if include.authors %}
+        <p><strong>Authors:</strong> {{ include.authors }}</p>
+      {% endif %}
+
+      {% if include.detail %}
+        <p><strong>Summary:</strong> {{ include.detail }}</p>
+      {% endif %}
+
+      {% if include.amount %}
+        <p><strong>Amount:</strong> {{ include.amount }}</p>
+      {% endif %}
 
       {% if include.if_factor %}
         <div class="metrics-expanded">
