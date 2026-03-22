@@ -22,7 +22,30 @@
 
     <div class="pill-body">
       {% if include.authors %}
-        <p><strong>Authors:</strong> {{ include.authors }}</p>
+        <p class="pub-authors"> {{ include.authors }}</p>
+      {% endif %}
+
+      {% if include.item.key_finding %}
+        <div class="key-finding-box">
+          <i class="fa-solid fa-star"></i>
+          <span>{{ include.item.key_finding }}</span>
+        </div>
+      {% endif %}
+
+      {% if include.item.keywords %}
+        <div class="keyword-container">
+          {% for tag in include.item.keywords %}
+            <span class="ghost-tag">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if include.item.abstract %}
+        <div class="abstract-section">
+          <div class="abstract-text">
+            {{ include.item.abstract }}
+          </div>
+        </div>
       {% endif %}
 
       {% if include.detail %}

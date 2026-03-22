@@ -10,6 +10,13 @@ entries:
       if: "3.8"
       q-factor: "Q1"
     joint_first: false
+    link: "https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1691088/full"
+    key_finding: "In a real-world federated learning network across 3 countries, our in-house built 'FLightcase' toolbox predicted brain age within 6.08 years (healthy) and cognitive function within 9.19 points SDMT (MS)."
+    abstract: |
+      <b>Background:</b> Federated learning (FL) has the potential to boost deep learning in neuroimaging but is rarely deployed in real-world scenarios, where its true potential lies. We propose FLightcase, a new FL toolbox tailored for brain research, and evaluate it on a real-world FL network to predict the cognitive status in patients with multiple sclerosis (MS) from brain magnetic resonance imaging (MRI).<br><br>
+      <b>Methods:</b> We first trained a DenseNet neural network to predict age from T1-weighted brain MRI on three open-source datasets: IXI (586 images), SALD (491 images), and CamCAN (653 images). These were distributed across the three centres in our FL network: Brussels (BE), Greifswald (DE), and Prague (CZ). We benchmarked this federated model with a centralised version. The best-performing brain age model was then fine-tuned to predict performance on the symbol digit modalities test (SDMT) of patients with MS (Brussels: 96 images, Greifswald: 756 images, Prague: 2,424 images). Shallow transfer learning (TL) was compared with deep transfer learning, in which weights were updated either in the last layer or across the entire network, respectively.<br><br>
+      <b>Results:</b> Federated training outperformed centralised training, predicting age with a mean absolute error (MAE) of 6.08 versus 7.02. Federated training yielded Pearson correlations (all p < .001) between true and predicted age of0.88 (IXI, Brussels), 0.91 (SALD, Greifswald), and 0.93 (CamCAN, Prague). Fine-tuning of the centralised model to SDMT was most successful with a deep TL paradigm (MAE = 9.19) compared to shallow TL (MAE = 11.05). Across Brussels, Greifswald, and Prague, deep TL predicted SDMT with MAEs of 10.71, 9.67, and 8.98, respectively, and yielded Pearson correlations between true and predicted SDMT of.25 (p = 0.282), 0.40 (p < 0.001), and 0.50 (p < 0.001).<br><br>
+      <b>Conclusion:</b> Real-world federated learning using FLightcase is feasible for neuroimaging research in MS, enabling access to large MS imaging databases without sharing data. The federated SDMT-decoding model is promising and could be improved in the future by adopting FL algorithms that address the non-IID data issue and consider other imaging modalities. We hope our detailed real-world experiments and open-source distribution of FLightcase will prompt researchers to move beyond simulated FL environments.
 
   - authors: "Sosa A, O’Neill KA, Billiet T, Chen J, Couvreur L, Denissen S, ..., Krupp L"
     year: 2025
@@ -20,6 +27,7 @@ entries:
       if: "2.1"
       q-factor: "Q2"
     joint_first: false
+    link: "https://www.pedneur.com/article/S0887-8994(25)00328-5/abstract"
 
   - authors: "Huynh, T.N., ... Denissen, S., Long, T.Q., Trung, N.L. and Nagels, G."
     year: 2025
@@ -27,6 +35,7 @@ entries:
     journal: "arXiv preprint"
     volume_issue: "arXiv:2510.00051"
     joint_first: false
+    link: "https://arxiv.org/abs/2510.00051"
 
   - authors: "Denissen S*, Van Laethem D*, Baijot, J, ..., Nagels, G"
     year: 2025
@@ -38,6 +47,7 @@ entries:
       if: "6.0"
       q-factor: "Q1"
     joint_first: true
+    link: "https://pubmed.ncbi.nlm.nih.gov/39832354/"
 
   - authors: "De Keersmaecker E, Guida S, Denissen S, ..., Swinnen E"
     year: 2025
@@ -49,6 +59,7 @@ entries:
       if: "9.4"
       q-factor: "Q1"
     joint_first: false
+    link: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013834.pub2/nl"
 
   - authors: "Wittens MMJ*, Denissen S*, Sima DM, ..., Engelborghs S"
     year: 2024
@@ -60,6 +71,7 @@ entries:
       if: "7.6"
       q-factor: "Q1"
     joint_first: true
+    link: "https://pubmed.ncbi.nlm.nih.gov/38877568/"
 
   - authors: "Van Laethem D*, Denissen S*, Costers L, ..., Nagels G"
     year: 2024
@@ -71,6 +83,7 @@ entries:
       if: "5.0"
       q-factor: "Q1"
     joint_first: true
+    link: "https://journals.sagepub.com/doi/10.1177/13524585231216007?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed"
 
   - authors: "Denissen S, Van Schependom J, Nagels G"
     year: 2023
@@ -78,6 +91,7 @@ entries:
     journal: "Book chapter in VUB book 'A question of truth'"
     link: "https://pim-qa.asp.xcs.be/assets/Chapters/17464/19578/13_a_question_of_truth.pdf"
     joint_first: false
+    link: "https://pim-qa.asp.xcs.be/assets/Chapters/17464/19578/13_a_question_of_truth.pdf"
 
   - authors: "Thijs L, Voets E, Denissen S, ..., Verheyden G"
     year: 2023
@@ -89,6 +103,7 @@ entries:
       if: "7.9"
       q-factor: "Q1"
     joint_first: false
+    link: "https://www.ahajournals.org/doi/10.1161/STROKEAHA.123.043490"
 
   - authors: "Thijs L, Voets E, Denissen S, ..., Verheyden G"
     year: 2023
@@ -100,6 +115,7 @@ entries:
       if: "8.8"
       q-factor: "Q1"
     joint_first: false
+    link: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013712.pub2/full/nl"
 
   - authors: "Baijot J, Van Laethem D, Denissen S, ..., Van Schependom, J"
     year: 2022
@@ -111,6 +127,7 @@ entries:
       if: "4.6"
       q-factor: "Q2"
     joint_first: false
+    link: "https://www.nature.com/articles/s41598-022-26204-z"
 
   - authors: "Denissen S and Nagels G"
     year: 2022
@@ -122,6 +139,7 @@ entries:
       if: "5.8"
       q-factor: "Q1"
     joint_first: false
+    link: "https://journals.sagepub.com/doi/10.1177/13524585221130421?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed"
 
   - authors: "Denissen S, Engemann DA, De Cock A, ..., Nagels G"
     year: 2022
@@ -133,6 +151,7 @@ entries:
       if: "5.1"
       q-factor: "Q1"
     joint_first: false
+    link: "https://onlinelibrary.wiley.com/doi/10.1111/ene.15473"
 
   - authors: "Denissen S, Chen OY, De Mey J, ..., Nagels, G"
     year: 2021
@@ -144,6 +163,7 @@ entries:
       if: "3.508"
       q-factor: "Q2"
     joint_first: false
+    link: "https://www.mdpi.com/2075-4426/11/12/1349"
 
   - authors: "Baijot J*, Denissen S*, Costers L, ..., Van Schependom J"
     year: 2021
@@ -155,6 +175,7 @@ entries:
       if: "4.997"
       q-factor: "Q2"
     joint_first: true
+    link: "https://www.nature.com/articles/s41598-021-86792-0"
 
   - authors: "Denissen S, Staring W, Kunkel D, ..., Verheyden GS"
     year: 2020
@@ -166,6 +187,7 @@ entries:
       if: "7.914"
       q-factor: "Q1"
     joint_first: false
+    link: "https://www.ahajournals.org/doi/10.1161/STROKEAHA.119.028157"
 
   - authors: "Denissen S, De Cock A, Meurrens T, ..., Nagels G"
     year: 2019
@@ -174,6 +196,7 @@ entries:
     volume_issue: "11, 1179573519884041"
     journal_metrics: "Not yet in 2019"
     joint_first: false
+    link: "https://journals.sagepub.com/doi/10.1177/1179573519884041?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed"
 
   - authors: "Denissen S, Staring W, Kunkel D, ..., Verheyden GS"
     year: 2019
@@ -185,3 +208,4 @@ entries:
       if: "7.89"
       q-factor: "Q1"
     joint_first: false
+    link: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD008728.pub3/full/nl"
