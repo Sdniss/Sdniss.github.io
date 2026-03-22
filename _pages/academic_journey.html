@@ -8,21 +8,27 @@ permalink: /academic_journey/
   <div class="stats-card">
     <div class="stats-main">
       <div class="stat-item">
-        <span class="stat-value">337</span>
+        <span class="stat-value">{{ site.data.scholar.citations }}</span>
         <span class="stat-label">Citations</span>
       </div>
       <div class="stat-item">
-        <span class="stat-value">8</span>
+        <span class="stat-value">{{ site.data.scholar.h_index }}</span>
         <span class="stat-label">h-index</span>
       </div>
       <div class="stat-item">
-        <span class="stat-value">7</span>
+        <span class="stat-value">{{ site.data.scholar.i10_index }}</span>
         <span class="stat-label">i10-index</span>
       </div>
     </div>
-    <a href="https://scholar.google.com/citations?user=H9KHafoAAAAJ" target="_blank" class="scholar-link">
-      <i class="fa-brands fa-google-scholar"></i> View Google Scholar Profile
-    </a>
+
+    <div class="scholar-footer">
+      <a href="{{ site.data.scholar.profile_url }}" target="_blank" class="scholar-link">
+        <i class="fa-brands fa-google-scholar"></i> View Google Scholar Profile
+      </a>
+      {% if site.data.scholar.last_updated %}
+        <span class="last-updated">Last synced: {{ site.data.scholar.last_updated }}</span>
+      {% endif %}
+    </div>
   </div>
 </section>
 
@@ -145,7 +151,7 @@ permalink: /academic_journey/
 
 <style>
   /* Container & Typography */
-  .academic-container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+  .academic-container { max-width: 90%; margin: 0 auto; padding: 40px 20px; }
 
   .year-block { margin-bottom: 40px; }
   .year-header-row { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
@@ -222,6 +228,19 @@ permalink: /academic_journey/
   }
 
   .scholar-link:hover { opacity: 1; }
+
+  .scholar-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .last-updated {
+    font-size: 0.65rem;
+    color: #b2bec3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 
   /* Identity Styling */
   .identity-statement {
