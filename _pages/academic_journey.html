@@ -111,7 +111,7 @@ permalink: /academic_journey/
           {% endif %}
 
           {% if should_show %}
-            {% include node_pill.html cat="Mentoring (PhD)" icon="user-graduate" color="#6f42c1" title=item.name subtitle=item.field detail=item.topic %}
+            {% include node_pill.html cat="Mentoring" student_type="PhD" icon="user-graduate" color="#6f42c1" title=item.name subtitle=item.field detail=item.topic %}
           {% endif %}
         {% endfor %}
 
@@ -128,7 +128,7 @@ permalink: /academic_journey/
           {% endif %}
 
           {% if should_show %}
-            {% include node_pill.html cat="Mentoring (Master)" icon="graduation-cap" color="#6f42c1" title=item.name subtitle=item.field detail=item.topic %}
+            {% include node_pill.html cat="Mentoring" student_type="Master" icon="graduation-cap" color="#6f42c1" title=item.name subtitle=item.field detail=item.topic %}
           {% endif %}
         {% endfor %}
 

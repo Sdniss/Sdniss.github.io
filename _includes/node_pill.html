@@ -33,6 +33,10 @@
         <p><strong>Amount:</strong> {{ include.amount }}</p>
       {% endif %}
 
+      {% if include.student_type %}
+        <p><strong>Type:</strong> {{ include.student_type }}</p>
+      {% endif %}
+
       {% if include.if_factor %}
         <div class="metrics-expanded">
           <div class="metric-box">
