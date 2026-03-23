@@ -7,13 +7,15 @@
       {% else %}
         <span class="pill-title">{{ include.title | truncate: 40 }}</span>
       {% endif %}
-      <span class="pill-cat">{{ include.cat }}</span>
 
       {% if include.if_factor %}
         <span class="mini-metrics">
           <i class="fa-solid fa-chart-line"></i> IF {{ include.if_factor }}
           {% if include.q_factor %} • {{ include.q_factor }}{% endif %}
+          <span class="pill-cat">{{ include.cat }}</span>
         </span>
+      {% else %}
+        <span class="pill-cat">{{ include.cat }}</span>
       {% endif %}
     </div>
   </summary>
