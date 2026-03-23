@@ -163,7 +163,7 @@ permalink: /academic_journey/
 
   /* Pill Styling */
   .node-pill { background: #fff; border: 1px solid #f0f0f0; border-radius: 40px; transition: all 0.25s ease; }
-  .node-pill[open] { width: 100%; border-radius: 20px; border-color: var(--accent); }
+  .node-pill[open] { max-width: 700px; border-radius: 20px; border-color: var(--accent) }
 
   .pill-summary { display: flex; align-items: center; padding: 6px 14px; gap: 12px; list-style: none; cursor: pointer; }
   .pill-summary::-webkit-details-marker { display: none; }
@@ -357,7 +357,7 @@ permalink: /academic_journey/
     display: flex;
     gap: 12px;
     align-items: center;
-    font-weight: 600;
+    font-weight: 300;
     color: #2d3436;
     font-size: 0.9rem;
     line-height: 1.4;
@@ -400,4 +400,21 @@ permalink: /academic_journey/
   .abstract-text::-webkit-scrollbar { width: 4px; }
   .abstract-text::-webkit-scrollbar-track { background: #f1f1f1; }
   .abstract-text::-webkit-scrollbar-thumb { background: #ced4da; border-radius: 10px; }
+
+  .pub-figure-box {
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    text-align: center;
+  }
+  .pub-img {
+    max-width: 100%;
+    max-height: 300px; /* Prevents the image from being too tall */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  .journal-btn { background: #f1f2f6; color: #2d3436 !important; }
+  .pdf-btn { background: #e74c3c !important; color: white !important; }
 </style>
