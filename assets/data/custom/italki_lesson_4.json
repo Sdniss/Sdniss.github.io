@@ -1,0 +1,110 @@
+[
+  {
+    "simplified": "你今天怎么样",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "nǐ jīn tiān zěn me yàng" },
+        "meanings": ["How are you today"]
+      }
+    ]
+  },
+  {
+    "simplified": "不错",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "bù cuò" },
+        "meanings": ["Not bad"]
+      }
+    ]
+  },
+  {
+    "simplified": "忙",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "máng" },
+        "meanings": ["Busy"]
+      }
+    ]
+  },
+  {
+    "simplified": "剪头发",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "jiǎn tóu fa" },
+        "meanings": ["Get a haircut"]
+      }
+    ]
+  },
+  {
+    "simplified": "剪刀",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "jiǎn dāo" },
+        "meanings": ["Scissors"]
+      }
+    ]
+  },
+  {
+    "simplified": "我也没有不喜欢的颜色",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "wǒ yě méi yǒu bù xǐ huān de yán sè" },
+        "meanings": ["I don't have any colors I dislike either"]
+      }
+    ]
+  },
+  {
+    "simplified": "问题",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "wèn tí" },
+        "meanings": ["Question", "Problem"]
+      }
+    ]
+  },
+  {
+    "simplified": "你的头发是什么颜色的？",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "nǐ de tóu fa shì shén me yán sè de?" },
+        "meanings": ["What color is your hair?"]
+      }
+    ]
+  },
+  {
+    "simplified": "眼睛",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "yǎn jing" },
+        "meanings": ["Eye"]
+      }
+    ]
+  },
+  {
+    "simplified": "多少岁",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "duō shao suì" },
+        "meanings": ["How old"]
+      }
+    ]
+  },
+  {
+    "simplified": "冷",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "lěng" },
+        "meanings": ["Cold"]
+      }
+    ]
+  },
+  {
+    "simplified": "课",
+    "forms": [
+      {
+        "transcriptions": { "pinyin": "kè" },
+        "meanings": ["Class", "Lesson"]
+      }
+    ]
+  }
+]
