@@ -15,6 +15,13 @@ entries:
     pdf: "/assets/pdf/publications/denissen-2026-federated.pdf"
     figure: "/assets/images/pub-figures/denissen-2026-federated.webp"
 
+  - authors: "Xinguang Wang, Nguyen Linh Trung, Oliver Y. Chen, Jeroen Van Schependom, Stijn Denissen and Guy Nagels"
+    year: 2026
+    title: "PDD-FANs: Personalized Decentralized Federated Adversarial Networks with Defense Mechanism in Non-IID Setting"
+    journal: "IEEE TrustCom 2025 (Conference)"
+    joint_first: false
+    link: "https://ieeexplore.ieee.org/document/11354869"
+
   - authors: "Sosa A, O’Neill KA, Billiet T, Chen J, Couvreur L, Denissen S, ..., Krupp L"
     year: 2025
     title: "Incorporating measures of cognitive processing speed and brain volume in clinical management of pediatric onset MS"
