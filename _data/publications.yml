@@ -163,7 +163,8 @@ entries:
     key_finding: "There is evidence to suggest that trunk training as part of rehabilitation improves ADL, trunk function, standing balance, walking ability, upper and lower limb function, and quality of life in people aMer stroke.
     Core-stability, selective-, and unstable-trunk training were the trunk training approaches mostly applied in the included trials."
 
-  - authors: "Baijot J, Van Laethem D, Denissen S, ..., Van Schependom, J"
+  - authors: "Baijot J, Van Laethem D, Denissen S, Costers L, Cambron M, D’Haeseleer M, D’hooghe MB,
+              Vanbinst A, De Mey J, Nagels G and Van Schependom J"
     year: 2022
     title: "Radial diffusivity reflects general decline rather than specific cognitive deterioration in multiple sclerosis"
     journal: "Scientific Reports"
@@ -174,9 +175,11 @@ entries:
       q-factor: "Q2"
     joint_first: false
     link: "https://www.nature.com/articles/s41598-022-26204-z"
-    pdf: ""
-    figure: ""
+    pdf: "/assets/pdf/publications/Baijot_2022_Radial.pdf"
+    figure: "/assets/images/pub-figures/Baijot_2022_Radial.webp"
     figure-license: "CC BY 4.0"
+    key_finding: "Radial diffusivity is strongly related to cognitive impairment in MS.
+    However, the strong associations of radial diffusivity with both cognition and whole brain lesion volume suggest that it is a surrogate marker for general decline in MS, rather than a marker for specific cognitive functions."
 
   - authors: "Denissen S and Nagels G"
     year: 2022
@@ -188,9 +191,10 @@ entries:
       if: "5.8"
       q-factor: "Q1"
     joint_first: false
+    key_finding: "This paper argues that AI will change MS care within the next 10 years. It is part of a 'controversies' series, together with an article discussing the 'No' and the 'Commentary'."
     link: "https://journals.sagepub.com/doi/10.1177/13524585221130421?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed"
 
-  - authors: "Denissen S, Engemann DA, De Cock A, ..., Nagels G"
+  - authors: "Denissen S, Engemann DA, De Cock A, Costers L, Baijot J, Laton J, Penner I-K, Grothe M, Kirsch M, D'hooghe MB, D'Haeseleer M, Dive D, De Mey J, Van Schependom J, Sima DM and Nagels G"
     year: 2022
     title: "Brain age as a surrogate marker for cognitive performance in multiple sclerosis"
     journal: "European journal of neurology"
@@ -201,8 +205,13 @@ entries:
       q-factor: "Q1"
     joint_first: false
     link: "https://onlinelibrary.wiley.com/doi/10.1111/ene.15473"
+    figure-license: "CC BY-NC-ND 4.0"
+    figure: "/assets/images/pub-figures/Denissen_2022_Brain_age.webp"
+    pdf: "/assets/pdf/publications/Denissen_2022_Brain_age.pdf"
+    key_finding: "In this paper, we showed with an interpretable linear brain age model that people with MS have brains that look older than their calendar age.
+    We moreover showed that higher overestimation is correlated with worse information processing speed."
 
-  - authors: "Denissen S, Chen OY, De Mey J, ..., Nagels, G"
+  - authors: "Denissen S, Chen OY, De Mey J, De Vos M, Van Schependom J, Sima DM and Nagels, G"
     year: 2021
     title: "Towards multimodal machine learning prediction of individual cognitive evolution in multiple sclerosis"
     journal: "Journal of personalized medicine"
@@ -213,6 +222,9 @@ entries:
       q-factor: "Q2"
     joint_first: false
     link: "https://www.mdpi.com/2075-4426/11/12/1349"
+    figure: "/assets/images/pub-figures/Denissen_2021.jpg"
+    figure-license: "CC BY 4.0"
+    pdf: "/assets/pdf/publications/Denissen_2021.pdf"
 
   - authors: "Baijot J*, Denissen S*, Costers L, ..., Van Schependom J"
     year: 2021
@@ -225,8 +237,8 @@ entries:
       q-factor: "Q2"
     joint_first: true
     link: "https://www.nature.com/articles/s41598-021-86792-0"
-    pdf: ""
-    figure: ""
+    pdf: "/assets/pdf/publications/Baijot_2021.pdf"
+    figure: "/assets/images/pub-figures/Baijot_2021.webp"
     figure-license: "CC BY 4.0"
 
   - authors: "Denissen S, Staring W, Kunkel D, ..., Verheyden GS"
