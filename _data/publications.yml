@@ -225,8 +225,10 @@ entries:
     figure: "/assets/images/pub-figures/Denissen_2021.jpg"
     figure-license: "CC BY 4.0"
     pdf: "/assets/pdf/publications/Denissen_2021.pdf"
+    key_finding: "This review aims to boost the field of machine learning for cognitive prognosis in MS by means of an introduction to machine learning and its pitfalls, an overview of important elements for study design, and an overview of the current literature on cognitive prognosis in MS using machine learning.
+    Furthermore, the review discusses new trends in the field of machine learning that might be adopted for future studies in the field."
 
-  - authors: "Baijot J*, Denissen S*, Costers L, ..., Van Schependom J"
+  - authors: "Baijot J*, Denissen S*, Costers L, Gielen J, Cambron M, D'Haeseleer M, D'hooghe MB, Vanbinst A, De Mey J, Nagels G and Van Schependom J"
     year: 2021
     title: "Signal quality as Achilles’ heel of graph theory in functional magnetic resonance imaging in multiple sclerosis"
     journal: "Scientific Reports"
@@ -240,8 +242,10 @@ entries:
     pdf: "/assets/pdf/publications/Baijot_2021.pdf"
     figure: "/assets/images/pub-figures/Baijot_2021.webp"
     figure-license: "CC BY 4.0"
+    key_finding: "The results of this paper suggest that differences in network parameters between MS and HS in fMRI do not reflect a functional reorganisation of the brain, but rather occur due to reduced fMRI signal quality.
+    Correlations found with cognitive variables might therefore be false positives, and should be critically assessed."
 
-  - authors: "Denissen S, Staring W, Kunkel D, ..., Verheyden GS"
+  - authors: "Denissen S, Staring W, Kunkel D, Pickering RM, Lennon S, Geurts ACH, Weerdesteyn V and Verheyden GS"
     year: 2020
     title: "Interventions for preventing falls in people after stroke"
     journal: "Stroke"
@@ -252,8 +256,12 @@ entries:
       q-factor: "Q1"
     joint_first: false
     link: "https://www.ahajournals.org/doi/10.1161/STROKEAHA.119.028157"
+    figure-license: "© 2020 American Heart Association, Inc."
+    figure: "/assets/images/pub-figures/Denissen_2020.jpg"
+    pdf: "/assets/pdf/publications/Denissen_2020_Stroke.pdf"
+    key_finding: "This is a summary of the eponymous Cochrane paper, published in the 'Cochrane corner' of Stroke. The results indicate that exercise may be beneficial for preventing rate of falls in people with stroke, but not number of fallers."
 
-  - authors: "Denissen S, De Cock A, Meurrens T, ..., Nagels G"
+  - authors: "Denissen S, De Cock A, Meurrens T, Vleugels L, Van Remoortel A, Gebara B, D’Haeseleer M, D’Hooghe MB, Van Schependom J, and Nagels G"
     year: 2019
     title: "The Impact of Cognitive Dysfunction on Locomotor Rehabilitation Potential in Multiple Sclerosis"
     journal: "Journal of central nervous system disease"
@@ -261,6 +269,12 @@ entries:
     journal_metrics: "Not yet in 2019"
     joint_first: false
     link: "https://journals.sagepub.com/doi/10.1177/1179573519884041?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed"
+    figure: "/assets/images/pub-figures/Denissen_2019_JCNSD.jpg"
+    figure-license: "CC BY-NC 4.0"
+    pdf: "/assets/pdf/publications/Denissen_2019_JCNSD.pdf"
+    key_finding: "Cognitive impaired and preserved patients with MS showed a significant within-group difference in 6 Minute Walk Test (6MWT) during hospitalization (COG+: 47.51m; COG–: 40.97m; P<.01).
+    In contrast, Δ6MWT values were comparable between groups. The odds of achieving a minimal clinical important difference on the 6MWT did not differ significantly between both groups.
+    Only attention/concentration was significantly correlated with Δ6MWT."
 
   - authors: "Denissen S, Staring W, Kunkel D, ..., Verheyden GS"
     year: 2019
@@ -273,3 +287,7 @@ entries:
       q-factor: "Q1"
     joint_first: false
     link: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD008728.pub3/full/nl"
+    figure-license: "Copyright © 2019 The Cochrane Collaboration. Published by John Wiley & Sons, Ltd."
+    figure: "/assets/images/pub-figures/Denissen_2019_Cochrane.png"
+    pdf: "/assets/pdf/publications/Denissen_2019_Cochrane.pdf"
+    key_finding: "This is a summary of the eponymous Cochrane paper, published in the 'Cochrane corner' of Stroke. The results indicate that exercise may be beneficial for preventing rate of falls in people with stroke, but not number of fallers."
