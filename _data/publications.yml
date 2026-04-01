@@ -15,6 +15,7 @@ entries:
     key_finding: "In a real-world federated learning network across 3 countries, our in-house built 'FLightcase' toolbox predicted brain age within 6.08 years (healthy) and cognitive function within 9.19 points SDMT (MS)."
     pdf: "/assets/pdf/publications/denissen-2026-federated.pdf"
     figure: "/assets/images/pub-figures/denissen-2026-federated.webp"
+    figure-license: "CC BY 4.0"
 
   - authors: "Xinguang Wang, Nguyen Linh Trung, Oliver Y. Chen, Jeroen Van Schependom, Stijn Denissen and Guy Nagels"
     year: 2026
@@ -63,8 +64,9 @@ entries:
     Surprisingly, test performance was comparable between people with MS and healthy participants for all cognitive tests, both in icognition and the gold standard paper-and-pencil tests."
     link: "https://pubmed.ncbi.nlm.nih.gov/39832354/"
     figure: "/assets/images/pub-figures/denissen-2025_icognition_figure.png"
+    figure-license: "CC BY 4.0"
 
-  - authors: "De Keersmaecker E, Guida S, Denissen S, ..., Swinnen E"
+  - authors: "De Keersmaecker E, Guida S, Denissen S, Dewolf L, Nagels G, Jansen B, Beckwée D and Swinnen E"
     year: 2025
     title: "Virtual reality for multiple sclerosis rehabilitation"
     journal: "Cochrane Database of Systematic Reviews"
@@ -74,7 +76,13 @@ entries:
       if: "9.4"
       q-factor: "Q1"
     joint_first: false
+    key_finding: "We found evidence that the use of virtual reality may be more effective than no intervention in improving upper limb function and participation and quality of life.
+    Training with virtual reality may be superior to conventional therapy for improving balance and postural control, and participation and quality of life.
+    For the other outcomes, there was no clear difference between virtual reality and conventional therapy. There was insufficient evidence to reach conclusions about the effect of virtual reality on global motor function, activity limitations and adverse events. "
+    figure: "/assets/images/pub-figures/De_Keersmaecker_2025-figure.svg"
+    figure-license: "Copyright © 2025 The Cochrane Collaboration. Published by John Wiley & Sons, Ltd."
     link: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013834.pub2/nl"
+    pdf: "/assets/pdf/publications/De_Keersmaecker_2025.pdf"
 
   - authors: "Wittens MMJ*, Denissen S*, Sima DM, ..., Engelborghs S"
     year: 2024
@@ -86,9 +94,14 @@ entries:
       if: "7.6"
       q-factor: "Q1"
     joint_first: true
+    key_finding: "Patients with Mild Cognitive Impairment and Alzheimer's Disease Dementia showed an increased brain age compared to their chronological age. Overall, brain age outperformed BPAD and chronological age in terms of classification accuracy across the AD spectrum. There was a weak-to-moderate correlation between total MMSE score and both brain age and BPAD.
+    BPAD was increased in heavy alcohol drinkers compared to non-/sporadic and moderate drinkers."
     link: "https://pubmed.ncbi.nlm.nih.gov/38877568/"
+    pdf: "/assets/pdf/publications/Wittens_2024_Brain_age.pdf"
+    figure: "/assets/images/pub-figures/Wittens_2024.webp"
+    figure-license: "CC BY 4.0"
 
-  - authors: "Van Laethem D*, Denissen S*, Costers L, ..., Nagels G"
+  - authors: "Van Laethem D*, Denissen S*, Costers L, Descamps A, Baijot J, Van Remoortel A, Van Merhaegen-Wieleman A, D’hooghe M, D'Haeseleer M, Smeets D, Sima DM, Van Schependom J and Nagels G"
     year: 2024
     title: "The Finger Dexterity Test: Validation study of a smartphone-based manual dexterity assessment"
     journal: "Multiple Sclerosis Journal"
@@ -98,6 +111,13 @@ entries:
       if: "5.0"
       q-factor: "Q1"
     joint_first: true
+    key_finding: "The Finger Dexterity Test significantly correlated with the gold-standard Nine Hole Peg Test (9HPT).
+    MS subjects had significantly higher FDT scores than healthy subjects, which was not the case for the 9HPT.
+    A significant correlation with age, Expanded Disability Status Scale (EDSS), and disease duration for the non-dominant hand was observed.
+    There was a good test–retest reliability in healthy subjects."
+    figure: "/assets/images/pub-figures/Van_Laethem_2023.jpg"
+    pdf: "/assets/pdf/publications/Van_Laethem_2023.pdf"
+    figure-license: "© The Author(s), 2023. MSJ papers are typically published under Creative Commons."
     link: "https://journals.sagepub.com/doi/10.1177/13524585231216007?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed"
 
   - authors: "Denissen S, Van Schependom J, Nagels G"
@@ -106,7 +126,6 @@ entries:
     journal: "Book chapter in VUB book 'A question of truth'"
     link: "https://pim-qa.asp.xcs.be/assets/Chapters/17464/19578/13_a_question_of_truth.pdf"
     joint_first: false
-    link: "https://pim-qa.asp.xcs.be/assets/Chapters/17464/19578/13_a_question_of_truth.pdf"
 
   - authors: "Thijs L, Voets E, Denissen S, ..., Verheyden G"
     year: 2023
