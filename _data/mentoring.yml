@@ -20,6 +20,7 @@ students:
   - name: "Mohammad Waleed Adnan"
     topic: "explaining brain age models with XAI"
     field: "Applied Computer Science"
+    start_date: "2025"
     graduation_date: "Ongoing"
     type: "Master"
   - name: "Louise Van de Looverbosch"
