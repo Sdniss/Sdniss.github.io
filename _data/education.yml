@@ -11,6 +11,15 @@ entries:
       - "Promoters: Prof. Dr. ir. Guy Nagels, Dr. Diana Sima, Prof. Dr. ir. Jeroen Van Schependom"
       - "Personal grant: VLAIO Baekeland (HBC.2019.2579)"
       - "Defense date: 30/01/2024"
+    link: "https://researchportal.vub.be/en/publications/structural-brain-damage-and-cognition-in-ms-an-ai-approach/"
+    pdf: "/assets/pdf/publications/Denissen_Stijn_PhD_thesis_30.01.2024.pdf"
+    figure: "/assets/images/pub-figures/cover_image_PhD_Stijn.png"
+    figure-license: "CC BY 4.0"
+    key_finding: "My PhD investigated three ways to deal with scarce data to investigate the relationship between structural brain MRI and cognitive impairment in people with MS with AI:<br>
+    1. Designing a smartphone application for cognitive screening in MS (ico<b>gnition</b>)<br>
+    2. Leveraging large healthy control databases to predict 'brain age' as in-between step<br>
+    3. Establishing a real-world federated learning network to train models without sharing data
+    "
 
   - degree: "MSc Rehabilitation Sciences"
     institution: "KU Leuven"
@@ -23,6 +32,12 @@ entries:
       - "Track: Neurorehabilitation"
       - "Note: I was selected for a research internship on brain stimulation under supervision of Prof. Koen Cuypers."
       - "Grade: Cum Laude"
+    link: "https://scriptiebank.be/scriptie/2018/trunk-rehabilitation-different-recovery-phases-post-stroke-systematic-review-and-meta"
+    pdf: "/assets/pdf/publications/Master_Thesis_Stijn_Anne.pdf"
+    key_finding: "
+    Selective trunk exercises, sitting reaching protocol and weight-shift training seem to provide beneficial effects for treating trunk impairment post-stroke.
+    Furthermore, all protocols had superior effects on some phases post-stroke compared to control therapy.
+    This thesis served as a first step towards a Cochrane review by Thijs et al. 2023."
 
   - degree: "BSc Rehabilitation Sciences"
     institution: "KU Leuven"
