@@ -32,14 +32,18 @@ permalink: /academic_journey/
   <div class="filter-container" id="category-filters">
     <button class="filter-btn" data-filter="all" style="--btn-color: #2d3436">All</button>
     <button class="filter-btn" data-filter="Publication" style="--btn-color: #0984e3">Publications</button>
+    <button class="filter-btn" data-filter="Conference" style="--btn-color: #00b894">Conferences</button>
+    <button class="filter-btn" data-filter="Education" style="--btn-color: #a29bfe">Education</button>
     <button class="filter-btn" data-filter="Professional" style="--btn-color: #636e72">Professional</button>
     <button class="filter-btn" data-filter="Mentoring" style="--btn-color: #6f42c1">Mentoring</button>
     <button class="filter-btn" data-filter="Award" style="--btn-color: #fdcb6e">Awards</button>
     <button class="filter-btn" data-filter="SciComm" style="--btn-color: #d63031">SciComm</button>
+    <button class="filter-btn" data-filter="Teaching" style="--btn-color: #fab1a0">Teaching</button>
+    <button class="filter-btn" data-filter="Research Stays" style="--btn-color: #eb9534">Abroad</button>
   </div>
 </div>
 
-<div id="category-summary-area" style="margin-bottom: 20px;">
+<div id="category-summary-area" style="margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
 
   <section class="scholar-stats category-summary" data-cat="Publication" style="display:none;">
     <div class="stats-card">
@@ -65,6 +69,18 @@ permalink: /academic_journey/
     </div>
   </section>
 
+  <div class="category-summary vision" data-cat="Conference" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+    {{ site.data.conferences.summary }} <!-- Use " | size " to count number of entries -->
+  </div>
+
+  <div class="category-summary vision" data-cat="Education" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+    {{ site.data.education.summary }} <!-- Use " | size " to count number of entries -->
+  </div>
+
+  <div class="category-summary vision" data-cat="Teaching" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+    {{ site.data.teaching.summary }} <!-- Use " | size " to count number of entries -->
+  </div>
+
   <div class="category-summary vision" data-cat="Professional" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.professional.summary }} <!-- Use " | size " to count number of entries -->
   </div>
@@ -80,11 +96,18 @@ permalink: /academic_journey/
   <div class="category-summary vision" data-cat="SciComm" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.scicomm.summary }} <!-- Use " | size " to count number of entries -->
   </div>
+
+  <div class="category-summary" data-cat="all" style="display:block;">
+    <div class="language-tags">
+      {% for lang in site.data.languages.entries %}
+        <span class="lang-tag" title="{{ lang.level }}"><b>{{ lang.language }}</b>: {{ lang.level }}</span>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 <div class="academic-container">
-  {% assign years = "2026,2025,2024,2023,2022,2021,2020,2019,2018,2017" | split: "," %}
-  {% assign current_active_year = "2026" %}
+  {% assign years = "2026,2025,2024,2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012" | split: "," %}
 
   {% for year in years %}
     <section class="year-block" data-year="{{ year }}">
@@ -94,9 +117,37 @@ permalink: /academic_journey/
       </div>
 
       <div class="node-garden">
-        {% for item in site.data.professional.entries %}
-          {% if item.start_date == year or item.years contains year %}
-            {% include node_pill.html cat="Professional" icon="briefcase" color="#636e72" title=item.position subtitle=item.institution %}
+        {% for item in site.data.education.entries %}
+          {% if item.end_date == year %}
+            {% include node_pill.html cat="Education" icon="graduation-cap" color="#a29bfe" title=item.degree subtitle=item.institution detail=item.location item=item %}
+          {% endif %}
+        {% endfor %}
+
+        {% for item in site.data.conferences.entries %}
+          {% capture cy %}{{ item.year }}{% endcapture %}
+          {% if cy == year %}
+            {% include node_pill.html cat="Conference" icon="microphone" color="#00b894" title=item.title subtitle=item.org detail=item.location item=item %}
+          {% endif %}
+        {% endfor %}
+
+        {% for item in site.data.research_stays.entries %}
+          {% capture ay %}{{ item.year }}{% endcapture %}
+          {% if ay == year %}
+            {% include node_pill.html cat="Research Stays" icon="plane-departure" color="#eb9534" title=item.institution subtitle=item.type detail=item.description item=item %}
+          {% endif %}
+        {% endfor %}
+
+        {% for item in site.data.organisations.research_engagement %}
+          {% if item.start_date == year %}{% include node_pill.html cat="Professional" icon="handshake" color="#636e72" title=item.role subtitle=item.org item=item %}{% endif %}
+        {% endfor %}
+
+        {% for item in site.data.organisations.student_engagement %}
+          {% if item.start_date == year %}{% include node_pill.html cat="Professional" icon="handshake" color="#636e72" title=item.role subtitle=item.org item=item %}{% endif %}
+        {% endfor %}
+
+        {% for item in site.data.teaching.entries %}
+          {% if item.end_date == year or (item.end_date == "Ongoing" and year == "2026")%}
+            {% include node_pill.html cat="Teaching" icon="chalkboard-user" color="#fab1a0" title=item.course subtitle=item.role item=item %}
           {% endif %}
         {% endfor %}
 
@@ -104,6 +155,12 @@ permalink: /academic_journey/
           {% capture py %}{{ item.year }}{% endcapture %}
           {% if py == year %}
             {% include node_pill.html cat="Publication" icon="book-open" color="#0984e3" title=item.title subtitle=item.journal authors=item.authors if_factor=item.journal_metrics.if q_factor=item.journal_metrics.q-factor item=item %}
+          {% endif %}
+        {% endfor %}
+
+        {% for item in site.data.professional.entries %}
+          {% if item.start_date == year or item.years contains year %}
+            {% include node_pill.html cat="Professional" icon="briefcase" color="#636e72" title=item.position subtitle=item.institution item=item %}
           {% endif %}
         {% endfor %}
 
@@ -117,12 +174,12 @@ permalink: /academic_journey/
         {% for item in site.data.awards_grants.entries %}
           {% capture hd %}{{ item.date }}{% endcapture %}
           {% if hd == year %}
-            {% include node_pill.html cat="Award" icon="trophy" color="#fdcb6e" title=item.award subtitle=item.organization amount=item.amount %}
+            {% include node_pill.html cat="Award" icon="trophy" color="#fdcb6e" title=item.award subtitle=item.organization amount=item.amount item=item %}
           {% endif %}
         {% endfor %}
 
         {% for item in site.data.mentoring.students %}
-          {% if item.graduation_date contains year or (item.graduation_date == "Ongoing" and year == current_active_year) %}
+          {% if item.graduation_date contains year or (item.graduation_date == "Ongoing" and year == "2026") %}
             {% include node_pill.html cat="Mentoring" student_type=item.type icon="user-graduate" color="#6f42c1" title=item.name subtitle=item.field detail=item.topic item=item %}
           {% endif %}
         {% endfor %}
@@ -562,5 +619,26 @@ document.addEventListener('DOMContentLoaded', function() {
     background-color: var(--btn-color) !important;
     border-color: var(--btn-color) !important;
     color: white !important;
+  }
+
+  .language-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .lang-tag {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 50px;
+    color: #636e72;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  }
+  /* Optional: Highlight Invited talks in CSS */
+  .node-pill[data-invited="true"] {
+    border-style: dashed;
   }
 </style>
