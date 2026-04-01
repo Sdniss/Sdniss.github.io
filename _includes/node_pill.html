@@ -122,7 +122,7 @@
     </div>
 
     {% if include.item.link %}
-      {% if include.cat == "Publication" %}
+      {% if include.item.pdf %}
         <div class="pub-actions">
             <a href="{{ include.item.link }}" target="_blank" class="pill-link">Link Publisher Website →</a>
             <a href="{{ include.item.pdf | relative_url }}" download class="pill-link pdf-btn">
@@ -130,7 +130,13 @@
             </a>
         </div>
       {% else %}
-        <a href="{{ include.item.link }}" target="_blank" class="pill-link">More information →</a>
+        <div class="pub-actions">
+          {% if include.cat == "Publication" %}
+            <a href="{{ include.item.link }}" target="_blank" class="pill-link">Link Publisher Website →</a>
+          {% else %}
+            <a href="{{ include.item.link }}" target="_blank" class="pill-link">More information →</a>
+          {% endif %}
+        </div>
       {% endif %}
     {% endif %}
   </div>
