@@ -120,8 +120,15 @@ permalink: /academic_journey/
 
       <div class="node-garden">
         {% for item in site.data.education.entries %}
-          {% if item.end_date == year %}
-            {% include node_pill.html cat="Education" icon="graduation-cap" color="#a29bfe" title=item.degree subtitle=item.institution detail=item.location item=item %}
+          {% capture ey %}{{ item.end_date }}{% endcapture %}
+          {% if ey == year %}
+            {% include node_pill.html
+               cat="Education"
+               icon="graduation-cap"
+               color="#a29bfe"
+               title=item.degree
+               subtitle=item.institution
+               item=item %}
           {% endif %}
         {% endfor %}
 

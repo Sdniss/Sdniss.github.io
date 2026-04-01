@@ -22,10 +22,12 @@ entries:
       - "Promoter: Prof. Dr. Geert Verheyden"
       - "Track: Neurorehabilitation"
       - "Note: I was selected for a research internship on brain stimulation under supervision of Prof. Koen Cuypers."
+      - "Grade: Cum Laude"
 
   - degree: "BSc Rehabilitation Sciences"
     institution: "KU Leuven"
     location: "Leuven"
     start_date: "2012"
     end_date: "2015"
-    cvitems: [] # Empty as per .tex file
+    cvitems:
+      - "Grade: Cum Fructu"

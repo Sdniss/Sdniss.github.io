@@ -39,6 +39,27 @@
     </div>
 
     <div class="pill-body">
+      {% if include.item.cvitems and include.item.cvitems.size > 0 %}
+        <ul class="cv-items-list" style="list-style: none; padding-left: 0; margin-top: 15px;">
+          {% for cvline in include.item.cvitems %}
+            <li style="margin-bottom: 8px; font-size: 0.9rem; line-height: 1.4; color: #555;">
+              {% if cvline contains ": " %}
+                {% comment %} Split the string into exactly two parts: before and after the FIRST colon {% endcomment %}
+                {% assign parts = cvline | split: ": " %}
+                {% assign label = parts[0] %}
+
+                {% comment %} Rejoin everything else in case the content itself had colons {% endcomment %}
+                {% capture content %}{% for p in parts offset:1 %}{{ p }}{% unless forloop.last %}: {% endunless %}{% endfor %}{% endcapture %}
+
+                <strong style="color: #2d3436;">{{ label }}:</strong> {{ content }}
+              {% else %}
+                {{ cvline }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
       {% if include.authors %}
         <p class="pub-authors"> {{ include.authors }}</p>
       {% endif %}
