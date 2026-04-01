@@ -36,13 +36,16 @@ entries:
     link: "https://www.pedneur.com/article/S0887-8994(25)00328-5/abstract"
     key_finding: "Whole brain volume percentile (r = 0.4, P = 0.01), white matter percentile (r = 0.4, P = 0.01), and white matter lesion volume (r = −0.4, P = 0.005) were associated with SDMT score. Annualized percent brain volume change of the hippocampus (measured a median of 1.6 years apart) significantly correlated with follow-up SDMT (r = 0.4, P = 0.02), and annualized percent brain volume change of the thalamus correlated with annual change in SDMT z-score (r = 0.4, P = 0.009)."
 
-  - authors: "Huynh, T.N., ... Denissen, S., Long, T.Q., Trung, N.L. and Nagels, G."
+  - authors: "Trinh Ngoc Huynh, Nguyen Duc Kien, Nguyen Hai Anh, Dinh Tran Hiep, Manuela Vaneckova, Tomas Uher, Jeroen Van Schependom, Stijn Denissen, Tran Quoc Long, Nguyen Linh Trung and Guy Nagels"
     year: 2025
     title: "Latent Representation Learning from 3D Brain MRI for Interpretable Prediction in Multiple Sclerosis"
     journal: "arXiv preprint"
     volume_issue: "arXiv:2510.00051"
     joint_first: false
     link: "https://arxiv.org/abs/2510.00051"
+    pdf: "/assets/pdf/publications/Trinh_Ngoc_Latent_2025.pdf"
+    key_finding: "This paper presents InfoVAE-Med3D, a latent-representation learning approach for 3D brain MRI that targets interpretable biomarkers of cognitive decline.
+    Across reconstruction and downstream prediction tasks (prediction of age and cognitive performance), InfoVAE-Med3D consistently outperforms other VAE variants, indicating a richer latent space."
 
   - authors: "Denissen S*, Van Laethem D*, Baijot, J, ..., Nagels, G"
     year: 2025
