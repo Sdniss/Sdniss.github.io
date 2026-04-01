@@ -126,8 +126,10 @@ entries:
     journal: "Book chapter in VUB book 'A question of truth'"
     link: "https://pim-qa.asp.xcs.be/assets/Chapters/17464/19578/13_a_question_of_truth.pdf"
     joint_first: false
+    figure: "/assets/images/pub-figures/a_question_of_truth.webp"
+    figure-license: "Copyright VUB Press / Owl press"
 
-  - authors: "Thijs L, Voets E, Denissen S, ..., Verheyden G"
+  - authors: "Thijs L, Voets E, Denissen S, Mehrholz J, Elsner B, Lemmens R and Verheyden G"
     year: 2023
     title: "Trunk training for improving activities in people with stroke"
     journal: "Stroke"
@@ -138,8 +140,12 @@ entries:
       q-factor: "Q1"
     joint_first: false
     link: "https://www.ahajournals.org/doi/10.1161/STROKEAHA.123.043490"
+    figure: "/assets/images/pub-figures/Thijs_2023.jpg"
+    figure-license: "© 2023 American Heart Association, Inc."
+    pdf: "/assets/pdf/publications/Thijs_2023_Stroke.pdf"
+    key_finding: "This is a summary in Stroke's 'Cochrane Corner' of the eponymous Cochrane review. This review suggests that trunk training improves basic ADL, trunk function, standing balance, walking ability, upper and lower limb function, and quality of life."
 
-  - authors: "Thijs L, Voets E, Denissen S, ..., Verheyden G"
+  - authors: "Thijs L, Voets E, Denissen S, Mehrholz J, Elsner B, Lemmens R and Verheyden G"
     year: 2023
     title: "Trunk training for improving activities in people with stroke"
     journal: "Cochrane Database of Systematic Reviews"
@@ -150,6 +156,11 @@ entries:
       q-factor: "Q1"
     joint_first: false
     link: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013712.pub2/full/nl"
+    figure: "/assets/images/pub-figures/Thijs_2023.jpg"
+    figure-license: "Copyright © 2023 The Cochrane Collaboration. Published by John Wiley & Sons, Ltd."
+    pdf: "/assets/pdf/publications/Thijs_Cochrane_2023.pdf"
+    key_finding: "There is evidence to suggest that trunk training as part of rehabilitation improves ADL, trunk function, standing balance, walking ability, upper and lower limb function, and quality of life in people aMer stroke.
+    Core-stability, selective-, and unstable-trunk training were the trunk training approaches mostly applied in the included trials."
 
   - authors: "Baijot J, Van Laethem D, Denissen S, ..., Van Schependom, J"
     year: 2022
