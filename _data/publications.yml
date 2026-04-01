@@ -47,7 +47,7 @@ entries:
     key_finding: "This paper presents InfoVAE-Med3D, a latent-representation learning approach for 3D brain MRI that targets interpretable biomarkers of cognitive decline.
     Across reconstruction and downstream prediction tasks (prediction of age and cognitive performance), InfoVAE-Med3D consistently outperforms other VAE variants, indicating a richer latent space."
 
-  - authors: "Denissen S*, Van Laethem D*, Baijot, J, ..., Nagels, G"
+  - authors: "Denissen S*, Van Laethem D*, Baijot J, Costers L, Descamps A, Van Remoortel A, Van Merhaegen-Wieleman A, D’hooghe M, D'Haeseleer M, Smeets D, Sima DM, Van Schependom J and Nagels G"
     year: 2025
     title: "A New Smartphone-Based Cognitive Screening Battery for Multiple Sclerosis (icognition): Validation Study"
     journal: "Journal of Medical Internet Research"
@@ -57,7 +57,12 @@ entries:
       if: "6.0"
       q-factor: "Q1"
     joint_first: true
+    pdf: "/assets/pdf/publications/Denissen_2025_JMIR.pdf"
+    key_finding: "This paper validated a new smartphone app to screen for cognitive deterioration in people with MS.
+    All icognition tests correlated well with their paper-and-pencil equivalents, negatively correlated with the Expanded Disability Status Scale, and showed moderate test-retest reliability.
+    Surprisingly, test performance was comparable between people with MS and healthy participants for all cognitive tests, both in icognition and the gold standard paper-and-pencil tests."
     link: "https://pubmed.ncbi.nlm.nih.gov/39832354/"
+    figure: "/assets/images/pub-figures/denissen-2025_icognition_figure.png"
 
   - authors: "De Keersmaecker E, Guida S, Denissen S, ..., Swinnen E"
     year: 2025
