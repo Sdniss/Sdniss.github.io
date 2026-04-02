@@ -26,7 +26,9 @@ entries:
     title: "Panel member"
     location: "Maastricht (NL)"
     year: 2024
-    summary: "Invited as panelist in discussion on 'Big Data and Artificial Intelligence in Biomedicine'"
+    summary: "Invited as panelist in discussion on 'Big Data and Artificial Intelligence in Biomedicine' in the MOSA conference by students of Maastricht University."
+    link: "https://www.mosaconference.info/gallery2024"
+    figure: "/assets/photos/MOSA_2024.jpg"
 
   - org: "ECTRIMS"
     title: "What artificial intelligence tools are ready for MS clinical practice"
