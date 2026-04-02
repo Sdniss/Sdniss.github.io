@@ -2,11 +2,14 @@ section_title: "Experience abroad"
 
 entries:
   - institution: "General Faculty Hospital, Prague (CZ)"
-    summary: "Setting up the federated learning network"
+    summary: "I went to Prague for 3 months to set up the federated learning (FL) network that formed a key chapter in my PhD, and the basis for my junior FWO fellowship.<br>
+    In the figure, we are delivering an FL computer to the radiology department of the First Faculty of Medicine."
     location: "Prague (CZ)"
     year: "2023"
     type: "Research Stay"
+    figure: "/assets/photos/Prague_2023.png"
     duration: "3 months"
+    link: "https://www.vfn.cz/en/pacienti/kliniky-ustavy/radiodiagnosticka-klinika/informace-k-mr-pro-lekare/"
 
   - institution: "Dr. Becker Kiliani-Klinik, Bad Windsheim (DE)"
     description: "Neurorehabilitation internship"
@@ -14,3 +17,5 @@ entries:
     year: "2017"
     type: "Internship"
     duration: "2 months"
+    figure: "/assets/photos/kiliani_klinik_2017.png"
+    link: "https://dbkg.de/kliniken/dr-becker-kiliani-klinik/kurzprofil-klinik"

@@ -4,37 +4,39 @@ This interdisciplinary view is now at the core of the iAIMS community I establis
 entries:
   - position: "Junior postdoctoral fellow FWO"
     institution: "AIMS lab, VUB"
-    description: "Title: Leveraging recent advances in explainable AI to decode cognitive functioning from T1/FLAIR weighted MR images in MS - An international federated learning approach (12A6U25N)"
+    summary: "Postdoctoral researcher funded by a personal junior postdoctoral fellowship.<br><br>
+    <b>Title:</b> Leveraging recent advances in explainable AI to decode cognitive functioning from T1/FLAIR weighted MR images in MS - An international federated learning approach (12A6U25N).<br>
+    <b>More info:</b> See 'Awards' tab."
     start_date: "2024"
     end_date: "Ongoing"
 
   - position: "PhD Student (VLAIO Baekeland)"
     institution: "Industrial doctorate. AIMS lab (VUB) and icometrix NV (Leuven)"
-    description: "Title: Structural brain damage and cognition in MS: an AI approach (HBC.2019.2579)"
+    summary: "Title: Structural brain damage and cognition in MS: an AI approach (HBC.2019.2579). See 'Education' and 'Awards' for more detail."
     start_date: "2019"
     end_date: "2024"
 
   - position: "Research assistant Prof. Guy Nagels"
     institution: "AIMS lab, VUB"
-    description: "Initial lab experience working on various projects, including a project on NMSC Melsbroek rehabilitation data, resulting in a paper in the Journal of Central Nervous System Disease, and continuing the Cochrane update."
+    summary: "Initial lab experience working on various projects, including a project on NMSC Melsbroek rehabilitation data, resulting in a paper in the Journal of Central Nervous System Disease, and continuing the Cochrane update."
     start_date: "2018"
     end_date: "2019"
 
   - position: "Physical therapist"
     institution: "National Multiple Sclerosis Center Melsbroek"
-    description: "Rehabilitation of patients with multiple sclerosis."
+    summary: "Rehabilitation of patients with multiple sclerosis."
     start_date: "2018"
     end_date: "2018"
 
   - position: "Research assistant Prof. Geert Verheyden"
     institution: "Dept. Rehabilitation Sciences, KU Leuven"
-    description: "Updating the 2013 Cochrane review of Prof. Verheyden, resulting in a paper in 2019."
+    summary: "Updating the 2013 Cochrane review of Prof. Verheyden, resulting in a paper in 2019."
     start_date: "2018"
     end_date: "2018"
 
   - years: "2017"
     position: "Physical therapist"
     institution: "GIRA Campus Pellenberg, UZ Leuven"
-    description: "Geriatric intensive rehabilitation, mainly of patients having suffered a stroke."
+    summary: "Geriatric intensive rehabilitation, mainly of patients having suffered a stroke."
     start_date: "2017"
     end_date: "2017"
