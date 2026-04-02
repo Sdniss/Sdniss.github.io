@@ -135,40 +135,26 @@
       {% endif %}
     </div>
 
-    {% if include.item.link %}
-      {% if include.item.pdf %}
-        <div class="pub-actions">
-            <a href="{{ include.item.link }}" target="_blank" class="pill-link">Link Publisher Website →</a>
-            <a href="{{ include.item.pdf | relative_url }}" download class="pill-link pdf-btn">
-              <i class="fa-solid fa-file-pdf"></i> Download PDF
-            </a>
-            {% if include.item.linkedin_post_link %}
-              <a href="{{ include.item.linkedin_post_link }}" target="_blank" class="pill-link linkedin-btn">
-                <i class="fa-brands fa-linkedin"></i> View LinkedIn Post
-              </a>
-            {% endif %}
-        </div>
-      {% else %}
-        <div class="pub-actions">
-          {% if include.cat == "Publication" %}
-            <a href="{{ include.item.link }}" target="_blank" class="pill-link">Link Publisher Website →</a>
-          {% else %}
-            <a href="{{ include.item.link }}" target="_blank" class="pill-link">More information →</a>
-          {% endif %}
-          {% if include.item.linkedin_post_link %}
-            <a href="{{ include.item.linkedin_post_link }}" target="_blank" class="pill-link linkedin-btn">
-              <i class="fa-brands fa-linkedin"></i> View LinkedIn Post
-            </a>
-          {% endif %}
-        </div>
+    <div class="pub-actions">
+      {% if include.item.link %}
+        {% if include.cat == "Publication" %}
+          <a href="{{ include.item.link }}" target="_blank" class="pill-link">Link Publisher Website →</a>
+        {% else %}
+          <a href="{{ include.item.link }}" target="_blank" class="pill-link">More information →</a>
+        {% endif %}
       {% endif %}
-    {% endif %}
-    {% if include.item.linkedin_post_link %}
-      <div class="pub-actions">
+
+      {% if include.item.pdf %}
+        <a href="{{ include.item.pdf | relative_url }}" download class="pill-link pdf-btn">
+          <i class="fa-solid fa-file-pdf"></i> Download PDF
+        </a>
+      {% endif %}
+
+      {% if include.item.linkedin_post_link %}
         <a href="{{ include.item.linkedin_post_link }}" target="_blank" class="pill-link linkedin-btn">
           <i class="fa-brands fa-linkedin"></i> View LinkedIn Post
         </a>
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
   </div>
 </details>
