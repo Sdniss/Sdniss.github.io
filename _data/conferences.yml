@@ -2,48 +2,65 @@ section_title: "Conferences"
 summary: "I presented at 7 international conferences in multiple sclerosis and neurorehabilitation, including two invited talks at the largest MS conference worldwide (ECTRIMS)."
 entries:
   - org: "ECTRIMS"
-    title: "Invited: Will AI shift decision making in favor of the PwMS in the next decade?"
+    title: "Will AI shift decision making in favor of the PwMS in the next decade?"
     location: "Barcelona (ES)"
     year: 2025
-    invited: true
+    summary: "Invited talk during the Nursing session at ECTRIMS on 'Shared decision making and digitalisation'"
+    link: "https://pag.virtual-meeting.org/congrex/ectrims2025/en-GB/pag/session/67907"
+    figure: "/assets/photos/ECTRIMS_2025.jpg"
 
   - org: "BVNV"
     title: "Artificiële intelligentie in MS"
-    location: "Blankenberge (B)"
+    location: "Blankenberge (BE)"
     year: 2025
+    summary: "Talk at the annual conference of the Belgian Society for Neurological Nurses"
 
   - org: "NNR"
     title: "Surfing the smartphone wave to support clinical practice"
     location: "Maastricht (NL)"
     year: 2025
+    summary: "Talk in the workshop on 'Advances in Neuropsychology: Innovations in Cognitive Assessment and Intervention', together with Dr. Delphine Van Laethem."
+    figure: "/assets/photos/NNR_2025.jpg"
 
   - org: "ECTRIMS"
-    title: "Invited talk: What artificial intelligence tools are ready for MS clinical practice"
+    title: "What artificial intelligence tools are ready for MS clinical practice"
     location: "Copenhagen (DK)"
     year: 2024
     invited: true
+    link: "https://apps.congrex.com/ectrims2024/en-GB/pag/presentation/360049"
+    summary: "Invited talk for the educational session on 'Clinical implications of digital monitoring and artificial intelligence in MS and related disorders'"
+    figure: "/assets/photos/ECTRIMS_2024.jpg"
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_mscare-collaboration-multidisciplinarity-activity-7242981853815607297-nSt1?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - org: "IMSCOGS"
     title: "Brain age as a surrogate marker for IPS in MS"
     location: "Bordeaux (FR)"
     year: 2022
+    link: "https://imscogs2022.sciencesconf.org/data/IMSCOGS_2022_Program.pdf"
+    summary: "Talk about our work on brain age as a cognitive surrogate marker (cfr publications)"
 
   - org: "ACTRIMS"
     title: "Brain age in MS: An explainable principal component of brain MRI and potential sensitive cognitive biomarker"
     location: "Virtual"
     year: 2021
+    summary: "Recorded virtual talk (due to COVID-19) at the NAIMS Symposium on 'Big Data and Machine Learning with MRI in Multiple Sclerosis'"
+    link: "https://www.naimscooperative.org/2021-naims-symposium"
 
   - org: "NNR"
     title: "Interventions for preventing falls in people after stroke"
     location: "Maastricht (NL)"
     year: 2019
+    summary: "Platform presentation on the results of the update of the 2013 Cochrane review on fall prevention post-stroke."
 
   - org: "RIMS"
     title: "The impact of cognitive dysfunction on locomotor rehabilitation potential in MS"
-    location: "Ljubljana (Sl)"
+    location: "Ljubljana (SL)"
     year: 2019
+    summary: "Platform presentation on an analysis of rehabilitation data at the National Multiple Sclerosis Center of Melsbroek. (cfr. publications)"
 
   - org: "RIMS"
     title: "The effects of multidisciplinary rehabilitation in MS"
-    location: "Ljubljana (Sl)"
+    location: "Ljubljana (SL)"
     year: 2019
+    summary: "Platform presentation on an analysis of rehabilitation data at the National Multiple Sclerosis Center of Melsbroek."
+    link: "https://eu.eventscloud.com/ehome/200180839/scientificprogramme/"

@@ -2,6 +2,8 @@ section_title: "Extracurricular"
 
 research_engagement:
   - org: "iAIMS"
+    title: "Founder iAIMS community"
+    summary: "Lorem ipsum sit amet ..."
     role: "Founder. international community for AI in MS."
     link: "https://iaims.org"
     location: "International"

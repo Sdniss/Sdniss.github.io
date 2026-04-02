@@ -134,7 +134,7 @@ permalink: /academic_journey/
         {% for item in site.data.conferences.entries %}
           {% capture cy %}{{ item.year }}{% endcapture %}
           {% if cy == year %}
-            {% include node_pill.html cat="Conference" icon="microphone" color="#00b894" title=item.title subtitle=item.org detail=item.location item=item %}
+            {% include node_pill.html cat="Conference" icon="microphone" color="#00b894" title=item.org subtitle=item.title item=item %}
           {% endif %}
         {% endfor %}
 
@@ -146,7 +146,7 @@ permalink: /academic_journey/
         {% endfor %}
 
         {% for item in site.data.organisations.research_engagement %}
-          {% if item.start_date == year %}{% include node_pill.html cat="Professional" icon="handshake" color="#636e72" title=item.role subtitle=item.org item=item %}{% endif %}
+          {% if item.start_date == year %}{% include node_pill.html cat="Professional" icon="handshake" color="#636e72" title=item.title subtitle=item.role item=item %}{% endif %}
         {% endfor %}
 
         {% for item in site.data.organisations.student_engagement %}
@@ -648,4 +648,9 @@ document.addEventListener('DOMContentLoaded', function() {
   .node-pill[data-invited="true"] {
     border-style: dashed;
   }
+
+  .linkedin-btn {
+      background: #0077b5 !important; /* Official LinkedIn Blue */
+      color: white !important;
+    }
 </style>

@@ -71,6 +71,13 @@
         </div>
       {% endif %}
 
+      {% if include.item.summary %}
+        <div class="key-finding-box">
+          <i class="fa-solid fa-star"></i>
+          <span><b>Summary:</b><br>{{ include.item.summary }}</span>
+        </div>
+      {% endif %}
+
       {% if include.item.keywords %}
         <div class="keyword-container">
           {% for tag in include.item.keywords %}
@@ -91,6 +98,10 @@
         <p><strong>Summary:</strong> {{ include.detail }}</p>
       {% endif %}
 
+      {% if include.item.location %}
+        <p><strong>Location:</strong> {{ include.item.location }}</p>
+      {% endif %}
+
       {% if include.amount %}
         <p><strong>Amount:</strong> {{ include.amount }}</p>
       {% endif %}
@@ -102,7 +113,9 @@
       {% if include.item.figure %}
         <div class="pub-figure-box">
           <img src="{{ include.item.figure | relative_url }}" class="pub-img">
-          <figcaption style="color:#999999; font-size: 10px">Licensed under: {{ include.item.figure-license }}</figcaption>
+          {% if include.item.figure-license %}
+            <figcaption style="color:#999999; font-size: 10px">Licensed under: {{ include.item.figure-license }}</figcaption>
+          {% endif %}
         </div>
       {% endif %}
 
@@ -129,6 +142,11 @@
             <a href="{{ include.item.pdf | relative_url }}" download class="pill-link pdf-btn">
               <i class="fa-solid fa-file-pdf"></i> Download PDF
             </a>
+            {% if include.item.linkedin_post_link %}
+              <a href="{{ include.item.linkedin_post_link }}" target="_blank" class="pill-link linkedin-btn">
+                <i class="fa-brands fa-linkedin"></i> View LinkedIn Post
+              </a>
+            {% endif %}
         </div>
       {% else %}
         <div class="pub-actions">
@@ -136,6 +154,11 @@
             <a href="{{ include.item.link }}" target="_blank" class="pill-link">Link Publisher Website →</a>
           {% else %}
             <a href="{{ include.item.link }}" target="_blank" class="pill-link">More information →</a>
+          {% endif %}
+          {% if include.item.linkedin_post_link %}
+            <a href="{{ include.item.linkedin_post_link }}" target="_blank" class="pill-link linkedin-btn">
+              <i class="fa-brands fa-linkedin"></i> View LinkedIn Post
+            </a>
           {% endif %}
         </div>
       {% endif %}
