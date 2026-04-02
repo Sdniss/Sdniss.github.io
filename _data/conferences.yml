@@ -38,6 +38,8 @@ entries:
     year: 2022
     link: "https://imscogs2022.sciencesconf.org/data/IMSCOGS_2022_Program.pdf"
     summary: "Talk about our work on brain age as a cognitive surrogate marker (cfr publications)"
+    figure: "/assets/photos/IMSCOGS_2022.jpeg"
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_multiplesclerosis-activity-6933335695885258753-rdXD?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - org: "ACTRIMS"
     title: "Brain age in MS: An explainable principal component of brain MRI and potential sensitive cognitive biomarker"
@@ -51,16 +53,23 @@ entries:
     location: "Maastricht (NL)"
     year: 2019
     summary: "Platform presentation on the results of the update of the 2013 Cochrane review on fall prevention post-stroke."
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_nnr-kuleuven-activity-6537738720014020608-sRzU?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
+    figure: "/assets/photos/NNR_2019.jpeg"
 
   - org: "RIMS"
     title: "The impact of cognitive dysfunction on locomotor rehabilitation potential in MS"
     location: "Ljubljana (SL)"
     year: 2019
     summary: "Platform presentation on an analysis of rehabilitation data at the National Multiple Sclerosis Center of Melsbroek. (cfr. publications)"
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_rims-nmscabrmelsbroek-activity-6549343284081238016-MDGG?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
+    link: "https://eu.eventscloud.com/ehome/200180839/scientificprogramme/"
+    figure: "/assets/photos/RIMS_2019_cogimp.jpeg"
 
   - org: "RIMS"
     title: "The effects of multidisciplinary rehabilitation in MS"
     location: "Ljubljana (SL)"
     year: 2019
     summary: "Platform presentation on an analysis of rehabilitation data at the National Multiple Sclerosis Center of Melsbroek."
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_rims-nmscabrmelsbroek-activity-6549343284081238016-MDGG?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
     link: "https://eu.eventscloud.com/ehome/200180839/scientificprogramme/"
+    figure: "/assets/photos/RIMS_2019_multidisciplinary.jpeg"

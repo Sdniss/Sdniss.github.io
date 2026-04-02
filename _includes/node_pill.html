@@ -163,5 +163,12 @@
         </div>
       {% endif %}
     {% endif %}
+    {% if include.item.linkedin_post_link %}
+      <div class="pub-actions">
+        <a href="{{ include.item.linkedin_post_link }}" target="_blank" class="pill-link linkedin-btn">
+          <i class="fa-brands fa-linkedin"></i> View LinkedIn Post
+        </a>
+      </div>
+    {% endif %}
   </div>
 </details>

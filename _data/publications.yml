@@ -66,6 +66,7 @@ entries:
     link: "https://pubmed.ncbi.nlm.nih.gov/39832354/"
     figure: "/assets/images/pub-figures/denissen-2025_icognition_figure.png"
     figure-license: "CC BY 4.0"
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_a-new-smartphone-based-cognitive-screening-activity-7287424449589460993-k8AA?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - authors: "De Keersmaecker E, Guida S, Denissen S, Dewolf L, Nagels G, Jansen B, Beckwée D and Swinnen E"
     year: 2025
@@ -211,6 +212,7 @@ entries:
     pdf: "/assets/pdf/publications/Denissen_2022_Brain_age.pdf"
     key_finding: "In this paper, we showed with an interpretable linear brain age model that people with MS have brains that look older than their calendar age.
     We moreover showed that higher overestimation is correlated with worse information processing speed."
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_brainhealth-activity-6946801759621136384-fxnI?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - authors: "Denissen S, Chen OY, De Mey J, De Vos M, Van Schependom J, Sima DM and Nagels, G"
     year: 2021
@@ -228,6 +230,7 @@ entries:
     pdf: "/assets/pdf/publications/Denissen_2021.pdf"
     key_finding: "This review aims to boost the field of machine learning for cognitive prognosis in MS by means of an introduction to machine learning and its pitfalls, an overview of important elements for study design, and an overview of the current literature on cognitive prognosis in MS using machine learning.
     Furthermore, the review discusses new trends in the field of machine learning that might be adopted for future studies in the field."
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_personalizedmedicine-cognition-machinelearning-activity-6876196496635650048-hTw1?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - authors: "Baijot J*, Denissen S*, Costers L, Gielen J, Cambron M, D'Haeseleer M, D'hooghe MB, Vanbinst A, De Mey J, Nagels G and Van Schependom J"
     year: 2021
@@ -245,6 +248,7 @@ entries:
     figure-license: "CC BY 4.0"
     key_finding: "The results of this paper suggest that differences in network parameters between MS and HS in fMRI do not reflect a functional reorganisation of the brain, but rather occur due to reduced fMRI signal quality.
     Correlations found with cognitive variables might therefore be false positives, and should be critically assessed."
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_signal-quality-as-achilles-heel-of-graph-activity-6783388917325455360-8sAj?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - authors: "Denissen S, Staring W, Kunkel D, Pickering RM, Lennon S, Geurts ACH, Weerdesteyn V and Verheyden GS"
     year: 2020
@@ -261,6 +265,7 @@ entries:
     figure: "/assets/images/pub-figures/Denissen_2020.jpg"
     pdf: "/assets/pdf/publications/Denissen_2020_Stroke.pdf"
     key_finding: "This is a summary of the eponymous Cochrane paper, published in the 'Cochrane corner' of Stroke. The results indicate that exercise may be beneficial for preventing rate of falls in people with stroke, but not number of fallers."
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_thrilled-to-announce-that-stroke-published-activity-6631267048552964097-ycxz?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - authors: "Denissen S, De Cock A, Meurrens T, Vleugels L, Van Remoortel A, Gebara B, D’Haeseleer M, D’Hooghe MB, Van Schependom J, and Nagels G"
     year: 2019
@@ -276,6 +281,7 @@ entries:
     key_finding: "Cognitive impaired and preserved patients with MS showed a significant within-group difference in 6 Minute Walk Test (6MWT) during hospitalization (COG+: 47.51m; COG–: 40.97m; P<.01).
     In contrast, Δ6MWT values were comparable between groups. The odds of achieving a minimal clinical important difference on the 6MWT did not differ significantly between both groups.
     Only attention/concentration was significantly correlated with Δ6MWT."
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_this-wednesday-we-learned-that-our-recent-activity-6598604309506600960-8ifm?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - authors: "Denissen S, Staring W, Kunkel D, ..., Verheyden GS"
     year: 2019
@@ -292,3 +298,4 @@ entries:
     figure: "/assets/images/pub-figures/Denissen_2019_Cochrane.png"
     pdf: "/assets/pdf/publications/Denissen_2019_Cochrane.pdf"
     key_finding: "This is a summary of the eponymous Cochrane paper, published in the 'Cochrane corner' of Stroke. The results indicate that exercise may be beneficial for preventing rate of falls in people with stroke, but not number of fallers."
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_fallreviewsongwav-activity-6584873875555786752-6oca?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
