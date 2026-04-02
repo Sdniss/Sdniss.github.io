@@ -22,6 +22,12 @@ entries:
     summary: "Talk in the workshop on 'Advances in Neuropsychology: Innovations in Cognitive Assessment and Intervention', together with Dr. Delphine Van Laethem."
     figure: "/assets/photos/NNR_2025.jpg"
 
+  - org: "MOSA conference"
+    title: "Panel member"
+    location: "Maastricht (NL)"
+    year: 2024
+    summary: "Invited as panelist in discussion on 'Big Data and Artificial Intelligence in Biomedicine'"
+
   - org: "ECTRIMS"
     title: "What artificial intelligence tools are ready for MS clinical practice"
     location: "Copenhagen (DK)"

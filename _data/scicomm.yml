@@ -9,7 +9,7 @@ summary: >
 
 entries:
   - title: "3 minute thesis competition Vietnam"
-    role: "Jury member, explaining research in 3\""
+    summary: "Jury member, explaining research in 3\""
     type: "Event"
     date: "2025"
     link: "https://aiptit3mtcompetition.pages.dev/"
@@ -21,10 +21,17 @@ entries:
     link: "https://ertsberg.be/boek/vergeet-dementie/"
 
   - title: "De Specialist"
-    role: "Interview on smartphone symptom screening (also in other media channels)"
+    summary: "Interview on smartphone symptom screening (also in other media channels)"
     type: "Interview"
     date: "2025"
     link: "https://www.despecialist.eu/nl/nieuws/nieuwe-vub-app-moet-helpen-bij-snellere-screening-multiple-sclerose.html"
+
+  - title: "LACTRIMS interview"
+    summary: "Interview by Dr. Lorna Galleguillos on my talk entitled 'What artificial intelligence tools are ready for MS clinical practice' during the educational session on 'Clinical implications of digital monitoring and artificial intelligence in MS and related disorders' at ECTRIMS 2024 in Copenhagen"
+    type: "Interview"
+    date: "2024"
+    link: "https://apps.congrex.com/ectrims2024/en-GB/pag/presentation/360049"
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_hablemosdeem-lactrims-esclerosismultiple-activity-7250258342965579777-2PlV?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - title: "Award ceremony 'PhD of The Year'"
     role: "PhD in a 3-minute song"

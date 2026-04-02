@@ -16,12 +16,12 @@
         </span>
       {% else %}
         {% if include.item.start_date and include.item.end_date %}
-          <span class="mini-metrics"> • {{ include.item.start_date }}-{{ include.item.end_date }}
+          <span class="mini-metrics"> {{ include.item.start_date }}-{{ include.item.end_date }}
             <span class="pill-cat">{{ include.cat }}</span>
           </span>
         {% else %}
           {% if include.item.start_date and include.item.graduation_date %}
-            <span class="mini-metrics"> • {{ include.item.start_date }}-{{ include.item.graduation_date }}
+            <span class="mini-metrics"> {{ include.item.start_date }}-{{ include.item.graduation_date }}
               <span class="pill-cat">{{ include.cat }}</span>
             </span>
           {% else %}
@@ -100,6 +100,18 @@
 
       {% if include.item.location %}
         <p><strong>Location:</strong> {{ include.item.location }}</p>
+      {% endif %}
+
+      {% if include.item.duration %}
+        <p><strong>Duration:</strong> {{ include.item.duration }}</p>
+      {% endif %}
+
+      {% if include.item.topic %}
+        <p><strong>Topic:</strong> {{ include.item.topic }}</p>
+      {% endif %}
+
+      {% if include.item.role %}
+        <p><strong>Role:</strong> {{ include.item.role }}</p>
       {% endif %}
 
       {% if include.amount %}

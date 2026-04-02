@@ -39,8 +39,9 @@ permalink: /academic_journey/
     <button class="filter-btn" data-filter="Mentoring" style="--btn-color: #6f42c1">Mentoring</button>
     <button class="filter-btn" data-filter="Award" style="--btn-color: #fdcb6e">Awards</button>
     <button class="filter-btn" data-filter="SciComm" style="--btn-color: #d63031">SciComm</button>
-    <button class="filter-btn" data-filter="Teaching" style="--btn-color: #fab1a0">Teaching</button>
+    <button class="filter-btn" data-filter="Teaching" style="--btn-color: 	#e6a26e">Teaching</button>
     <button class="filter-btn" data-filter="Research Stays" style="--btn-color: #eb9534">Abroad</button>
+    <button class="filter-btn" data-filter="Community Engagement" style="--btn-color: #1a2c79">Community Engagement</button>
   </div>
 </div>
 
@@ -84,6 +85,10 @@ permalink: /academic_journey/
 
   <div class="category-summary vision" data-cat="Professional" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.professional.summary }} <!-- Use " | size " to count number of entries -->
+  </div>
+
+  <div class="category-summary vision" data-cat="Community Engagement" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+    {{ site.data.organisations.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
   <div class="category-summary vision" data-cat="Mentoring" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
@@ -145,17 +150,13 @@ permalink: /academic_journey/
           {% endif %}
         {% endfor %}
 
-        {% for item in site.data.organisations.research_engagement %}
-          {% if item.start_date == year %}{% include node_pill.html cat="Professional" icon="handshake" color="#636e72" title=item.title subtitle=item.role item=item %}{% endif %}
-        {% endfor %}
-
-        {% for item in site.data.organisations.student_engagement %}
-          {% if item.start_date == year %}{% include node_pill.html cat="Professional" icon="handshake" color="#636e72" title=item.role subtitle=item.org item=item %}{% endif %}
+        {% for item in site.data.organisations.entries %}
+          {% if item.start_date == year %}{% include node_pill.html cat="Community Engagement" icon="handshake" color="#1a2c79" title=item.title subtitle=item.role item=item %}{% endif %}
         {% endfor %}
 
         {% for item in site.data.teaching.entries %}
           {% if item.end_date == year or (item.end_date == "Ongoing" and year == "2026")%}
-            {% include node_pill.html cat="Teaching" icon="chalkboard-user" color="#fab1a0" title=item.course subtitle=item.role item=item %}
+            {% include node_pill.html cat="Teaching" icon="chalkboard-user" color="#e6a26e" title=item.course subtitle=item.role item=item %}
           {% endif %}
         {% endfor %}
 
@@ -188,7 +189,7 @@ permalink: /academic_journey/
 
         {% for item in site.data.mentoring.students %}
           {% if item.graduation_date contains year or (item.graduation_date == "Ongoing" and year == "2026") %}
-            {% include node_pill.html cat="Mentoring" student_type=item.type icon="user-graduate" color="#6f42c1" title=item.name subtitle=item.field detail=item.topic item=item %}
+            {% include node_pill.html cat="Mentoring" student_type=item.type icon="user-graduate" color="#6f42c1" title=item.name subtitle=item.field item=item %}
           {% endif %}
         {% endfor %}
       </div>
@@ -408,6 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
     display: table-row;
     align-items: center;
     gap: 5px;
+    color: #a9a9a9;
   }
   .metrics-expanded {
     display: flex;

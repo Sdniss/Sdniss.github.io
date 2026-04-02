@@ -16,10 +16,11 @@ entries:
     figure: "/assets/images/pub-figures/cover_image_PhD_Stijn.png"
     figure-license: "CC BY 4.0"
     summary: "My PhD investigated three ways to deal with scarce data to investigate the relationship between structural brain MRI and cognitive impairment in people with MS with AI:<br>
-    1. Designing a smartphone application for cognitive screening in MS (ico<b>gnition</b>)<br>
-    2. Leveraging large healthy control databases to predict 'brain age' as in-between step<br>
-    3. Establishing a real-world federated learning network to train models without sharing data
+    &nbsp;&nbsp;&nbsp;1. Designing a smartphone application for cognitive screening in MS (ico<b>gnition</b>)<br>
+    &nbsp;&nbsp;&nbsp;2. Leveraging large healthy control databases to predict 'brain age' as in-between step<br>
+    &nbsp;&nbsp;&nbsp;3. Establishing a real-world federated learning network to train models without sharing data
     "
+    linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_phdone-multiplesclerosis-artificialintelligence-activity-7160204303842877441-lksE?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
   - degree: "MSc Rehabilitation Sciences"
     institution: "KU Leuven"

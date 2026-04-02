@@ -2,13 +2,15 @@ section_title: "Experience abroad"
 
 entries:
   - institution: "General Faculty Hospital, Prague (CZ)"
-    description: "Setting up the federated learning network (3 months)"
+    summary: "Setting up the federated learning network"
     location: "Prague (CZ)"
     year: "2023"
     type: "Research Stay"
+    duration: "3 months"
 
   - institution: "Dr. Becker Kiliani-Klinik, Bad Windsheim (DE)"
-    description: "Neurorehabilitation internship (2 months)"
-    location: "Bad Windsheim (DE)"
+    description: "Neurorehabilitation internship"
+    summary: "Bad Windsheim (DE)"
     year: "2017"
     type: "Internship"
+    duration: "2 months"

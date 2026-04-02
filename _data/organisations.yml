@@ -1,39 +1,63 @@
 section_title: "Extracurricular"
-
-research_engagement:
+summary: "I have always had a passion to support various initiatives on a voluntary basis.
+This was to ensure cultural enrichment during my time as a student up to leading the iAIMS community to guide AI research in the field of multiple sclerosis."
+entries:
   - org: "iAIMS"
-    title: "Founder iAIMS community"
-    summary: "Lorem ipsum sit amet ..."
-    role: "Founder. international community for AI in MS."
+    title: "iAIMS community"
+    summary: "During the 2024 edition of ECTRIMS in Copenhagen, I sat down with Dr. Ceren Tozlu and my professor Prof. Guy Nagels as we observed a trend that technically-oriented researchers did not really find their way in the clinical ECTRIMS.
+    With the input and support of Dr. Ceren Tozlu and my own research group AIMS, I subsequently decided to organise an informal brainstorm with people interested in the AI x MS intersection (cfr. photo).
+    In the meantime, iAIMS has become a trusted community with members across the world that hosts this interdisciplinary discussion in multiple ways, including monthly journal clubs, Discord discussions and teaching.
+    For more info, please visit <a href='https://www.iaims.org'>our website</a>."
+    role: "Founder"
     link: "https://iaims.org"
     location: "International"
     start_date: "2025"
     end_date: "Ongoing"
     linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_artificialintelligence-community-care-activity-7376590538940055553-NS13?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
+    figure: "/assets/photos/iAIMS_kickoff_event_1.jpg"
+
   - org: "AIMS lab"
-    role: "Supervisor PhD student taskforce for lab data standardisation (BIDS format)"
-    location: "VUB"
+    title: "BIDS data format taskforce"
+    role: "Supervisor"
+    summary: "With primarily PhD students in our lab, I took the initiative to start a taskforce within our lab to convert our datasets to the gold standard Brain Imaging Data Structure ('BIDS') format."
+    location: "AIMS lab, VUB"
     start_date: "2025"
     end_date: "Ongoing"
-  - org: "OpenMR"
-    role: "Organiser. Conference for open science in MRI research"
+
+  - title: "OpenMR conference"
+    org: "OpenMR"
+    role: "Organiser of the 2021 edition."
+    summary: "I co-organised a conference for open science in MRI research (OpenMR).
+    Besides securing a 1000 euro pharma grant, I moderated a session, prepared an interactive Python workshop for working with neuroimaging data, and presented my 'a paper in a song' initiative."
+    link: "https://openmrbenelux.github.io/"
     location: "Virtual"
     start_date: "2021"
     end_date: "2021"
 
-student_engagement:
   - org: "NSE PhD Network"
-    role: "Board member. PhD student network in Natural Sciences & Engineering"
+    role: "Board member"
+    summary: "I co-organised events for the PhD student network in Natural Sciences & Engineering to stimulate connection between PhD students."
     location: "VUB"
     start_date: "2019"
     end_date: "2021"
+
   - org: "Artifex"
-    role: "Co-founder. Student union for cultural enrichment"
+    title: "Artifex"
+    role: "Co-founder"
+    summary: "Based on my experience as cultural representative of Apolloon, I recognised a need for a student union dedicated for cultural enrichment for students in Leuven.
+    I founded Artifex, which still exists today, with Yorick Peeters."
     location: "Leuven"
     start_date: "2015"
     end_date: "2017"
+    figure: "/assets/photos/Artifex.png"
+    link: "https://www.instagram.com/artifex_leuven/"
+
   - org: "Apolloon"
-    role: "Board member (cultural representative). Student union FaBeR"
+    title: "Apolloon"
+    role: "Board member"
+    summary: "During the academic year 2014-2015, I was the cultural representative of Apolloon, the student union of the faculty of Movement and Rehabilitation Sciences.
+    My responsibilities were to assure cultural enrichment of the students within the faculty, and to support the day-to-day operation of Apolloon."
     location: "KU Leuven"
     start_date: "2014"
     end_date: "2015"
+    link: "https://www.apolloon.org/en"
