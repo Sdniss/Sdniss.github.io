@@ -156,7 +156,7 @@ permalink: /academic_journey/
 
         {% for item in site.data.teaching.entries %}
           {% if item.end_date == year or (item.end_date == "Ongoing" and year == "2026")%}
-            {% include node_pill.html cat="Teaching" icon="chalkboard-user" color="#e6a26e" title=item.course subtitle=item.role item=item %}
+            {% include node_pill.html cat="Teaching" icon="chalkboard-user" color="#e6a26e" title=item.course subtitle=item.institution item=item %}
           {% endif %}
         {% endfor %}
 

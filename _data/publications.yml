@@ -48,6 +48,7 @@ entries:
     pdf: "/assets/pdf/publications/Trinh_Ngoc_Latent_2025.pdf"
     key_finding: "This paper presents InfoVAE-Med3D, a latent-representation learning approach for 3D brain MRI that targets interpretable biomarkers of cognitive decline.
     Across reconstruction and downstream prediction tasks (prediction of age and cognitive performance), InfoVAE-Med3D consistently outperforms other VAE variants, indicating a richer latent space."
+    figure: "/assets/images/pub-figures/Huynh_2025_figure_1.png"
 
   - authors: "Denissen S*, Van Laethem D*, Baijot J, Costers L, Descamps A, Van Remoortel A, Van Merhaegen-Wieleman A, D’hooghe M, D'Haeseleer M, Smeets D, Sima DM, Van Schependom J and Nagels G"
     year: 2025
@@ -285,7 +286,7 @@ entries:
     Only attention/concentration was significantly correlated with Δ6MWT."
     linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_this-wednesday-we-learned-that-our-recent-activity-6598604309506600960-8ifm?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
 
-  - authors: "Denissen S, Staring W, Kunkel D, ..., Verheyden GS"
+  - authors: "Denissen S, Staring W, Kunkel D, Pickering RM, Lennon S, Geurts ACH, Weerdesteyn V and Verheyden GS"
     year: 2019
     title: "Interventions for preventing falls in people after stroke"
     journal: "Cochrane database of systematic reviews"
