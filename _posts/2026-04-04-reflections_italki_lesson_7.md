@@ -11,6 +11,7 @@ We talked about the mail I received from Professor Wú Yībō (吴一波), who w
 weekend wasn't too great, he had a cold.
 
 # Words learned
+
 | Hanzi | Pinyin | English |
 | :--- | :--- | :--- |
 | **感冒** | gǎn mào | cold / to have a cold |

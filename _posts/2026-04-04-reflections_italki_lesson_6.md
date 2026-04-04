@@ -10,6 +10,7 @@ categories: chinese
 Not much to mention today, continuing the progress!
 
 # Words learned
+
 | Hanzi | Pinyin | English |
 | :--- | :--- | :--- |
 | **预约** | yù yuē | to make an appointment / reserve |

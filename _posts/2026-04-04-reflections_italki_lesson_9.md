@@ -13,6 +13,7 @@ Today, Anthony and I again reviewed what I had learned, but this time, I asked h
 I definitely feel progress!!
 
 # Words learned
+
 | 汉字 | 拼音 | 英文 |
 | :--- | :--- | :--- |
 | **很长时间** | hěn cháng shí jiān | a long time |

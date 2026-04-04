@@ -11,6 +11,7 @@ Today, we prepared a bit for the conversation with Professor Wú Yībō (吴一�
 As discussed, Anthony and I did a small review of all I learned up until now. He asked me questions, I answered.
 
 # Words learned
+
 | 汉字 | 拼音 | 英文 |
 | :--- | :--- | :--- |
 | **以后有可能** | yǐ hòu yǒu kě néng | maybe later / possible in the future |
