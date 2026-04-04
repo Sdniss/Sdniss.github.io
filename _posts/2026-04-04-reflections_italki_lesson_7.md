@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "italki lesson 6"
+title: "italki lesson 7"
 date: 2026-04-04
 categories: chinese
 ---
