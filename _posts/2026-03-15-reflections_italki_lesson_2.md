@@ -4,6 +4,8 @@ title: "italki lesson 2"
 date: 2026-03-15
 categories: chinese
 ---
+**Lesson date**: 15/03/2026
+
 Second lesson with Anthony today! Forgot to watch episode 3 of Little Fox Chinese, I'm blaming it on the little sleep with our lovely 宝宝 💛 Focus for next lesson!
 
 # Takeaways and lessons learned

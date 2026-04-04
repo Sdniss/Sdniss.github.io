@@ -4,6 +4,7 @@ title: "italki lesson 4"
 date: 2026-03-24
 categories: chinese
 ---
+**Lesson date**: 20/03/2026
 
 Just got back from the hairdresser, so that was the topic of today! While listening to the Lazy Chinese podcast a 
 couple of days later, I overheard "tóu fa", which I could relate back to this session! I'm starting to pick up words 

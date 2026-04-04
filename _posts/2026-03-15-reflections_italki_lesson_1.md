@@ -4,6 +4,8 @@ title: "italki lesson 1"
 date: 2026-03-15
 categories: chinese
 ---
+**Lesson date**: 13/03/2026
+
 Last Friday the 13th, I met my Chinese italki teacher [Anthony Davis](https://www.italki.com/en/teacher/8437613) for the first time. What stood out for me was his patience and honesty. I know little to no Chinese at this point, and he told me a full hour was too tiring for both of us at this point, given that he was the one primarly speaking Chinese. I am looking forward to my second lesson, which starts in an hour, and I still need to prepare 5 - 10 questions and answers that we can discuss. Better get going!
 
 # Takeaways and lessons learned

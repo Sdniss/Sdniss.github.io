@@ -2,9 +2,10 @@
 
 layout: post
 title: "italki lesson 5"
-date: 2026-03-24
+date: 2026-04-04
 categories: chinese
 ---
+**Lesson date**: 02/04/2026
 
 Saw Anthony's cat for the first time this lesson! We discussed the color of his **māo (猫)**, as well as our 猫 Kamiel. I have the feeling that I'm picking up his questions quicker. Encouraging, but I still feel I miss too many words and short sentences that can keep a conversation going. That's something I'm going to add as a custom flashcard deck.
 

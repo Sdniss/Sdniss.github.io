@@ -4,6 +4,8 @@ title: "italki lesson 3"
 date: 2026-03-17
 categories: chinese
 ---
+**Lesson date**: 17/03/2026
+
 After some exciting first steps in Chinese and feeling myself rise to mount stupid in the Dunning-Kruger curve, I also realise there is a long road ahead. Although I have a lot of fun designing the flashcard system and using it to review and prepare my lessons, conversation is still a long way. I would like to get there asap, as being able to speak Chinese continuously will be a snowball effect. Grateful for the lessons learned today, and my strict but very helpful 老师！
 
 # Takeaways and lessons learned
