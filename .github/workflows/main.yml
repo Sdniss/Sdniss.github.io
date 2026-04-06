@@ -38,8 +38,15 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # -f (force) is helpful if the PDF is in your .gitignore
+          
+          # 1. Pull the latest changes to avoid "fetch first" errors
+          git pull --rebase origin main
+          
+          # 2. Add the PDF (force add in case it's gitignored)
           git add -f assets/pdf/stijn_denissen_cv.pdf
-          # [skip ci] prevents infinite build loops
-          git commit -m "Automated CV update from YAML data [skip ci]" || echo "No changes to commit"
+          
+          # 3. Commit only if there are changes
+          git commit -m "Automated CV update [skip ci]" || echo "No changes to commit"
+          
+          # 4. Push back to main
           git push origin main
