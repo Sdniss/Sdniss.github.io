@@ -12,8 +12,8 @@ entries:
     link: "https://www.vfn.cz/en/pacienti/kliniky-ustavy/radiodiagnosticka-klinika/informace-k-mr-pro-lekare/"
 
   - institution: "Dr. Becker Kiliani-Klinik, Bad Windsheim (DE)"
-    description: "Neurorehabilitation internship"
-    summary: "Bad Windsheim (DE)"
+    summary: "Neurorehabilitation internship"
+    location: "Bad Windsheim (DE)"
     year: "2017"
     type: "Internship"
     duration: "2 months"
