@@ -5,6 +5,9 @@ on:
       - '_data/**' # Trigger only when data changes
       - 'scripts/**'
       - 'cv_template.tex'
+      
+permissions:
+  contents: write
 
 jobs:
   build_cv:
