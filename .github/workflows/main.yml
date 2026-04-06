@@ -49,14 +49,19 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 1. Stage the file FIRST so git knows it's safe to rebase
-          git add -f assets/pdf/stijn_denissen_cv.pdf
+          # 1. Hide ALL changes (PDF and the new .tex files) so the repo looks "clean"
+          git add .
+          git stash
           
-          # 2. Now pull the remote changes
+          # 2. Now pull the latest changes from your 'main' branch
           git pull --rebase origin main
           
-          # 3. Commit the staged file
-          git commit -m "Automated CV update [skip ci]" || echo "No changes to commit"
+          # 3. Bring your changes back
+          git stash pop || echo "No changes to pop"
           
-          # 4. Push
+          # 4. Only stage the PDF (we don't necessarily need to commit the temp .tex files)
+          git add -f assets/pdf/stijn_denissen_cv.pdf
+          
+          # 5. Commit and Push
+          git commit -m "Automated CV update [skip ci]" || echo "No changes to commit"
           git push origin main
