@@ -4,7 +4,7 @@ on:
     paths:
       - '_data/**' 
       - 'scripts/**'
-      - 'cv_template.tex'
+      - 'main.tex'
       
 permissions:
   contents: write
@@ -16,47 +16,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          persist-credentials: true # CRITICAL for pushing back
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+      - name: Install System Dependencies
+        # We need XeTeX and the fonts for your specific CV style
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+
       - name: Install Python dependencies
         run: pip install PyYAML Jinja2
 
-      - name: Install TeX Live
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
-
-      - name: Run CV Generator
+      - name: Run CV Generator and Compile
+        # This one command now does EVERYTHING thanks to your new script
         run: python scripts/generate_cv.py
 
-      - name: Compile LaTeX to PDF
-        run: |
-          sudo apt-get install -y texlive-xetex
-          mkdir -p assets/pdf
-          # Ensure main.tex is the correct name of your generated file!
-          xelatex -interaction=nonstopmode -output-directory=assets/pdf main.tex
-          mv assets/pdf/main.pdf assets/pdf/stijn_denissen_cv.pdf
-          
-      - name: Debug - List Files
-        run: ls -R  # This will print every file the bot sees in the logs
-        
       - name: Commit and Push PDF
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 1. Force add the PDF (the -f bypasses .gitignore)
-          # IMPORTANT: Ensure this path matches exactly where your PDF is generated!
+          git pull --rebase origin main
           git add -f assets/pdf/stijn_denissen_cv.pdf
-          
-          # 2. Commit only if something actually changed
-          git commit -m "Automated CV update [skip ci]" || exit 0
-          
-          # 3. Force push to overwrite the 'rejected' error
-          # This is safe for a personal CV repo
-          git push origin main --force
+          git commit -m "Automated CV update [skip ci]" || echo "No changes to commit"
+          git push origin main
