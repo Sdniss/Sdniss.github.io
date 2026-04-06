@@ -9,7 +9,7 @@ entries:
     journal_metrics:
       year: "2024"
       if: "3.8"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: false
     link: "https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1691088/full"
     key_finding: "In a real-world federated learning network across 3 countries, our in-house built 'FLightcase' toolbox predicted brain age within 6.08 years (healthy) and cognitive function within 9.19 points SDMT (MS)."

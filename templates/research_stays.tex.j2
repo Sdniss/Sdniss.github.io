@@ -1,0 +1,16 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{((( data.section_title | tex_escape )))}
+
+\begin{cvmentoring}
+((% for entry in data.entries %))
+%---------------------------------------------------------
+  \cvhonor
+    {((( entry.institution | tex_escape )))} % Institution
+    {((% if entry.description %))((( entry.description | tex_escape )))((% else %))((( entry.type | tex_escape ))) ((( entry.duration | tex_escape )))((% endif %))} % Description
+    {((( entry.location | tex_escape )))} % Location
+    {((( entry.year | tex_escape )))} % Date(s)
+
+((% endfor %))
+\end{cvmentoring}

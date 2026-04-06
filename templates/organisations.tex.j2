@@ -1,0 +1,28 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{((( data.section_title | tex_escape )))}
+
+% --- Research community engagement ---
+\cvsubsection{Research community engagement}
+\begin{cvhonors}
+((% for item in data.entries if item.org in ['iAIMS', 'AIMS lab', 'OpenMR'] %))
+  \cvhonor
+    {((( item.org | tex_escape )))} % Organization
+    {((( item.role | tex_escape ))). ((( item.title | tex_escape )))((% if item.link %)). \hyperlink{((( item.link )))}{((( item.link )))}((% endif %))} % Position/Role
+    {((( item.location | tex_escape )))} % Location
+    {((( item.start_date )))--((( item.end_date | lower | replace('ongoing', 'now') ))) \vfill} % Date(s)
+((% endfor %))
+\end{cvhonors}
+
+% --- Student engagement ---
+\cvsubsection{Student engagement}
+\begin{cvhonors}
+((% for item in data.entries if item.org in ['NSE PhD Network', 'Artifex', 'Apolloon'] %))
+  \cvhonor
+    {((( item.org | tex_escape )))} % Organization
+    {((( item.role | tex_escape ))). ((( item.title | tex_escape )))} % Position/Role
+    {((( item.location | tex_escape )))} % Location
+    {((( item.start_date )))--((( item.end_date | lower | replace('ongoing', 'now') ))) \vfill} % Date(s)
+((% endfor %))
+\end{cvhonors}

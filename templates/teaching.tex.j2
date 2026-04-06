@@ -1,0 +1,18 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{((( data.section_title | tex_escape )))}
+
+((( data.summary | tex_escape )))
+
+\begin{cvhonors}
+((% for entry in data.entries %))
+%---------------------------------------------------------
+  \cvhonor
+    {((( entry.course | tex_escape )))} % Course
+    {((( entry.role | tex_escape ))): ((( entry.summary | striptags | tex_escape )))} % Summary
+    {((( entry.institution | tex_escape )))} % Location
+    {((% if entry.start_date and entry.start_date != entry.end_date %))((( entry.start_date )))--((( entry.end_date | lower | replace('ongoing', 'Now') )))((% else %))((( entry.end_date | lower | replace('ongoing', 'Now') )))((% endif %))} % Date(s)
+
+((% endfor %))
+\end{cvhonors}

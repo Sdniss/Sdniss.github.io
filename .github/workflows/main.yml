@@ -1,0 +1,38 @@
+name: Generate PDF CV
+on:
+  push:
+    paths:
+      - '_data/**' # Trigger only when data changes
+      - 'scripts/**'
+      - 'cv_template.tex'
+
+jobs:
+  build_cv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python_version: '3.x'
+
+      - name: Install Python dependencies
+        run: pip install PyYAML Jinja2
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+
+      - name: Run CV Generator
+        run: python scripts/generate_cv.py
+
+      - name: Commit and Push PDF
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/pdf/stijn_denissen_cv.pdf
+          git commit -m "Automated CV update from YAML data" || echo "No changes to commit"
+          git push

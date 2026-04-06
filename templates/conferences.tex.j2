@@ -1,0 +1,17 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{((( data.section_title | tex_escape )))}
+
+((( data.summary | tex_escape )))
+
+\begin{cvpresentations}
+((% for item in data.entries %))
+  \cvhonor
+    {((( item.org | tex_escape )))} % Conference name
+    {((% if item.invited %))Invited: ((% endif %))((( item.title | tex_escape )))} % Title
+    {((( item.location | tex_escape )))((% if item.location == "Virtual" %))\vfill((% endif %))} % Location
+    {((( item.year | default('') | tex_escape )))((% if item.location == "Virtual" %))\vfill((% endif %))} % Date(s)
+
+((% endfor %))
+\end{cvpresentations}

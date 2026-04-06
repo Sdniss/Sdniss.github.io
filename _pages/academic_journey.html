@@ -27,6 +27,9 @@ permalink: /academic_journey/
 
 <div class="detailed-header">
     <h2 class="section-title">Curriculum Vitae</h2>
+    <a href="{{ '/assets/pdf/stijn_denissen_cv.pdf' | relative_url }}" class="filter-btn" style="--btn-color: #d63031;">
+       <i class="fa-solid fa-file-pdf"></i> Download Official CV
+    </a>
 </div>
 
 <div class="filter-wrapper">
@@ -163,7 +166,7 @@ permalink: /academic_journey/
         {% for item in site.data.publications.entries %}
           {% capture py %}{{ item.year }}{% endcapture %}
           {% if py == year %}
-            {% include node_pill.html cat="Publication" icon="book-open" color="#0984e3" title=item.title subtitle=item.journal authors=item.authors if_factor=item.journal_metrics.if q_factor=item.journal_metrics.q-factor item=item %}
+            {% include node_pill.html cat="Publication" icon="book-open" color="#0984e3" title=item.title subtitle=item.journal authors=item.authors if_factor=item.journal_metrics.if q_factor=item.journal_metrics.q_factor item=item %}
           {% endif %}
         {% endfor %}
 

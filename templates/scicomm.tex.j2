@@ -1,0 +1,19 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{((( data.section_title | tex_escape )))}
+
+((( data.summary | tex_escape )))
+
+\begin{cvhonors}
+((% for entry in data.entries %))
+%---------------------------------------------------------
+  \cvhonor
+    {((% if entry.link %))\href{((( entry.link )))}{((( entry.title | tex_escape )))}((% else %))((( entry.title | tex_escape )))((% endif %))} % Event/Organization
+    {((( entry.summary | striptags | tex_escape )))} % Position/Description
+    {((( entry.type | tex_escape )))} % Location/Type
+    {((( entry.date | tex_escape )))} % Date(s)
+((% endfor %))
+\end{cvhonors}
+
+ \hfill \textit{Note: Please click text in bold for more info if available.}

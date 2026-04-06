@@ -1,0 +1,16 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{((( data.section_title | tex_escape )))}
+
+((( data.summary | tex_escape )))
+
+\begin{cvhonors}
+((% for entry in data.entries %))
+  \cvhonor
+    {((( entry.award | tex_escape )))} % Award/Grant name
+    {((( entry.organization | default('') | tex_escape )))((% if entry.role %)) (Role: ((( entry.role | tex_escape ))))((% endif %))} % Org + Role
+    {((( entry.amount | default('') | tex_escape )))} % Amount
+    {((( entry.date | default('') | tex_escape )))} % Date
+((% endfor %))
+\end{cvhonors}

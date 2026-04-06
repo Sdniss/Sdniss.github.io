@@ -1,0 +1,18 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{((( data.section_title | tex_escape )))}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{llll}
+    ((% for pair in data.entries | batch(2) %))
+        {((( pair[0].language | tex_escape )))} & {\bf ((( pair[0].level | tex_escape )))} &
+        ((%- if pair[1] -%))
+        {((( pair[1].language | tex_escape )))} & {\bf ((( pair[1].level | tex_escape )))} \\
+        ((%- else -%))
+        {} & {} \\
+        ((%- endif -%))
+    ((% endfor %))
+    \end{tabular}
+\end{table}

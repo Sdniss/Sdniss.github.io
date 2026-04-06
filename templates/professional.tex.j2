@@ -1,0 +1,22 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{((( data.section_title | tex_escape )))}
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvskills}
+((% for entry in data.entries %))
+%---------------------------------------------------------
+  \cvskill
+    {((% if entry.start_date == entry.end_date %))((( entry.start_date | tex_escape )))((% else %))((( entry.start_date | tex_escape )))-((( entry.end_date | lower | replace('ongoing', 'Now') )))((% endif %))} % Year
+    {((( entry.position | tex_escape )))} % Position
+    {((( entry.institution | tex_escape )))} % Institution
+  \cvskillextended
+    {}
+    {((( entry.summary | striptags | tex_escape )))} % Description
+    {}
+
+((% endfor %))
+\end{cvskills}

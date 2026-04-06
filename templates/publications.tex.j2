@@ -1,0 +1,21 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{((( data.section_title | tex_escape )))}
+
+\begin{cvpubs}
+((% for entry in data.entries %))
+    \cvpub{
+        ((%- set display_authors = entry.authors | replace("Denissen S", "\\textbf{Denissen S}") | replace("Denissen, S.", "\\textbf{Denissen, S.}") -%))
+        ((( display_authors ))) ((( entry.year ))). ((( entry.title | tex_escape ))). ((( entry.journal | tex_escape ))) ((( entry.volume_issue | default('') | tex_escape ))).
+        ((%- if entry.journal_metrics and entry.journal_metrics != "Not yet in 2019" -%))
+        \hfill \textbf{IF: ((( entry.journal_metrics.if ))), ((( entry.journal_metrics.q_factor ))) (((( entry.journal_metrics.year ))))}
+        ((%- endif -%))
+    }
+((% endfor %))
+\end{cvpubs}
+
+\begin{flushright}
+    \vspace{0.5cm}
+    * indicates joint first authorship.
+\end{flushright}

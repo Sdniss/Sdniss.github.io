@@ -1,0 +1,30 @@
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Teaching and Supervision}
+
+((( data.summary | tex_escape )))
+
+% --- PhD Students ---
+\cvsubsection{PhD Students (co-promoter)}
+\begin{cvmentoring}
+((% for student in data.students | selectattr("type", "equalto", "PhD") %))
+  \cvhonor
+    {((( student.name | tex_escape )))}
+    {((( student.topic | tex_escape )))}
+    {((( student.field | tex_escape )))}
+    {((( student.start_date )))--((( student.graduation_date | default('Now') ))) \vfill}
+((% endfor %))
+\end{cvmentoring}
+
+% --- Master Students ---
+\cvsubsection{Master Students}
+\begin{cvmentoring}
+((% for student in data.students | selectattr("type", "equalto", "Master") %))
+  \cvhonor
+    {((( student.name | tex_escape )))}
+    {((( student.topic | tex_escape )))}
+    {((( student.field | tex_escape )))}
+    {((( student.graduation_date | default('') ))) \vfill}
+((% endfor %))
+\end{cvmentoring}
