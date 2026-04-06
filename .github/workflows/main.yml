@@ -2,7 +2,7 @@ name: Generate PDF CV
 on:
   push:
     paths:
-      - '_data/**' # Trigger only when data changes
+      - '_data/**' 
       - 'scripts/**'
       - 'cv_template.tex'
       
@@ -15,11 +15,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true # CRITICAL for pushing back
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python_version: '3.x'
+          python-version: '3.x'
 
       - name: Install Python dependencies
         run: pip install PyYAML Jinja2
@@ -36,6 +38,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/pdf/stijn_denissen_cv.pdf
-          git commit -m "Automated CV update from YAML data" || echo "No changes to commit"
-          git push
+          # -f (force) is helpful if the PDF is in your .gitignore
+          git add -f assets/pdf/stijn_denissen_cv.pdf
+          # [skip ci] prevents infinite build loops
+          git commit -m "Automated CV update from YAML data [skip ci]" || echo "No changes to commit"
+          git push origin main
