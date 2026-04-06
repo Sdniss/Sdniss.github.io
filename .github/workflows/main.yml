@@ -48,7 +48,15 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
+          
+          # 1. Stage the file FIRST so git knows it's safe to rebase
           git add -f assets/pdf/stijn_denissen_cv.pdf
+          
+          # 2. Now pull the remote changes
+          git pull --rebase origin main
+          
+          # 3. Commit the staged file
           git commit -m "Automated CV update [skip ci]" || echo "No changes to commit"
+          
+          # 4. Push
           git push origin main
