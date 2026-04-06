@@ -71,13 +71,20 @@ def build():
     # (Assuming main.tex is in your root folder)
     if os.path.exists('main.tex'):
         print("Compiling main.tex...")
-        subprocess.run(["lualatex", "-interaction=nonstopmode", "main.tex"], check=True)
+        # Use a try/except or just remove check=True to allow the script to continue
+        # LaTeX often returns 1 even if the PDF is mostly fine.
+        subprocess.run(["lualatex", "-interaction=nonstopmode", "main.tex"])
+        subprocess.run(["lualatex", "-interaction=nonstopmode", "main.tex"])
 
         # 4. Move the result to assets
         os.makedirs('assets/pdf', exist_ok=True)
         if os.path.exists('main.pdf'):
+            # This is the important part: if the PDF was made, we move it!
             os.replace('main.pdf', 'assets/pdf/stijn_denissen_cv.pdf')
             print("CV successfully updated in assets/pdf/")
+        else:
+            print("Error: main.pdf was not generated despite compilation attempt.")
+            exit(1)
     else:
         print("Error: main.tex not found in root directory.")
 
