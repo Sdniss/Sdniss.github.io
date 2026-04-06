@@ -1,6 +1,7 @@
 import yaml
 import jinja2
 import os
+import subprocess
 
 
 # Function to make YAML strings LaTeX-safe
@@ -70,9 +71,7 @@ def build():
     # (Assuming main.tex is in your root folder)
     if os.path.exists('main.tex'):
         print("Compiling main.tex...")
-        # Run twice for cross-references/table alignments
-        os.system("xelatex -interaction=nonstopmode main.tex")
-        os.system("xelatex -interaction=nonstopmode main.tex")
+        subprocess.run(["lualatex", "-interaction=nonstopmode", "main.tex"], check=True)
 
         # 4. Move the result to assets
         os.makedirs('assets/pdf', exist_ok=True)
