@@ -34,19 +34,28 @@ jobs:
       - name: Run CV Generator
         run: python scripts/generate_cv.py
 
+      - name: Compile LaTeX to PDF
+        # This step is CRITICAL. Without it, there is no PDF to commit.
+        # We use xelatex because your CV uses specific fonts.
+        run: |
+          sudo apt-get install -y texlive-xetex
+          xelatex -interaction=nonstopmode -output-directory=assets/pdf main.tex
+          # Move/rename the output if necessary to match your 'git add' path
+          mv assets/pdf/main.pdf assets/pdf/stijn_denissen_cv.pdf
+
       - name: Commit and Push PDF
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 1. Pull the latest changes to avoid "fetch first" errors
+          # 1. Sync with remote to prevent [rejected] error
           git pull --rebase origin main
           
-          # 2. Add the PDF (force add in case it's gitignored)
+          # 2. Force add the PDF (in case it's in .gitignore)
           git add -f assets/pdf/stijn_denissen_cv.pdf
           
-          # 3. Commit only if there are changes
+          # 3. Commit with [skip ci] to prevent infinite loops
           git commit -m "Automated CV update [skip ci]" || echo "No changes to commit"
           
-          # 4. Push back to main
+          # 4. Push the changes
           git push origin main
