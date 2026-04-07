@@ -35,22 +35,22 @@ permalink: /academic_journey/
 <div class="filter-wrapper">
   <div class="filter-container" id="category-filters">
     <button class="filter-btn" data-filter="all" style="--btn-color: #2d3436">All</button>
-    <button class="filter-btn" data-filter="Publication" style="--btn-color: #0984e3">Publications</button>
-    <button class="filter-btn" data-filter="Conference" style="--btn-color: #00b894">Conferences</button>
-    <button class="filter-btn" data-filter="Education" style="--btn-color: #a29bfe">Education</button>
-    <button class="filter-btn" data-filter="Professional" style="--btn-color: #636e72">Professional</button>
-    <button class="filter-btn" data-filter="Mentoring" style="--btn-color: #6f42c1">Mentoring</button>
-    <button class="filter-btn" data-filter="Award" style="--btn-color: #fdcb6e">Awards</button>
-    <button class="filter-btn" data-filter="SciComm" style="--btn-color: #d63031">SciComm</button>
-    <button class="filter-btn" data-filter="Teaching" style="--btn-color: 	#e6a26e">Teaching</button>
-    <button class="filter-btn" data-filter="Research Stays" style="--btn-color: #eb9534">Abroad</button>
-    <button class="filter-btn" data-filter="Community Engagement" style="--btn-color: #1a2c79">Community Engagement</button>
+    <button class="filter-btn" data-filter="publications" style="--btn-color: #0984e3">Publications</button>
+    <button class="filter-btn" data-filter="conferences" style="--btn-color: #00b894">Conferences</button>
+    <button class="filter-btn" data-filter="education" style="--btn-color: #a29bfe">Education</button>
+    <button class="filter-btn" data-filter="professional" style="--btn-color: #636e72">Professional</button>
+    <button class="filter-btn" data-filter="mentoring" style="--btn-color: #6f42c1">Mentoring</button>
+    <button class="filter-btn" data-filter="awards" style="--btn-color: #fdcb6e">Awards</button>
+    <button class="filter-btn" data-filter="scicomm" style="--btn-color: #d63031">SciComm</button>
+    <button class="filter-btn" data-filter="teaching" style="--btn-color: 	#e6a26e">Teaching</button>
+    <button class="filter-btn" data-filter="research_stays" style="--btn-color: #eb9534">Abroad</button>
+    <button class="filter-btn" data-filter="community_engagement" style="--btn-color: #1a2c79">Community Engagement</button>
   </div>
 </div>
 
 <div id="category-summary-area" style="margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
 
-  <section class="scholar-stats category-summary" data-cat="Publication" style="display:none;">
+  <section class="scholar-stats category-summary" data-cat="publications" style="display:none;">
     <div class="stats-card">
       <div class="stats-main">
         <div class="stat-item">
@@ -74,35 +74,35 @@ permalink: /academic_journey/
     </div>
   </section>
 
-  <div class="category-summary vision" data-cat="Conference" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+  <div class="category-summary vision" data-cat="conferences" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.conferences.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
-  <div class="category-summary vision" data-cat="Education" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+  <div class="category-summary vision" data-cat="education" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.education.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
-  <div class="category-summary vision" data-cat="Teaching" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+  <div class="category-summary vision" data-cat="teaching" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.teaching.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
-  <div class="category-summary vision" data-cat="Professional" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+  <div class="category-summary vision" data-cat="professional" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.professional.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
-  <div class="category-summary vision" data-cat="Community Engagement" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+  <div class="category-summary vision" data-cat="community_engagement" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.organisations.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
-  <div class="category-summary vision" data-cat="Mentoring" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+  <div class="category-summary vision" data-cat="mentoring" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.mentoring.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
-  <div class="category-summary vision" data-cat="Award" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+  <div class="category-summary vision" data-cat="awards" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.awards_grants.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
-  <div class="category-summary vision" data-cat="SciComm" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+  <div class="category-summary vision" data-cat="scicomm" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.scicomm.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
@@ -130,7 +130,7 @@ permalink: /academic_journey/
           {% capture ey %}{{ item.end_date }}{% endcapture %}
           {% if ey == year %}
             {% include node_pill.html
-               cat="Education"
+               cat="education"
                icon="graduation-cap"
                color="#a29bfe"
                title=item.degree
@@ -142,57 +142,57 @@ permalink: /academic_journey/
         {% for item in site.data.conferences.entries %}
           {% capture cy %}{{ item.year }}{% endcapture %}
           {% if cy == year %}
-            {% include node_pill.html cat="Conference" icon="microphone" color="#00b894" title=item.org subtitle=item.title item=item %}
+            {% include node_pill.html cat="conferences" icon="microphone" color="#00b894" title=item.org subtitle=item.title item=item %}
           {% endif %}
         {% endfor %}
 
         {% for item in site.data.research_stays.entries %}
           {% capture ay %}{{ item.year }}{% endcapture %}
           {% if ay == year %}
-            {% include node_pill.html cat="Research Stays" icon="plane-departure" color="#eb9534" title=item.institution subtitle=item.type detail=item.description item=item %}
+            {% include node_pill.html cat="research_stays" icon="plane-departure" color="#eb9534" title=item.institution subtitle=item.type detail=item.description item=item %}
           {% endif %}
         {% endfor %}
 
         {% for item in site.data.organisations.entries %}
-          {% if item.start_date == year %}{% include node_pill.html cat="Community Engagement" icon="handshake" color="#1a2c79" title=item.title subtitle=item.role item=item %}{% endif %}
+          {% if item.start_date == year %}{% include node_pill.html cat="community_engagement" icon="handshake" color="#1a2c79" title=item.title subtitle=item.role item=item %}{% endif %}
         {% endfor %}
 
         {% for item in site.data.teaching.entries %}
           {% if item.end_date == year or (item.end_date == "Ongoing" and year == "2026")%}
-            {% include node_pill.html cat="Teaching" icon="chalkboard-user" color="#e6a26e" title=item.course subtitle=item.institution item=item %}
+            {% include node_pill.html cat="teaching" icon="chalkboard-user" color="#e6a26e" title=item.course subtitle=item.institution item=item %}
           {% endif %}
         {% endfor %}
 
         {% for item in site.data.publications.entries %}
           {% capture py %}{{ item.year }}{% endcapture %}
           {% if py == year %}
-            {% include node_pill.html cat="Publication" icon="book-open" color="#0984e3" title=item.title subtitle=item.journal authors=item.authors if_factor=item.journal_metrics.if q_factor=item.journal_metrics.q_factor item=item %}
+            {% include node_pill.html cat="publications" icon="book-open" color="#0984e3" title=item.title subtitle=item.journal authors=item.authors if_factor=item.journal_metrics.if q_factor=item.journal_metrics.q_factor item=item %}
           {% endif %}
         {% endfor %}
 
         {% for item in site.data.professional.entries %}
           {% if item.start_date == year or item.years contains year %}
-            {% include node_pill.html cat="Professional" icon="briefcase" color="#636e72" title=item.position subtitle=item.institution item=item %}
+            {% include node_pill.html cat="professional" icon="briefcase" color="#636e72" title=item.position subtitle=item.institution item=item %}
           {% endif %}
         {% endfor %}
 
         {% for item in site.data.scicomm.entries %}
           {% capture scd %}{{ item.date }}{% endcapture %}
           {% if scd == year %}
-            {% include node_pill.html cat="SciComm" icon="bullhorn" color="#d63031" title=item.title subtitle=item.type detail=item.role item=item %}
+            {% include node_pill.html cat="scicomm" icon="bullhorn" color="#d63031" title=item.title subtitle=item.type detail=item.role item=item %}
           {% endif %}
         {% endfor %}
 
         {% for item in site.data.awards_grants.entries %}
           {% capture hd %}{{ item.date }}{% endcapture %}
           {% if hd == year %}
-            {% include node_pill.html cat="Award" icon="trophy" color="#fdcb6e" title=item.award subtitle=item.organization amount=item.amount item=item %}
+            {% include node_pill.html cat="awards" icon="trophy" color="#fdcb6e" title=item.award subtitle=item.organization amount=item.amount item=item %}
           {% endif %}
         {% endfor %}
 
         {% for item in site.data.mentoring.students %}
           {% if item.graduation_date contains year or (item.graduation_date == "Ongoing" and year == "2026") %}
-            {% include node_pill.html cat="Mentoring" student_type=item.type icon="user-graduate" color="#6f42c1" title=item.name subtitle=item.field item=item %}
+            {% include node_pill.html cat="mentoring" student_type=item.type icon="user-graduate" color="#6f42c1" title=item.name subtitle=item.field item=item %}
           {% endif %}
         {% endfor %}
       </div>
@@ -207,40 +207,64 @@ document.addEventListener('DOMContentLoaded', function() {
   const yearBlocks = document.querySelectorAll('.year-block');
   const summaries = document.querySelectorAll('.category-summary');
 
+  function applyFilter(filter) {
+    // 1. Toggle Active Class on Buttons
+    filterBtns.forEach(b => {
+      if (b.getAttribute('data-filter') === filter) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+
+    // 2. Filter Summaries
+    summaries.forEach(summary => {
+      if (summary.getAttribute('data-cat') === filter) {
+        summary.style.display = 'block';
+      } else {
+        summary.style.display = 'none';
+      }
+    });
+
+    // 3. Filter Chronological Pills
+    items.forEach(item => {
+      const category = item.getAttribute('data-category');
+      item.style.display = (filter === 'all' || category === filter) ? 'inline-block' : 'none';
+    });
+
+    // 4. Hide Empty Year Blocks
+    yearBlocks.forEach(block => {
+      const visible = block.querySelectorAll('.node-pill:not([style*="display: none"])').length;
+      block.style.display = (visible > 0) ? 'block' : 'none';
+    });
+  }
+
+  // Handle Button Clicks & Update URL Hash
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.getAttribute('data-filter');
-
-      // 1. Toggle Active Class on Buttons
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // 2. Filter Summaries (Show specific one, hide others. Hide all if "all")
-      summaries.forEach(summary => {
-        if (summary.getAttribute('data-cat') === filter) {
-          summary.style.display = 'block';
-        } else {
-          summary.style.display = 'none';
-        }
-      });
-
-      // 3. Filter Chronological Pills
-      items.forEach(item => {
-        const category = item.getAttribute('data-category');
-        item.style.display = (filter === 'all' || category === filter) ? 'inline-block' : 'none';
-      });
-
-      // 4. Hide Empty Year Blocks
-      yearBlocks.forEach(block => {
-        const visible = block.querySelectorAll('.node-pill:not([style*="display: none"])').length;
-        block.style.display = (visible > 0) ? 'block' : 'none';
-      });
+      if (filter) {
+        // Update the URL hash without jumping the page
+        window.history.pushState(null, null, `#${filter}`);
+        applyFilter(filter);
+      }
     });
   });
 
-  // Initialize page
-  const defaultBtn = document.querySelector('.filter-btn[data-filter="all"]');
-  if (defaultBtn) defaultBtn.click();
+  // Handle Initial Load and Browser Back/Forward
+  function handleUrlHash() {
+    const hash = window.location.hash.replace('#', '');
+    const validFilters = Array.from(filterBtns).map(b => b.getAttribute('data-filter'));
+
+    if (hash && validFilters.includes(hash)) {
+      applyFilter(hash);
+    } else {
+      applyFilter('all');
+    }
+  }
+
+  window.addEventListener('hashchange', handleUrlHash);
+  handleUrlHash(); // Run on first load
 });
 </script>
 
