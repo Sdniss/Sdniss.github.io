@@ -35,7 +35,9 @@ jobs:
             texlive-bibtex-extra \
             texlive-pictures \
             texlive-luatex \
-            fonts-noto-color-emoji
+            fonts-noto-color-emoji \
+            texlive-lang-chinese \
+            fonts-noto-cjk
             
       - name: Install Python dependencies
         run: pip install PyYAML Jinja2

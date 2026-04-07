@@ -169,6 +169,12 @@
 \newcommand*{\bodyfont}{\sourcesanspro}
 \newcommand*{\bodyfontlight}{\sourcesansprolight}
 
+% --- Chinese Font Support ---
+\usepackage{xeCJK}
+% Noto Sans CJK SC is the standard high-quality font on GitHub's Linux runners
+\newfontfamily\chinesefont{Noto Sans CJK SC}[AutoFakeBold,AutoFakeSlant]
+\newcommand{\cjk}[1]{{\chinesefont #1}}
+
 %-------------------------------------------------------------------------------
 %                Configuration for styles
 %-------------------------------------------------------------------------------
