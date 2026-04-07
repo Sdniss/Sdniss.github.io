@@ -33,7 +33,7 @@ entries:
     journal_metrics:
       year: "2024"
       if: "2.1"
-      q-factor: "Q2"
+      q_factor: "Q2"
     joint_first: false
     link: "https://www.pedneur.com/article/S0887-8994(25)00328-5/abstract"
     key_finding: "Whole brain volume percentile (r = 0.4, P = 0.01), white matter percentile (r = 0.4, P = 0.01), and white matter lesion volume (r = −0.4, P = 0.005) were associated with SDMT score. Annualized percent brain volume change of the hippocampus (measured a median of 1.6 years apart) significantly correlated with follow-up SDMT (r = 0.4, P = 0.02), and annualized percent brain volume change of the thalamus correlated with annual change in SDMT z-score (r = 0.4, P = 0.009)."
@@ -58,7 +58,7 @@ entries:
     journal_metrics:
       year: "2024"
       if: "6.0"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: true
     pdf: "/assets/pdf/publications/Denissen_2025_JMIR.pdf"
     key_finding: "This paper validated a new smartphone app to screen for cognitive deterioration in people with MS.
@@ -77,7 +77,7 @@ entries:
     journal_metrics:
       year: "2024"
       if: "9.4"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: false
     key_finding: "We found evidence that the use of virtual reality may be more effective than no intervention in improving upper limb function and participation and quality of life.
     Training with virtual reality may be superior to conventional therapy for improving balance and postural control, and participation and quality of life.
@@ -96,7 +96,7 @@ entries:
     journal_metrics:
       year: "2024"
       if: "7.6"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: true
     key_finding: "Patients with Mild Cognitive Impairment and Alzheimer's Disease Dementia showed an increased brain age compared to their chronological age. Overall, brain age outperformed BPAD and chronological age in terms of classification accuracy across the AD spectrum. There was a weak-to-moderate correlation between total MMSE score and both brain age and BPAD.
     BPAD was increased in heavy alcohol drinkers compared to non-/sporadic and moderate drinkers."
@@ -114,7 +114,7 @@ entries:
     journal_metrics:
       year: "2024"
       if: "5.0"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: true
     key_finding: "The Finger Dexterity Test significantly correlated with the gold-standard Nine Hole Peg Test (9HPT).
     MS subjects had significantly higher FDT scores than healthy subjects, which was not the case for the 9HPT.
@@ -143,7 +143,7 @@ entries:
     journal_metrics:
       year: "2023"
       if: "7.9"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: false
     link: "https://www.ahajournals.org/doi/10.1161/STROKEAHA.123.043490"
     figure: "/assets/images/pub-figures/Thijs_2023.jpg"
@@ -159,7 +159,7 @@ entries:
     journal_metrics:
       year: "2023"
       if: "8.8"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: false
     link: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013712.pub2/full/nl"
     figure: "/assets/images/pub-figures/Thijs_2023.jpg"
@@ -177,7 +177,7 @@ entries:
     journal_metrics:
       year: "2022"
       if: "4.6"
-      q-factor: "Q2"
+      q_factor: "Q2"
     joint_first: false
     link: "https://www.nature.com/articles/s41598-022-26204-z"
     pdf: "/assets/pdf/publications/Baijot_2022_Radial.pdf"
@@ -194,7 +194,7 @@ entries:
     journal_metrics:
       year: "2022"
       if: "5.8"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: false
     key_finding: "This paper argues that AI will change MS care within the next 10 years. It is part of a 'controversies' series, together with an article discussing the 'No' and the 'Commentary'."
     link: "https://journals.sagepub.com/doi/10.1177/13524585221130421?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed"
@@ -207,7 +207,7 @@ entries:
     journal_metrics:
       year: "2022"
       if: "5.1"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: false
     link: "https://onlinelibrary.wiley.com/doi/10.1111/ene.15473"
     figure-license: "CC BY-NC-ND 4.0"
@@ -225,7 +225,7 @@ entries:
     journal_metrics:
       year: "2021"
       if: "3.508"
-      q-factor: "Q2"
+      q_factor: "Q2"
     joint_first: false
     link: "https://www.mdpi.com/2075-4426/11/12/1349"
     figure: "/assets/images/pub-figures/Denissen_2021.jpg"
@@ -243,7 +243,7 @@ entries:
     journal_metrics:
       year: "2021"
       if: "4.997"
-      q-factor: "Q2"
+      q_factor: "Q2"
     joint_first: true
     link: "https://www.nature.com/articles/s41598-021-86792-0"
     pdf: "/assets/pdf/publications/Baijot_2021.pdf"
@@ -261,7 +261,7 @@ entries:
     journal_metrics:
       year: "2020"
       if: "7.914"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: false
     link: "https://www.ahajournals.org/doi/10.1161/STROKEAHA.119.028157"
     figure-license: "© 2020 American Heart Association, Inc."
@@ -294,7 +294,7 @@ entries:
     journal_metrics:
       year: "2019"
       if: "7.89"
-      q-factor: "Q1"
+      q_factor: "Q1"
     joint_first: false
     link: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD008728.pub3/full/nl"
     figure-license: "Copyright © 2019 The Cochrane Collaboration. Published by John Wiley & Sons, Ltd."
