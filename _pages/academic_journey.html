@@ -45,6 +45,7 @@ permalink: /academic_journey/
     <button class="filter-btn" data-filter="teaching" style="--btn-color: 	#e6a26e">Teaching</button>
     <button class="filter-btn" data-filter="research_stays" style="--btn-color: #eb9534">Abroad</button>
     <button class="filter-btn" data-filter="community_engagement" style="--btn-color: #1a2c79">Community Engagement</button>
+    <button class="filter-btn" data-filter="reviewer" style="--btn-color: #836953">Reviewer</button>
   </div>
 </div>
 
@@ -104,6 +105,10 @@ permalink: /academic_journey/
 
   <div class="category-summary vision" data-cat="scicomm" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.scicomm.summary }} <!-- Use " | size " to count number of entries -->
+  </div>
+
+  <div class="category-summary vision" data-cat="reviewer" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
+    {{ site.data.reviewer.summary }} <!-- Use " | size " to count number of entries -->
   </div>
 
   <div class="category-summary" data-cat="all" style="display:block;">
@@ -193,6 +198,12 @@ permalink: /academic_journey/
         {% for item in site.data.mentoring.students %}
           {% if item.graduation_date contains year or (item.graduation_date == "Ongoing" and year == "2026") %}
             {% include node_pill.html cat="mentoring" student_type=item.type icon="user-graduate" color="#6f42c1" title=item.name subtitle=item.field item=item %}
+          {% endif %}
+        {% endfor %}
+
+        {% for item in site.data.reviewer.reviews %}
+          {% if item.year == year %}
+            {% include node_pill.html cat="reviewer" icon="magnifying-glass" color="#836953" title=item.name subtitle=item.publisher item=item q_factor=item.journal_metrics.q_factor if_factor=item.journal_metrics.if %}
           {% endif %}
         {% endfor %}
       </div>

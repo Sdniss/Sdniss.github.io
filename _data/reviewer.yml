@@ -1,25 +1,51 @@
 section_title: "Reviewer"
-intro: >
+summary: >
   I regularly serve as a peer-reviewer for impactful journals at the intersection of 
   neuroscience, neurology, and artificial intelligence.
 
-journals:
+reviews:
   - name: "Nature Translational Psychiatry"
     publisher: "Nature Portfolio"
     tags: ["Psychiatry", "Neuroscience"]
+    year: "2025"
+    journal_metrics:
+      year: "2024"
+      if: "6.2"
+      q_factor: "Q1"
 
   - name: "Imaging Neuroscience"
     publisher: "MIT Press"
     tags: ["Neuroimaging"]
-
-  - name: "Multiple Sclerosis and Related Disorders"
-    publisher: "Elsevier"
-    tags: ["Neurology", "MS"]
+    year: "2025"
+    journal_metrics: "Not yet in 2025"
 
   - name: "Brain Communications"
     publisher: "Oxford University Press"
     tags: ["Neurology"]
+    year: "2025"
+    journal_metrics:
+      year: "2024"
+      if: "4.5"
+      q_factor: "Q1"
 
   - name: "Frontiers in Neurology"
     publisher: "Frontiers"
     tags: ["Neurology"]
+    year: "2025"
+    journal_metrics:
+      year: "2024"
+      if: "2.8"
+      q_factor: "Q2"
+    pdf: "/assets/pdf/reviewed/Hindawi_2025.pdf"
+    figure: "/assets/images/review_figures/Hindawi_2025.png"
+    figure-license: "CC BY 4.0"
+    link: "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1620469/full"
+
+  - name: "Multiple Sclerosis and Related Disorders"
+    publisher: "Elsevier"
+    tags: [ "Neurology", "MS" ]
+    year: "2022"
+    journal_metrics:
+      year: "2022"
+      if: "4.0"
+      q_factor: "Q2"
