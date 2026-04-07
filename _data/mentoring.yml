@@ -5,7 +5,7 @@ summary: >
   and grant opportunities. I've also been a jury member of 2 master theses in the master in health care management (VUB).
 
 students:
-  - name: "Tianzheng Hu"
+  - name: "Tianzheng Hu (胡天正)"
     topic: "Exploring the relationship between brain age and neurological disorders"
     field: "Medical Sciences"
     start_date: "2025"
@@ -13,7 +13,7 @@ students:
     role: "Co-promoter"
     type: "PhD"
 
-  - name: "Xinguang Wang"
+  - name: "Xinguang Wang (王新光)"
     topic: "Enhancing performance in deep learning-based brain age prediction models via federated learning"
     field: "Medical Sciences"
     start_date: "2024"
