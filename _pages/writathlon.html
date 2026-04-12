@@ -6,453 +6,322 @@ permalink: /writathlon/
 ---
 
 <style>
-    /* Writathlon-Specific UI Extensions */
-    .writathlon-grid {
+    /* State Management & Transitions */
+    .view-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+    .view-active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Persona Grid */
+    .persona-grid {
         display: grid;
-        grid-template-columns: 320px 1fr;
-        gap: 2rem;
-        align-items: start;
-    }
-
-    /* Refined Sidebar: Light Mode Academic Style */
-    .sidebar-console {
-        background: #ffffff;
-        color: #1a1a1a;
-        padding: 1.5rem;
-        border-radius: 12px;
-        position: sticky;
-        top: 20px;
-        border: 1px solid rgba(0,0,0,0.1);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-
-    .sidebar-console h3 {
-        color: var(--primary);
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border-bottom: 2px solid var(--secondary);
-        padding-bottom: 0.5rem;
-        margin-top: 0;
-        margin-bottom: 1.5rem;
-    }
-
-    .sidebar-console label {
-        color: var(--primary);
-        font-weight: 700;
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    /* Input & Button Visibility Fixes */
-    .sidebar-console .wa-input {
-        background: #ffffff !important;
-        color: #1a1a1a !important;
-        border: 1px solid #ccc;
-        margin-bottom: 0.8rem;
-        font-size: 0.85rem;
-    }
-
-    .btn-secondary {
-        background: #f4f4f4;
-        color: var(--primary);
-        border: 1px solid #ccc;
-        padding: 8px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 600;
-        width: 100%;
-        transition: background 0.2s;
-    }
-
-    .btn-secondary:hover { background: #e0e0e0; }
-
-    .btn-delete {
-        background: none;
-        border: none;
-        color: #e76f51;
-        cursor: pointer;
-        font-size: 1rem;
-        padding: 0 5px;
-        transition: transform 0.1s;
-    }
-
-    .btn-delete:hover { transform: scale(1.2); color: #c0392b; }
-
-    /* Outline Part Boxes */
-    .part-box {
-        background: #f9f9f9 !important;
-        border: 1px solid #ddd;
-        padding: 15px;
-        margin-bottom: 12px;
-        border-radius: 8px;
-    }
-
-    /* Fixed Percentage Box */
-    .c-p {
-        width: 55px !important;
-        text-align: center;
-        font-weight: bold;
-        color: var(--primary) !important;
-        margin: 0 !important;
-    }
-
-    .percent-label {
-        font-size: 0.7rem;
-        color: #666;
-        margin-left: 2px;
-        font-weight: bold;
-    }
-
-    /* Streak & Progress Items */
-    .streak-badge {
-        background: var(--primary);
-        color: white;
-        padding: 12px;
-        border-radius: 8px;
-        font-weight: 600;
-        text-align: center;
-        margin: 1.5rem 0;
-    }
-
-    .streak-badge span { color: var(--secondary); font-size: 1.2rem; }
-
-    .atp-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-    .atp-table th {
-        text-align: center; padding: 10px; color: var(--primary);
-        border-bottom: 2px solid var(--secondary); font-size: 0.65rem;
-        text-transform: uppercase; letter-spacing: 1px;
-    }
-    .atp-table td { padding: 12px 8px; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
-
-    /* Scrollable Container for the Master Plan */
-    .atp-scroll-container {
-        max-height: 400px;
-        overflow-y: auto;
-        border: 1px solid rgba(0,0,0,0.05);
-        border-radius: 8px;
-        margin-top: 1rem;
-    }
-
-    /* Keep the Table Header Sticky while scrolling */
-    .atp-table thead th {
-        position: sticky;
-        top: 0;
-        background: white;
-        z-index: 10;
-        box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);
-    }
-
-    /* Custom Scrollbar for iA Style */
-    .atp-scroll-container::-webkit-scrollbar {
-        width: 6px;
-    }
-    .atp-scroll-container::-webkit-scrollbar-thumb {
-        background: rgba(0,0,0,0.2);
-        border-radius: 10px;
-    }
-
-    .active-week-row { background: #e9f5f3 !important; outline: 2px solid var(--accent); }
-    .recovery-row { background: #fff9e6; font-style: italic; }
-
-    .emp-dot { color: var(--accent); font-size: 1.2rem; line-height: 0; }
-    .emp-none { color: rgba(0,0,0,0.1); font-size: 0.8rem; }
-
-    .day-block {
-        background: white; border-left: 5px solid var(--accent);
-        border-radius: 8px; padding: 1.2rem; margin-bottom: 1.5rem;
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
-    }
-
-    /* Clean Season Setup Card */
-    #setup-card {
-        background: #ffffff !important;
-        border: 1px solid var(--dark-transparent);
-        padding: 2.5rem;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        margin-bottom: 2rem;
-    }
-
-    #setup-card h2 {
-        font-size: 1.4rem;
-        margin-bottom: 2rem;
-        letter-spacing: -0.5px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    #setup-card h2::before {
-        content: "🏁";
-        font-size: 1.2rem;
-    }
-
-    .setup-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 1.5rem;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
     }
-
-    .input-group {
+    .persona-card {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 1.2rem;
+        text-align: center;
+        cursor: pointer;
+        background: #fff;
+        transition: all 0.2s;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        align-items: center;
     }
+    .persona-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-color: var(--accent); }
+    .persona-card.selected { border: 2px solid var(--accent); background: #f0f8f7; }
+    .persona-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; filter: grayscale(100%); border: 2px solid #eee; }
+    .persona-card.selected img { filter: grayscale(0%); border-color: var(--accent); }
 
-    .input-group label {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 700;
-        color: var(--primary);
-        opacity: 0.8;
-    }
+    /* Layout & Sidebar */
+    .writathlon-grid { display: grid; grid-template-columns: 320px 1fr; gap: 2rem; align-items: start; }
+    .sidebar-console { background: #ffffff; padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    .wa-input { background: #ffffff !important; color: #1a1a1a !important; border: 1px solid #ccc; margin-bottom: 0.8rem; font-size: 0.85rem; width: 100%; padding: 8px; border-radius: 4px; }
+    .btn-secondary { background: #f4f4f4; color: var(--primary); border: 1px solid #ccc; padding: 8px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: 600; transition: background 0.2s; }
+    .btn-secondary:hover { background: #e9e9e9; }
+    .btn-delete { background: none; border: none; cursor: pointer; padding: 4px; font-size: 0.9rem; opacity: 0.6; transition: opacity 0.2s; }
+    .btn-delete:hover { opacity: 1; }
 
-    #setup-card .wa-input {
-        border: 1px solid #e0e0e0;
-        background: #fdfdfd;
-        padding: 12px;
+    /* REFINED OUTLINE SECTION */
+    .part-box {
+        background: #f9f9f9;
+        border: 1px solid #eee;
         border-radius: 8px;
-        transition: all 0.2s;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    .c-list {
+        margin-left: 15px;
+        border-left: 2px solid #eee;
+        padding-left: 10px;
+        margin-top: 5px;
+    }
+    .c-row {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 8px;
+        align-items: center;
+    }
+    .c-row .wa-input {
+        margin-bottom: 0;
+        padding: 5px;
+    }
+    .percent-label {
+        font-size: 0.65rem;
+        color: #888;
+        font-weight: bold;
     }
 
-    #setup-card .wa-input:focus {
-        border-color: var(--accent);
-        background: #fff;
-        box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
-        outline: none;
-    }
+    /* Table & Stats */
+    .atp-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .atp-table th { text-align: center; padding: 10px; border-bottom: 2px solid var(--secondary); font-size: 0.65rem; text-transform: uppercase; }
+    .atp-table td { padding: 10px 5px; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .streak-badge { background: var(--primary); color: white; padding: 12px; border-radius: 8px; text-align: center; margin: 1rem 0; font-weight: 600; }
 
-    .predict-btn {
-        width: 100%;
-        padding: 15px;
-        background: var(--primary);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-weight: 700;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: transform 0.1s, background 0.2s;
-    }
+    /* Coach UI */
+    .ghost-coach-brief { background: #fdfdfd; border: 1px solid #eee; padding: 1.2rem; border-radius: 12px; display: flex; gap: 15px; margin-bottom: 1.5rem; align-items: center; }
+    .ghost-portrait { width: 65px; height: 65px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
 
-    .predict-btn:hover {
-        background: #217a6f;
-        transform: translateY(-1px);
-    }
+    /* Coach Interaction Styles */
+    .coach-chat-container { margin-top: 1.5rem; padding: 1rem; background: #f0f4f8; border-radius: 12px; border: 1px solid #d1d9e0; }
 </style>
 
 <div class="section">
-    <div class="writathlon-grid">
+    <div id="view-landing" class="view-section view-active" style="max-width: 850px; margin: 0 auto;">
+        <h1 style="text-align: center; font-size: 2.8rem; color: var(--primary);">Write Scheduling</h1>
+        <p style="text-align: center; font-size: 1.1rem; color: #666;">Inspired by Joe Friel's <em>The Triathlete's Training Bible</em>.</p>
+        <div style="background: #f9f9f9; padding: 2rem; border-radius: 12px; margin: 2rem 0; line-height: 1.7; color: #333;">
+            <p>Write Scheduling is inspired by the concept of "periodisation" to prepare for a triathlon. In his book "The Triathlete's Training Bible", expert coach Joe Friel explains how preparing for a big sports event is best done counting backwards from race date.</p>
+            <p>Preparation time is subdivided in blocks that each have a unique goal, such as building aerobic endurance or muscular endurance. When the blocks are defined, you can further zoom in to plan a specific week with actionable to do's.</p>
+            <p>I see many similarities with writing. Writing requires planning, and also has different phases. Researching, writing, editing, etc. In the Write Scheduling, I experiment with a new way of scheduling your writing. The planning coarsely follows a periodisation plan, which is then personalised using an LLM and your unique writing style, for which you can choose from the writing style of different famous writers.</p>
+        </div>
+        <div style="text-align: center;">
+            <button class="btn-primary" onclick="showView('view-persona')" style="padding: 18px 50px; font-size: 1.1rem;">Let's schedule it write</button>
+        </div>
+    </div>
 
-        <aside class="sidebar-console">
-            <h3>Coachbox System</h3>
+    <div id="view-persona" class="view-section" style="max-width: 1100px; margin: 0 auto;">
+        <h2 style="text-align: center;">Choose Your Patron Writer</h2>
+        <p style="text-align: center; color: #777;">This selection defines your coach's voice and your session logic.</p>
+        <div class="persona-grid" id="persona-selector"></div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <button class="btn-primary" id="persona-next" onclick="showView('view-setup')" disabled style="padding: 12px 40px;">Continue to Setup</button>
+        </div>
+    </div>
 
-            <div id="active-params-box" style="display:none; font-size: 0.8rem; margin-bottom: 1rem; padding: 10px; background: var(--bright-transparent); border-radius: 6px;">
-                <div id="param-summary"></div>
-                <a href="javascript:void(0)" onclick="editParams()" style="color: var(--secondary); font-size: 0.7rem;">[Edit Season]</a>
+    <div id="view-setup" class="view-section" style="max-width: 600px; margin: 0 auto;">
+        <div class="card" style="padding: 2rem; background: white; border: 1px solid #ddd; border-radius: 12px;">
+            <h3 style="color:#444444">Project Foundation</h3>
+            <label style="font-size: 0.7rem; font-weight: bold; color: #555;">MANUSCRIPT GOAL</label>
+            <input type="text" id="goal-input" class="wa-input" placeholder="e.g. The Architecture of Silence">
+            <label style="font-size: 0.7rem; font-weight: bold; color: #555;">HARD DEADLINE</label>
+            <input type="date" id="deadline-input" class="wa-input">
+            <label style="font-size: 0.7rem; font-weight: bold; color: #555;">WEEKLY COMMITMENT (HOURS)</label>
+            <input type="number" id="hours-input" class="wa-input" value="10">
+            <label style="font-size: 0.7rem; font-weight: bold; color: #555;">GEMINI API KEY</label>
+            <input type="password" id="api-key-input" class="wa-input" placeholder="Paste Key Here">
+            <label style="font-size: 0.7rem; font-weight: bold; color: #555;">IDENTIFY YOUR PRIMARY WRITING LIMITER</label>
+            <input type="text" id="limiter-input" class="wa-input" placeholder="Procrastination, Instagram, Kids, ...">
+            <label style="font-size: 0.7rem; font-weight: bold; color: #555; display: block; margin-bottom: 8px;">SCHEDULED WRITING DAYS</label>
+            <div id="writing-days-selector" style="display: flex; justify-content: space-between; margin-bottom: 1.2rem; background: #fdfdfd; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                <div style="text-align: center;"><label style="display: block; font-size: 0.6rem; color: #888;">M</label><input type="checkbox" class="day-check" value="Mon" checked></div>
+                <div style="text-align: center;"><label style="display: block; font-size: 0.6rem; color: #888;">T</label><input type="checkbox" class="day-check" value="Tue" checked></div>
+                <div style="text-align: center;"><label style="display: block; font-size: 0.6rem; color: #888;">W</label><input type="checkbox" class="day-check" value="Wed" checked></div>
+                <div style="text-align: center;"><label style="display: block; font-size: 0.6rem; color: #888;">T</label><input type="checkbox" class="day-check" value="Thu" checked></div>
+                <div style="text-align: center;"><label style="display: block; font-size: 0.6rem; color: #888;">F</label><input type="checkbox" class="day-check" value="Fri" checked></div>
+                <div style="text-align: center;"><label style="display: block; font-size: 0.6rem; color: #888;">S</label><input type="checkbox" class="day-check" value="Sat"></div>
+                <div style="text-align: center;"><label style="display: block; font-size: 0.6rem; color: #888;">S</label><input type="checkbox" class="day-check" value="Sun"></div>
             </div>
+            <button class="btn-primary" onclick="finishOnboarding()" style="width: 100%; margin-top: 1rem;">GENERATE MASTER PLAN</button>
+        </div>
+    </div>
 
-            <label style="font-size: 0.75rem; font-weight: bold; color: var(--secondary);">Outline Template</label>
-            <select id="template-select" class="wa-input" onchange="applyTemplate()" style="font-size: 0.7rem; padding: 4px; margin-bottom: 10px;">
-                <option value="">-- Choose Template --</option>
-                <option value="imrad">Scientific Paper (IMRaD)</option>
-                <option value="book">General Book Structure</option>
-            </select>
+    <div id="view-app" class="view-section">
+        <div class="writathlon-grid">
+            <aside class="sidebar-console">
+                <div id="active-params-box" style="margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1rem; margin-bottom: 10px;">Writer's Dashboard</h3>
+                    <div id="param-summary" style="font-size: 0.8rem; background: #f4f4f4; padding: 10px; border-radius: 6px;"></div>
+                </div>
 
-            <div id="outline-area"></div>
-            <button class="btn-secondary" onclick="addPart()" style="font-size: 0.7rem; width:100%; margin-top:5px;">+ Add Section</button>
+                <label style="font-size: 0.7rem; font-weight: bold; display: block; margin-bottom: 5px;">MANUSCRIPT OUTLINE</label>
+                <select id="template-select" class="wa-input" onchange="applyTemplate()" style="font-size: 0.7rem; padding: 4px; margin-bottom: 12px;">
+                    <option value="">-- Apply Structure Template --</option>
+                    <option value="imrad">Scientific Paper (IMRaD)</option>
+                    <option value="book">General Book Structure</option>
+                </select>
 
-            <label style="font-size: 0.75rem; font-weight: bold; color: var(--secondary); margin-top: 1.5rem; display:block;">Limiters</label>
-            <textarea id="limiters-input" class="wa-input" rows="3" oninput="autoSave()" placeholder="e.g. Fatigue, Data cleaning..."></textarea>
+                <div id="outline-area"></div>
 
-            <div class="streak-badge">
-                STREAK: <span id="streak-val">0</span> 🚀
-            </div>
+                <button class="btn-secondary" onclick="addPart()" style="margin-top: 5px; font-size: 0.75rem; border-style: dashed;">+ Add New Section</button>
 
-            <div style="border-top: 1px solid var(--bright-transparent); padding-top: 1rem;">
-                <label style="font-size: 0.6rem; text-transform: uppercase;">Gemini API Key</label>
-                <input type="password" id="api-key-input" class="wa-input" style="margin-bottom:5px;">
-                <button class="btn-primary" onclick="saveKey()" style="font-size: 0.7rem; width:100%;">Secure Key</button>
-            </div>
+                <div class="streak-badge">MOMENTUM: <span id="streak-val">0</span> 🔥</div>
+                <button onclick="nuclearReset()" style="width: 100%; border: none; background: none; color: #e76f51; font-size: 0.65rem; cursor: pointer; margin-top: 2rem;">Nuclear Reset</button>
+            </aside>
 
-            <button onclick="nuclearReset()" style="margin-top: 2rem; background: transparent; border: 1px solid #e76f51; color: #e76f51; font-size: 0.6rem; cursor: pointer; border-radius: 4px; padding: 4px;">Nuclear Reset</button>
-        </aside>
-
-        <main>
-            <div class="card" id="setup-card">
-                <h2 style="color: var(--primary);">Season Setup</h2>
-
-                <div class="setup-grid">
-                    <div class="input-group" style="grid-column: span 2;">
-                        <label>Manuscript Goal</label>
-                        <input type="text" id="goal-input" class="wa-input" placeholder="e.g., Impact of Neural Nets on Climate Modeling" oninput="autoSave()">
-                    </div>
-
-                    <div class="input-group">
-                        <label>Hard Deadline</label>
-                        <input type="date" id="deadline-input" class="wa-input" oninput="autoSave()">
-                    </div>
-
-                    <div class="input-group">
-                        <label>Weekly Load (Hours)</label>
-                        <input type="number" id="hours-input" class="wa-input" value="7" oninput="autoSave()">
-                    </div>
-
-                    <div class="input-group" style="grid-column: span 2;">
-                        <label>Training Days</label>
-                        <input type="text" id="days-input" class="wa-input" placeholder="e.g., Mon, Wed, Fri (6:00 AM)" oninput="autoSave()">
+            <main>
+                <div class="ghost-coach-brief">
+                    <img id="current-ghost-img" src="" class="ghost-portrait">
+                    <div>
+                        <h4 id="current-ghost-name" style="margin: 0; color: var(--primary);"></h4>
+                        <p id="current-ghost-motto" style="margin: 2px 0; font-size: 0.85rem; font-style: italic; color: #666;"></p>
                     </div>
                 </div>
 
-                <button class="predict-btn" onclick="initializePlan()">GENERATE MASTER PLAN</button>
-            </div>
-
-            <div class="card" id="atp-card" style="display:none; text-align: left; background: white; color: var(--dark);">
-                <h3 style="color: var(--primary);">Periodization Master Plan</h3>
-                <div class="atp-scroll-container">
-                    <table class="atp-table">
-                        <thead>
-                            <tr>
-                                <th>Week</th>
-                                <th>Phase</th>
-                                <th>Load</th>
-                                <th>Research</th> <th>Write</th> <th>Edit</th> <th>Zoom</th> <th>Metadata</th> <th>Feedback</th> <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="atp-body"></tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div id="checklist-container" style="display:none; margin-top: 2rem;">
-                <div style="display:flex; justify-content: space-between; align-items: baseline;">
-                    <h2 id="micro-title" style="color: var(--primary);">Week Training</h2>
-                    <span id="completion-stats" style="font-weight:bold; color: var(--accent);">0/0 Tasks</span>
+                <div class="card" id="atp-card" style="text-align: left; background: white; color: var(--dark);">
+                    <h3 style="color: var(--primary);">Periodization Master Plan</h3>
+                    <div class="atp-scroll-container">
+                        <table class="atp-table">
+                            <thead>
+                                <tr>
+                                    <th>Week</th>
+                                    <th>Phase</th>
+                                    <th>Load</th>
+                                    <th>Research</th> <th>Write</th> <th>Edit</th> <th>Zoom Out</th> <th>Metadata</th> <th>Feedback</th> <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="atp-body"></tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="font-size: 0.7rem; text-transform: uppercase; font-weight: bold; color: var(--secondary);">Coach Briefing (Current blockers, specific focus, etc.)</label>
-                    <textarea id="coach-context" class="wa-input" rows="2" placeholder="e.g., Data is messy, focus on Introduction first..."></textarea>
-                </div>
+                <div id="checklist-container" style="display: none; margin-top: 2rem;">
+                    <h3 id="micro-title">Week Protocol</h3>
+                    <div id="task-list" style="margin-bottom: 1rem;"></div>
 
-                <p id="phase-motto" style="font-style: italic; color: #666; margin-bottom: 1.5rem;"></p>
-                <div id="task-list"></div>
-                <button id="refresh-coach-btn" class="btn-primary" style="margin-top: 1rem;" onclick="generateCoachTasks()">Consult Writing Coach</button>
-            </div>
-        </main>
+                    <button id="refresh-coach-btn" class="btn-primary" onclick="generateCoachTasks()" style="width: 100%;">Plan this week</button>
+
+                    <div id="coach-chat-box" class="coach-chat-container" style="display:none;">
+                        <label style="font-size: 0.7rem; font-weight: bold; color: #555;">ADAPT WEEKLY SCHEDULE</label>
+                        <p style="font-size: 0.75rem; color: #666; margin-bottom: 8px;">Talk to your coach to adjust the plan based on your reality.</p>
+                        <textarea id="coach-message" class="wa-input" style="height: 60px; resize: none; margin-bottom: 10px;" placeholder="e.g. I have a lot of meetings on Tuesday, move the workload to Friday..."></textarea>
+                        <button class="btn-primary" style="width:100%" onclick="adaptScheduleWithCoach()">Submit to Coach</button>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
 </div>
 
 <script>
 const DATA_KEY = 'writathlon_v2_system';
-let currentWeek = null;
-let constitution = "";
 
 const templates = {
-    imrad: [{n: 'Manuscript', chaps: [{n:'Introduction',p:0},{n:'Methods',p:0},{n:'Results',p:0},{n:'Discussion',p:0}]}],
-    book: [{n: 'Part I', chaps: [{n:'Chapter 1',p:0},{n:'Chapter 2',p:0}]}, {n: 'Part II', chaps: [{n:'Chapter 3',p:0}]}]
+    imrad: [{n: 'Manuscript', chaps: [{n:'Introduction',p:10},{n:'Methods',p:20},{n:'Results',p:30},{n:'Discussion',p:40}]}],
+    book: [{n: 'Part I', chaps: [{n:'Chapter 1',p:5},{n:'Chapter 2',p:10}]}, {n: 'Part II', chaps: [{n:'Chapter 3',p:15}]}]
 };
 
-async function loadConstitution() {
-    const LOCAL_FILE = "/assets/txt/writing_schedule_recipe.txt";
-    try {
-        const r = await fetch(LOCAL_FILE);
-        if (!r.ok) throw new Error("Local file not found");
-        constitution = await r.text();
-    } catch(e) {
-        constitution = "";
-    }
+let currentWeekData = { num: null, phase: null, hrs: null, isCurrent: false };
+
+const PERSONAS = {
+    trollope: { name: "Anthony Trollope", motto: "The clock is the master of the pen.", routine: "Mechanical Sprints: 5:30 AM – 8:30 AM. Strictly 250 words every 15 minutes. Work stops exactly at the 3-hour mark.", category: "Architect", img: "https://upload.wikimedia.org/wikipedia/commons/0/07/AnthonyTrollope.jpg" },
+    murakami: { name: "Haruki Murakami", motto: "The repetition is the important thing.", routine: "The Deep Dive: 4:00 AM – 10:00 AM. 6 hours of continuous, uninterrupted drafting. The rest of the day is for recovery.", category: "Architect", img: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Murakami_Haruki_%282009%29.jpg" },
+    dickens: { name: "Charles Dickens", motto: "A system of frantic regularity.", routine: "The Intervallist: 9:00 AM – 2:00 PM. Intense sessions of focus followed by rapid pacing to reset for the next burst.", category: "Intervallist", img: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Charles_Dickens_circa_1860s-crop.png" },
+    king: { name: "Stephen King", motto: "The door is closed.", routine: "The Quota Sprinter: Morning sessions with a strict 2,000-word daily goal. Sprints until the quota is hit.", category: "Intervallist", img: "https://upload.wikimedia.org/wikipedia/commons/2/24/Stephen_King_at_the_2024_Toronto_International_Film_Festival_2_%28cropped%29.jpg" },
+    angelou: { name: "Maya Angelou", motto: "A room of one's own, away from home.", routine: "The Workday Shift: 7:00 AM – 2:00 PM. Working in a bare hotel room to separate domestic life from the creative mind.", category: "Ritualist", img: "https://upload.wikimedia.org/wikipedia/commons/7/76/Maya_Angelou_in_Baltimore.jpg" },
+    hemingway: { name: "Ernest Hemingway", motto: "First light, first words.", routine: "The Dawn Watch: Starts at sunrise. Works until the 'juice' runs out (usually midday). Precision over duration.", category: "Ritualist", img: "https://upload.wikimedia.org/wikipedia/commons/2/28/ErnestHemingway.jpg" },
+    woolf: { name: "Virginia Woolf", motto: "Walking is the second draft.", routine: "Split Rhythm: 10:00 AM – 1:00 PM drafting. Afternoon dedicated to long walks to mentally map the structure.", category: "Gardener", img: "https://upload.wikimedia.org/wikipedia/commons/0/0b/George_Charles_Beresford_-_Virginia_Woolf_in_1902_-_Restoration.jpg" },
+    morrison: { name: "Toni Morrison", motto: "Control the light.", routine: "Pre-Dawn Clarity: 5:00 AM – 7:00 AM. High-intensity work before the world's noise begins. Short, sacred windows.", category: "Gardener", img: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Toni_Morrison_2_%2848479374541%29.jpg" },
+    faulkner: { name: "William Faulkner", motto: "Drafting under pressure.", routine: "The Pressure Cooker: Irregular hours. Writing in high-intensity bursts when a deadline looms. All or nothing.", category: "Chaos", img: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Carl_Van_Vechten_-_William_Faulkner.jpg" },
+    thompson: { name: "Hunter S. Thompson", motto: "The midnight performance.", routine: "The Night Owl: Midnight – 8:00 AM. Total immersion during the hours the world sleeps. High-octane sessions.", category: "Chaos", img: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Hst-by-rsexton-longbeach-5-1989-0.jpg" }
+};
+
+function showView(viewId) {
+    document.querySelectorAll('.view-section').forEach(v => v.classList.remove('view-active'));
+    document.getElementById(viewId).classList.add('view-active');
+    window.scrollTo(0,0);
 }
 
-function autoSave() {
-    const data = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
-    data.goal = document.getElementById('goal-input').value;
-    data.deadline = document.getElementById('deadline-input').value;
-    data.hours = document.getElementById('hours-input').value;
-    data.days = document.getElementById('days-input').value;
-    data.limiters = document.getElementById('limiters-input').value;
-    data.apiKey = document.getElementById('api-key-input').value;
-    data.outline = Array.from(document.querySelectorAll('.part-box')).map(p => ({
-        name: p.querySelector('.p-name').value,
-        chaps: Array.from(p.querySelectorAll('.c-row')).map(c => ({
-            n: c.querySelector('.c-name').value, p: c.querySelector('.c-p').value
-        }))
-    }));
-    localStorage.setItem(DATA_KEY, JSON.stringify(data));
-}
-
-function loadSystem() {
-    const data = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
-    if (!data.goal && !data.outline) return;
-    document.getElementById('goal-input').value = data.goal || '';
-    document.getElementById('deadline-input').value = data.deadline || '';
-    document.getElementById('hours-input').value = data.hours || 7;
-    document.getElementById('days-input').value = data.days || '';
-    document.getElementById('limiters-input').value = data.limiters || '';
-    document.getElementById('api-key-input').value = data.apiKey || '';
-    const out = document.getElementById('outline-area');
-    out.innerHTML = '';
-    (data.outline || []).forEach(p => {
-        const pEl = addPart(p.name);
-        p.chaps.forEach(c => addChapter(pEl.querySelector('.c-list'), c.n, c.p));
+function initPersonaSelector() {
+    const container = document.getElementById('persona-selector');
+    container.innerHTML = '';
+    Object.keys(PERSONAS).forEach(key => {
+        const p = PERSONAS[key];
+        const card = document.createElement('div');
+        card.className = 'persona-card';
+        card.innerHTML = `<img src="${p.img}"><h4>${p.name}</h4><p style="font-size:0.75rem; color:#555;">${p.routine}</p>`;
+        card.onclick = () => {
+            document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            localStorage.setItem('selected_persona', key);
+            document.getElementById('persona-next').disabled = false;
+        };
+        container.appendChild(card);
     });
-    if (data.deadline) initializePlan();
-    updateStreak();
 }
 
-function applyTemplate() {
-    const val = document.getElementById('template-select').value;
-    if(!val) return;
-    document.getElementById('outline-area').innerHTML = '';
-    templates[val].forEach(p => {
-        const pEl = addPart(p.n);
-        p.chaps.forEach(ch => addChapter(pEl.querySelector('.c-list'), ch.n, ch.p));
-    });
+function finishOnboarding() {
+    const apiKey = document.getElementById('api-key-input').value;
+    const deadline = document.getElementById('deadline-input').value;
+    if(!apiKey || !deadline) { alert("API Key and Deadline required."); return; }
+    const key = localStorage.getItem('selected_persona') || 'murakami';
+    const p = PERSONAS[key];
+    const limiter = document.getElementById('limiter-input').value;
+    const days = Array.from(document.querySelectorAll('.day-check:checked')).map(cb => cb.value).join(', ');
+    document.getElementById('param-summary').innerHTML += `<br>📅 Days: ${days || 'None selected'}`;
+    document.getElementById('current-ghost-img').src = p.img;
+    document.getElementById('current-ghost-name').innerText = p.name;
+    document.getElementById('current-ghost-motto').innerText = `${p.motto}`;
     autoSave();
+    initializePlan();
+    showView('view-app');
 }
 
 function initializePlan() {
+    const data = JSON.parse(localStorage.getItem(DATA_KEY));
     const goal = document.getElementById('goal-input').value;
     const deadline = document.getElementById('deadline-input').value;
     const hrs = document.getElementById('hours-input').value;
-    const days = document.getElementById('days-input').value;
-    if (!deadline) { alert("A hard deadline is required."); return; }
-    document.getElementById('setup-card').style.display = 'none';
-    document.getElementById('active-params-box').style.display = 'block';
-    document.getElementById('atp-card').style.display = 'block';
-    document.getElementById('param-summary').innerHTML = `
-        <div style="border-bottom: 1px solid rgba(0,0,0,0.05); margin-bottom: 10px; padding-bottom: 5px;">
-            <strong style="color: var(--primary); font-size: 0.85rem;">${goal || 'Untitled Project'}</strong>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr; gap: 5px; opacity: 0.8;">
-            <div>📅 Deadline: <strong>${new Date(deadline).toLocaleDateString()}</strong></div>
-            <div>⏲️ Target: <strong>${hrs}h / week</strong></div>
-            <div>📝 Schedule: <strong>${days || 'Daily'}</strong></div>
-        </div>
-    `;
+    const writinglimiter = document.getElementById('limiter-input').value;
+    const writingDays = data.writingDays;
+
+    document.getElementById('param-summary').innerHTML = `<strong>${goal || 'Untitled Project'}</strong><br>📅 Deadline: ${deadline}<br>⏲️ Load: ${hrs}h/week<br>⚠️️ Limiter: ${writinglimiter}<br>✏️ Writing Days: ${writingDays}`;
     renderATP(deadline, parseFloat(hrs));
-    autoSave();
 }
 
-// Update the Dot helper to include PREP
-function getEmpDots(phase) {
-    const map = {
+function getEmpDots(phase, isRecoveryWeek, weekNum, totalWeeks) {
+    const categories = ['Research', 'Write', 'Edit', 'Zoom', 'Metadata', 'Feedback'];
+    const phaseMap = {
         'PREP': ['Metadata', 'Feedback'],
-        'BASE': ['Research', 'Write', 'Feedback'],
-        'BUILD': ['Edit', 'Zoom', 'Feedback'],
+        'BASE': ['Research', 'Write'],
+        'BUILD': ['Edit', 'Zoom'],
         'PEAK': ['Edit'],
         'RACE': ['Metadata']
     };
 
-    const categories = ['Research', 'Write', 'Edit', 'Zoom', 'Metadata', 'Feedback'];
+    if (isRecoveryWeek) {
+        // Determine the "Neglected" focus based on project progress (Gradual Shift)
+        // Progress 0-33%: Focus on Edit (Clean up early drafts)
+        // Progress 34-66%: Focus on Research (Fill middle-project holes)
+        // Progress 67-100%: Focus on Write (Final sprints/bridge sections)
+        const progress = weekNum / totalWeeks;
+        let secondaryFocus;
+        if (progress < 0.33) {
+            secondaryFocus = 'Edit';
+        } else if (progress < 0.66) {
+            secondaryFocus = 'Research';
+        } else {
+            secondaryFocus = 'Write';
+        }
+
+        let recoveryFocus = ['Zoom', secondaryFocus];
+
+        // Add Feedback every 2 blocks (Every 8 weeks)
+        if (weekNum % 8 === 0) {
+            recoveryFocus.push('Feedback');
+        }
+
+        return categories.map(cat => {
+            const isActive = recoveryFocus.includes(cat);
+            return `<td class="${isActive ? 'emp-dot' : 'emp-none'}">${isActive ? '●' : '·'}</td>`;
+        }).join('');
+    }
+
+    // Standard phase-based focus
     return categories.map(cat => {
-        const isActive = map[phase] && map[phase].includes(cat);
+        const isActive = phaseMap[phase] && phaseMap[phase].includes(cat);
         return `<td class="${isActive ? 'emp-dot' : 'emp-none'}">${isActive ? '●' : '·'}</td>`;
     }).join('');
 }
@@ -460,130 +329,104 @@ function getEmpDots(phase) {
 function renderATP(deadline, baseHrs) {
     const body = document.getElementById('atp-body');
     body.innerHTML = '';
-    const today = new Date();
-    today.setHours(0,0,0,0);
+    const today = new Date(); today.setHours(0,0,0,0);
     const end = new Date(deadline);
+    const weeksTotal = Math.max(1, Math.ceil((end - today) / (1000 * 60 * 60 * 24 * 7)));
 
-    // 1. Calculate total weeks available
-    const weeksTotal = Math.ceil((end - today) / (1000 * 60 * 60 * 24 * 7));
-
-    // 2. Define Fixed Phases
-    const prepWeeks = 1;
-    const peakWeeks = 2;
-    const raceWeeks = 1;
-    const fixedTotal = prepWeeks + peakWeeks + raceWeeks;
-
-    // 3. Calculate Flexible Middle (Base + Build)
-    const flexibleWeeks = Math.max(0, weeksTotal - fixedTotal);
+    const prepWeeks = 1, peakWeeks = 2, raceWeeks = 1;
+    const flexibleWeeks = Math.max(0, weeksTotal - (prepWeeks + peakWeeks + raceWeeks));
     const baseEnd = prepWeeks + Math.floor(flexibleWeeks * 0.5);
     const buildEnd = baseEnd + Math.ceil(flexibleWeeks * 0.5);
 
     for (let i = 0; i < weeksTotal; i++) {
-        let phase = "";
-        let loadFactor = 1.0;
         let weekNum = i + 1;
+        let phase = i < prepWeeks ? "PREP" : (i < baseEnd ? "BASE" : (i < buildEnd ? "BUILD" : (i < weeksTotal - raceWeeks ? "PEAK" : "RACE")));
 
-        // --- PHASE ALLOCATION ---
+        const isRecoveryWeek = (weekNum % 4 === 0) && (phase !== "RACE");
+        const isMajorMilestone = (weekNum % 8 === 0);
 
-        // PREP: Fixed 1 week
-        if (i < prepWeeks) {
-            phase = "PREP";
-            loadFactor = 0.6;
-        }
-        // BASE: ~40% of total (50% of flex)
-        else if (i < baseEnd) {
-            phase = "BASE";
-            loadFactor = (i % 4 === 0) ? 0.7 : 1.0;
-        }
-        // BUILD: ~40% of total (50% of flex)
-        else if (i < buildEnd) {
-            phase = "BUILD";
-            loadFactor = (i % 4 === 0) ? 0.8 : 1.2;
-        }
-        // PEAK: Fixed 2 weeks
-        else if (i < weeksTotal - raceWeeks) {
-            phase = "PEAK";
-            loadFactor = 0.9;
-        }
-        // RACE: Fixed 1 week
-        else {
-            phase = "RACE";
-            loadFactor = 0.5; // Final Taper
-        }
+        let loadFactor = phase === "PREP" ? 0.6 : (phase === "BASE" ? 1.0 : (phase === "BUILD" ? 1.2 : (phase === "PEAK" ? 0.9 : 0.5)));
+        let finalHrs = isRecoveryWeek ? (baseHrs * 0.6) : (baseHrs);
 
-        let hrs = baseHrs * loadFactor;
-        let d = new Date(today);
-        d.setDate(today.getDate() + (i * 7));
+        let d = new Date(today); d.setDate(today.getDate() + (i * 7));
         const isCurrent = (today >= d && today < new Date(d.getTime() + 7 * 24 * 60 * 60 * 1000));
 
         const row = document.createElement('tr');
-        row.className = `${isCurrent ? 'active-week-row' : ''} ${loadFactor < 0.9 && phase !== 'PREP' ? 'recovery-row' : ''}`;
+        if(isRecoveryWeek) {
+            row.style.background = isMajorMilestone ? "rgba(42, 157, 143, 0.1)" : "rgba(231, 111, 81, 0.05)";
+        }
 
         row.innerHTML = `
             <td>${isCurrent ? '🚀' : 'W'+weekNum}</td>
-            <td style="font-weight:bold; color:var(--primary)">${phase}</td>
-            <td>${hrs.toFixed(1)}h</td>
-            ${getEmpDots(phase)}
-            <td id="stat-w${weekNum}" onclick="selectWeek(${weekNum}, '${phase}', ${hrs}, ${isCurrent})" style="cursor:pointer; font-size:1.1rem;">⭕</td>
+            <td style="font-weight:bold; color:${isRecoveryWeek ? (isMajorMilestone ? '#2a9d8f' : '#e76f51') : 'var(--primary)'}">
+                ${isMajorMilestone ? 'MILESTONE' : (isRecoveryWeek ? 'RECOVERY' : phase)}
+            </td>
+            <td>${finalHrs.toFixed(1)}h</td>
+            ${getEmpDots(phase, isRecoveryWeek, weekNum, weeksTotal)}
+            <td id="stat-w${weekNum}" onclick="selectWeek(${weekNum}, '${isMajorMilestone ? 'MILESTONE' : (isRecoveryWeek ? 'RECOVERY' : phase)}', ${finalHrs}, ${isCurrent})" style="cursor:pointer; font-size:1.1rem;">⭕</td>
         `;
         body.appendChild(row);
         updateStatusIcon(weekNum);
     }
+
+    // Final Row: Submit/Party
+    const submitRow = document.createElement('tr');
+    submitRow.style.background = "linear-gradient(90deg, #f9c74f, #f3722c, #f94335)";
+    submitRow.style.color = "white";
+    submitRow.style.fontWeight = "bold";
+
+    // Spread the content across all columns using colspan
+    submitRow.innerHTML = `
+        <td colspan="11" style="padding: 15px; text-align: center; font-size: 1rem; letter-spacing: 2px;">
+            🎉 PROJECT FINISH LINE: SUBMIT & CELEBRATE 🥂
+        </td>
+    `;
+
+    submitRow.onclick = () => {
+        alert("Time to pop the champagne! You've reached the end of the Writathlon. 🥳✨");
+    };    body.appendChild(submitRow);
 }
 
-// Update the Motto helper to include PREP
-function getMotto(p) {
-    const ms = {
-        PREP: "Metadata, Setup & Buddy Assignment",
-        BASE: "Laying the Foundation & Internal Cycles",
-        BUILD: "High-Volume Drafting (Icelandic Style)",
-        PEAK: "Clutter Removal & Flow",
-        RACE: "Final Polish & Submission"
-    };
-    return ms[p] || "";
-}
-
+// Main Coach Call
 async function generateCoachTasks() {
     const data = JSON.parse(localStorage.getItem(DATA_KEY));
     if (!data.apiKey) { alert("Add API Key first!"); return; }
 
-    const userBriefing = document.getElementById('coach-context').value;
-    const today = new Date();
-    const end = new Date(data.deadline);
-    const weeksRemaining = Math.ceil((end - today) / (1000 * 60 * 60 * 24 * 7));
-
-    // CRUNCH MODE TRIGGER
-    const isCrunchMode = weeksRemaining <= 4;
-
-    document.getElementById('task-list').innerHTML = `<p style="text-align:center">Coach is analyzing your progress...</p>`;
-
-    const prompt = `
-        SYSTEM LOGIC: ${constitution || "Scientific Athlete Protocol"}
-
-        USER CONTEXT:
-        - Project: ${data.goal}
-        - Phase: ${isCrunchMode ? 'CRUNCH MODE (Ignore Phases)' : currentWeek.phase}
-        - Weeks until Deadline: ${weeksRemaining}
-        - Weekly Hours: ${currentWeek.hrs}h
-        - Coach Briefing: ${userBriefing}
-        - Current Limiters: ${data.limiters}
-
-        CURRENT OUTLINE PROGRESS (Remaining Work):
-        ${data.outline.map(p => `${p.name}: ${p.chaps.map(c => `${c.n} is ${c.p}% complete`).join(", ")}`).join("\n")}
-
-        INSTRUCTION:
-        ${isCrunchMode
-            ? "CRITICAL: Deadline is imminent. Disregard periodization phases but do take into account which days to write. Identify every section below 100% and distribute that work logically across this week to ensure submission."
-            : "Follow the current phase rules. Focus on tasks relevant to the progress gaps shown above."}
-
-        Use 'Hardest Task First'. 2-5 tasks per day.
-
-        FORMAT:
-        ### [Day]
-        - [ ] Task (Est. Time)
-    `;
+    document.getElementById('task-list').innerHTML = `<p style="text-align:center">Coach is preparing your weekly plan...</p>`;
+    document.getElementById('refresh-coach-btn').style.display = 'none';
 
     try {
+        // 1. Fetch the guidance document from your assets folder
+        const fileResp = await fetch('/assets/txt/writing_schedule_recipe.txt');
+        if (!fileResp.ok) throw new Error("Could not load coaching logic file.");
+        const coachLogic = await fileResp.text();
+        const activeDays = data.writingDays ? data.writingDays.join(", ") : "Mon, Tue, Wed, Thu, Fri";
+
+        const outlineContext = (data.outline || []).map(p =>
+            `${p.name}: ${p.chaps.map(c => `${c.n} (${c.p}% done)`).join(", ")}`
+        ).join("\n");
+
+        // 2. Inject the file content into the prompt
+        const prompt = `
+            You are a writing coach focusing on scheduling.
+            Follow the specific reasoning and methodology provided in the GUIDANCE DOCUMENT below.
+
+            GUIDANCE DOCUMENT:
+            "${coachLogic}"
+
+            USER CONTEXT:
+            - Project: ${data.goal}
+            - Week: ${currentWeekData.num}
+            - Phase: ${currentWeekData.phase}
+            - Total Available Hours: ${currentWeekData.hrs}
+            - Progress: ${outlineContext}
+            - Available Writing Days: ${activeDays} (ONLY schedule tasks on these days)
+
+            INSTRUCTION:
+            Generate a daily writing schedule (2-5 to do's based on number of daily hours)
+            Format as: ### Day Name\n- [ ] Task (Time)`;
+
+        // 3. Send to Gemini
         const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${data.apiKey}`, {
             method: "POST",
             headers: {"Content-Type":"application/json"},
@@ -591,62 +434,92 @@ async function generateCoachTasks() {
         });
 
         const json = await resp.json();
-        const raw = json.candidates[0].content.parts[0].text;
+        const structured = parseRawCoachData(json.candidates[0].content.parts[0].text);
+        saveAndRender(structured);
+        document.getElementById('coach-chat-box').style.display = 'block';
 
-        // Parsing logic remains the same...
-        const structured = raw.split('###').filter(x => x.trim()).map(s => {
-            const lines = s.trim().split('\n');
-            return {
-                day: lines[0].trim(),
-                tasks: lines.slice(1).filter(l => l.includes('[ ]')).map(t => ({
-                    txt: t.replace('- [ ]','').replace('*','').trim(),
-                    done: false
-                }))
-            };
-        });
-
-        if(!data.microcycles) data.microcycles = {};
-        data.microcycles[currentWeek.num] = structured;
-        localStorage.setItem(DATA_KEY, JSON.stringify(data));
-        renderChecklist(structured);
     } catch(e) {
-        document.getElementById('task-list').innerHTML = `<p style="color:red">Coach Error: ${e.message}</p>`;
+        console.error(e);
+        document.getElementById('task-list').innerHTML = `<p style="color:red">Error: ${e.message}</p>`;
+        document.getElementById('refresh-coach-btn').style.display = 'block';
     }
+}
+
+// Adaptation Flow
+async function adaptScheduleWithCoach() {
+    const msg = document.getElementById('coach-message').value;
+    if(!msg) return;
+    const data = JSON.parse(localStorage.getItem(DATA_KEY));
+
+    document.getElementById('task-list').style.opacity = '0.5';
+    const prompt = `Rewrite the following week schedule based on this user request: "${msg}". Keep the ${currentWeekData.hrs}h load. Current: ${JSON.stringify(data.microcycles[currentWeekData.num])}. Format: ### Day Name\n- [ ] Task (Time)`;
+
+    try {
+        const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${data.apiKey}`, {
+            method: "POST", headers: {"Content-Type":"application/json"},
+            body: JSON.stringify({ contents:[{parts:[{text:prompt}]}] })
+        });
+        const json = await resp.json();
+        const structured = parseRawCoachData(json.candidates[0].content.parts[0].text);
+        saveAndRender(structured);
+        document.getElementById('coach-message').value = '';
+    } catch(e) { alert("Failed to adapt."); }
+    document.getElementById('task-list').style.opacity = '1';
+}
+
+function parseRawCoachData(raw) {
+    return raw.split('###').filter(x => x.trim()).map(s => {
+        const lines = s.trim().split('\n');
+        return { day: lines[0].trim(), tasks: lines.slice(1).filter(l => l.includes('[ ]')).map(t => ({ txt: t.replace('- [ ]','').trim(), done: false })) };
+    });
+}
+
+function saveAndRender(structured) {
+    const data = JSON.parse(localStorage.getItem(DATA_KEY));
+    if(!data.microcycles) data.microcycles = {};
+    data.microcycles[currentWeekData.num] = structured;
+    localStorage.setItem(DATA_KEY, JSON.stringify(data));
+    renderChecklist(structured);
+    updateStatusIcon(currentWeekData.num);
 }
 
 function renderChecklist(days) {
     const container = document.getElementById('task-list');
     container.innerHTML = '';
-    let total = 0, done = 0;
     days.forEach((d, dIdx) => {
         const div = document.createElement('div');
         div.className = 'day-block';
-        let html = `<div class="day-title">${d.day}</div>`;
+        div.style = "background:#fdfdfd; border-left:4px solid var(--accent); padding:10px; margin-bottom:10px; border-radius:8px;";
+        let html = `<div style="font-weight:bold; margin-bottom:5px;">${d.day}</div>`;
         d.tasks.forEach((t, tIdx) => {
-            total++; if(t.done) done++;
-            html += `<div class="task-row"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask(${dIdx}, ${tIdx})"><span>${t.txt}</span></div>`;
+            html += `<div style="display:flex; gap:10px; margin-bottom:4px;"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask(${dIdx}, ${tIdx})"><span>${t.txt}</span></div>`;
         });
         div.innerHTML = html; container.appendChild(div);
     });
-    document.getElementById('completion-stats').innerText = `${done}/${total} Tasks`;
 }
 
 function selectWeek(num, phase, hrs, isCurrent) {
-    currentWeek = {num, phase, hrs, isCurrent};
+    currentWeekData = {num, phase, hrs, isCurrent};
     document.getElementById('checklist-container').style.display = 'block';
     document.getElementById('micro-title').innerText = `Week ${num} Protocol`;
-    document.getElementById('phase-motto').innerText = `Current Focus: ${getMotto(phase)}`;
     const data = JSON.parse(localStorage.getItem(DATA_KEY));
-    if (data.microcycles?.[num]) renderChecklist(data.microcycles[num]);
-    else document.getElementById('task-list').innerHTML = "<p>No tasks generated yet.</p>";
+    if (data.microcycles?.[num]) {
+        renderChecklist(data.microcycles[num]);
+        document.getElementById('refresh-coach-btn').style.display = 'none';
+        document.getElementById('coach-chat-box').style.display = 'block';
+    } else {
+        document.getElementById('task-list').innerHTML = '';
+        document.getElementById('refresh-coach-btn').style.display = 'block';
+        document.getElementById('coach-chat-box').style.display = 'none';
+    }
 }
 
 function toggleTask(dIdx, tIdx) {
     const data = JSON.parse(localStorage.getItem(DATA_KEY));
-    const wk = data.microcycles[currentWeek.num];
+    const wk = data.microcycles[currentWeekData.num];
     wk[dIdx].tasks[tIdx].done = !wk[dIdx].tasks[tIdx].done;
     localStorage.setItem(DATA_KEY, JSON.stringify(data));
-    renderChecklist(wk); updateStatusIcon(currentWeek.num); updateStreak();
+    renderChecklist(wk); updateStatusIcon(currentWeekData.num); updateStreak();
 }
 
 function updateStatusIcon(num) {
@@ -660,24 +533,120 @@ function updateStatusIcon(num) {
 
 function updateStreak() {
     const data = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
-    let s = 0; if(data.microcycles) Object.values(data.microcycles).forEach(wk => { let t = 0, d = 0; wk.forEach(day => { t += day.tasks.length; d += day.tasks.filter(x => x.done).length; }); if(t > 0 && d/t >= 0.5) s++; });
+    let s = 0; if(data.microcycles) Object.values(data.microcycles).forEach(wk => {
+        let t = 0, d = 0; wk.forEach(day => { t += day.tasks.length; d += day.tasks.filter(x => x.done).length; });
+        if(t > 0 && d/t >= 0.5) s++;
+    });
     document.getElementById('streak-val').innerText = s;
 }
 
-function addPart(name = 'New Section') {
-    const div = document.createElement('div'); div.className = 'part-box';
-    div.innerHTML = `<div style="display:flex; gap:5px; margin-bottom:10px;"><input type="text" class="p-name wa-input" value="${name}" oninput="autoSave()" style="flex-grow:1; font-weight:bold;"><button class="btn-delete" onclick="this.parentElement.parentElement.remove(); autoSave();">🗑️</button></div><div class="c-list"></div><button class="btn-secondary" onclick="addChapter(this.previousElementSibling)">+ Add Sub-section</button>`;
-    document.getElementById('outline-area').appendChild(div); return div;
+function autoSave() {
+    const data = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
+    data.goal = document.getElementById('goal-input').value;
+    data.deadline = document.getElementById('deadline-input').value;
+    data.hours = document.getElementById('hours-input').value;
+    data.apiKey = document.getElementById('api-key-input').value;
+    data.writingDays = Array.from(document.querySelectorAll('.day-check:checked')).map(cb => cb.value);
+    data.limiter = document.getElementById('limiter-input').value;
+    data.outline = Array.from(document.querySelectorAll('.part-box')).map(part => ({
+        name: part.querySelector('.p-name').value,
+        chaps: Array.from(part.querySelectorAll('.c-row')).map(row => ({ n: row.querySelector('.c-name').value, p: row.querySelector('.c-p').value }))
+    }));
+    localStorage.setItem(DATA_KEY, JSON.stringify(data));
 }
 
-function addChapter(list, name = '', p = 0) {
-    const d = document.createElement('div'); d.className = 'c-row'; d.style = "display:flex; gap:5px; margin-bottom:8px; align-items:center;";
-    d.innerHTML = `<input type="text" class="c-name wa-input" value="${name}" oninput="autoSave()" style="flex-grow:1;"><input type="number" class="c-p wa-input" value="${p}" oninput="autoSave()" style="width:55px"><span class="percent-label">%</span><button class="btn-delete" onclick="this.parentElement.remove(); autoSave();">×</button>`;
+function applyTemplate() {
+    const val = document.getElementById('template-select').value;
+    if(!val) return;
+    document.getElementById('outline-area').innerHTML = '';
+    templates[val].forEach(p => {
+        const pEl = addPart(p.n);
+        p.chaps.forEach(ch => addChapter(pEl.querySelector('.c-list'), ch.n, ch.p));
+    });
+    autoSave();
+}
+
+function addPart(name = 'New Section') {
+    const div = document.createElement('div');
+    div.className = 'part-box';
+    div.innerHTML = `<div style="display:flex; gap:5px; align-items:center;"><input type="text" class="p-name wa-input" value="${name}" oninput="autoSave()" style="flex-grow:1; font-weight:bold; margin-bottom:0; background:#eee !important;"><button class="btn-delete" onclick="this.parentElement.parentElement.remove(); autoSave();">🗑️</button></div><div class="c-list"></div><button class="btn-secondary" onclick="addChapter(this.previousElementSibling)" style="margin-top:8px; font-size:0.65rem; padding:4px;">+ Add Sub-section</button>`;
+    document.getElementById('outline-area').appendChild(div);
+    return div;
+}
+
+function addChapter(list, name = 'Sub-section', p = 0) {
+    const d = document.createElement('div');
+    d.className = 'c-row';
+    d.innerHTML = `<input type="text" class="c-name wa-input" value="${name}" oninput="autoSave()" style="flex-grow:1;"><input type="number" class="c-p wa-input" value="${p}" oninput="autoSave()" style="width:50px; text-align:center;"><span class="percent-label">%</span><button class="btn-delete" onclick="this.parentElement.remove(); autoSave();">×</button>`;
     list.appendChild(d);
 }
 
-function saveKey() { autoSave(); alert("Key Secured."); }
-function editParams() { document.getElementById('setup-card').style.display = 'block'; window.scrollTo({ top: 0, behavior: 'smooth' }); }
 function nuclearReset() { if(prompt("Type 'This unicorn will fly' to reset:") === "This unicorn will fly") { localStorage.removeItem(DATA_KEY); location.reload(); } }
-window.onload = () => { loadConstitution(); loadSystem(); };
+
+window.onload = () => {
+    initPersonaSelector();
+    const data = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
+    if(data.goal && data.apiKey) {
+        document.getElementById('goal-input').value = data.goal;
+        document.getElementById('deadline-input').value = data.deadline;
+        document.getElementById('api-key-input').value = data.apiKey;
+        if(data.limiter) document.getElementById('limiter-input').value = data.limiter;
+        if(data.outline) {
+            document.getElementById('outline-area').innerHTML = '';
+            data.outline.forEach(p => {
+                const pEl = addPart(p.name);
+                p.chaps.forEach(ch => addChapter(pEl.querySelector('.c-list'), ch.n, ch.p));
+            });
+        }
+        finishOnboarding();
+    } else { showView('view-landing'); }
+};
+
+function loadSavedData() {
+    const raw = localStorage.getItem(DATA_KEY);
+    if (!raw) {
+        initPersonaSelector(); // Initial setup if no data exists
+        return;
+    }
+
+    const data = JSON.parse(raw);
+
+    // Populate standard inputs
+    if (data.goal) document.getElementById('goal-input').value = data.goal;
+    if (data.deadline) document.getElementById('deadline-input').value = data.deadline;
+    if (data.hours) document.getElementById('hours-input').value = data.hours;
+    if (data.apiKey) document.getElementById('api-key-input').value = data.apiKey;
+    if (data.limiter) document.getElementById('limiter-input').value = data.limiter;
+
+    // Populate Writing Day checkboxes
+    if (data.writingDays) {
+        document.querySelectorAll('.day-check').forEach(cb => {
+            cb.checked = data.writingDays.includes(cb.value);
+        });
+    }
+
+    // Re-render the outline if it exists
+    if (data.outline) {
+        const area = document.getElementById('outline-area');
+        area.innerHTML = '';
+        data.outline.forEach(p => area.appendChild(createPartElement(p.name, p.chaps)));
+    }
+
+    // If they already have an API key and deadline, skip straight to the App view
+    if (data.apiKey && data.deadline) {
+        const personaKey = localStorage.getItem('selected_persona') || 'murakami';
+        const p = PERSONAS[personaKey];
+        document.getElementById('current-ghost-img').src = p.img;
+        document.getElementById('current-ghost-name').innerText = p.name;
+        document.getElementById('current-ghost-motto').innerText = p.motto;
+
+        initializePlan();
+        showView('view-app');
+    } else {
+        initPersonaSelector();
+    }
+}
+
+// Call it immediately at the bottom of your script
+loadSavedData();
 </script>

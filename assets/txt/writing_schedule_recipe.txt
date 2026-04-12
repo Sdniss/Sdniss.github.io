@@ -1,92 +1,114 @@
 The recipe document for Gemini prompts
+
+##########
 Prep Phase
+##########
+
 Goal: To prepare for the writing process. The idea is to create a “digital writing twin” that the LLM can track. You have to inform the LLM how your digital avatar is progressing, whether there are changes to factors like limiters (maybe you got a baby in the meantime), etc.
 Metaphors:
-- Plans are nothing, planning is everything – Eisenhower
+    - Plans are nothing, planning is everything – Eisenhower
 Focus: Metadata | Feedback
 Length: 1 week
 Tasks:
-- Schedule a date where you will submit your “PREP” work for feedback. Intermediary deadline.
-- Write in 300 words what you expect your paper to be about 
-- Check journal / thesis / … requirements. Already make an account on the publisher’s website and go through the submission process. Are there hidden to do’s, such as finding external peer reviewers? This will be added to your feedback requests.
-- Define the deadline of your paper
-- Define your writing load. Which days per week will your write and how many hours? Be advised that these writing periods are sacred. Consider doing it first thing in the morning, hardest tasks first.
-- Define your writing limiters. What is it that typically prevents you from writing? Examples include Instagram, unpredictable hours to care for a baby, …
-- Define your writing facilitators. What motivates you to write? In this app, we try to motivate you using tick boxes you can check and a streak you maintain.
-- Define your writing spots. Where do you like to write? Choose 3 locations in order of preference.
-- Define your writing buddy / coach. Assign one person who you will update from time to time about your writing process. This will be your kind but strict military sergeant to which you will mirror your writing discipline.
-- Ask for feedback early, on multiple aspects. Planning, content, …
+    - Schedule a date where you will submit your “PREP” work for feedback. Intermediary deadline.
+    - Write in 300 words what you expect your paper to be about
+    - Check journal / thesis / … requirements. Already make an account on the publisher’s website and go through the submission process. Are there hidden to do’s, such as finding external peer reviewers? This will be added to your feedback requests.
+    - Define the deadline of your paper
+    - Define your writing load. Which days per week will your write and how many hours? Be advised that these writing periods are sacred. Consider doing it first thing in the morning, hardest tasks first.
+    - Define your writing limiters. What is it that typically prevents you from writing? Examples include Instagram, unpredictable hours to care for a baby, …
+    - Define your writing facilitators. What motivates you to write? In this app, we try to motivate you using tick boxes you can check and a streak you maintain.
+    - Define your writing spots. Where do you like to write? Choose 3 locations in order of preference.
+    - Define your writing buddy / coach. Assign one person who you will update from time to time about your writing process. This will be your kind but strict military sergeant to which you will mirror your writing discipline.
+    - Ask for feedback early, on multiple aspects. Planning, content, …
+
+##########
 Base Phase
+##########
+
 Goal: In this phase, you will lay the foundation for you and your manuscript. It consists of 2 or 3 “internal cycles”, meaning that you will check in with yourself at the end of each round (internal feedback). External feedback at the end of this phase. For you, it is to get familiar with the topic you are writing about. For your manuscript, it is to have an initial shape that you can start finetuning. This phase will be a dance between research and writing. Input and output. You will read literature, extract the info that is relevant for you, and integrate it in the paper. In parallel, you might well be collecting data and performing experiments. This is a parallel track that runs not only alongside the base phase.
 Metaphors:
 - “Your first drafts should sound like they were hastily translated from Icelandic by a non-native speaker”
-- 
 Focus: Research | Write | Feedback
 Length: 2 – 3 months
 Tasks:
-- Create a reading list with papers that you want to read. This will be something you can update every time you come across new literature.
-- From time to time, read a paper from your reading list, and write down a maximum of 5 things you took away from the paper, and which you want to integrate in your paper.
-- Schedule a date where you will submit your “BASE” work for feedback. Intermediary deadline. The end of each base will be scheduled for you.
-- Make a more specific outline of the 300-word summary you created. You will make the “fil rouge” for your manuscript that will be on the top of your writing dashboard at all time. If you feel it changed, you can update it towards a new version. The outline will be the skeleton of your paper, and if possible, you already write down coarsely what your storyline is about. Research found A, B and C. There is however a lack of D. I found that E, meaning that scientists should strive for F.
-- From time to time, there will be a block here with the following exercise according to George M. Whitesides: “. . . start with a blank piece of paper, and write down, in any order, all important ideas that occur to you concerning the paper”. The idea is to write freely. Just write down what you are thinking of.
-- Throughout the entire cycle, make sure to also have moments where you write the story you want to write, regardless of references. You can even add “[REF]” to indicate that you still need to find a reference for it, or check whether it makes sense.
-- Alternate the bulk writing with short moments of zooming out. What have you written so far? Where is it going? Do not edit.
-- Check in whether you need to update your “fil rouge”.
-- At the end of each “BASE” subsection, there is a quick internal review moment. For 1 session, you will check in with yourself how your writing went, and check whether you need to update your fil rouge.
+    - Create a reading list with papers that you want to read. This will be something you can update every time you come across new literature.
+    - From time to time, read a paper from your reading list, and write down a maximum of 5 things you took away from the paper, and which you want to integrate in your paper.
+    - Schedule a date where you will submit your “BASE” work for feedback. Intermediary deadline. The end of each base will be scheduled for you.
+    - Make a more specific outline of the 300-word summary you created. You will make the “fil rouge” for your manuscript that will be on the top of your writing dashboard at all time. If you feel it changed, you can update it towards a new version. The outline will be the skeleton of your paper, and if possible, you already write down coarsely what your storyline is about. Research found A, B and C. There is however a lack of D. I found that E, meaning that scientists should strive for F.
+    - From time to time, there will be a block here with the following exercise according to George M. Whitesides: “. . . start with a blank piece of paper, and write down, in any order, all important ideas that occur to you concerning the paper”. The idea is to write freely. Just write down what you are thinking of.
+    - Throughout the entire cycle, make sure to also have moments where you write the story you want to write, regardless of references. You can even add “[REF]” to indicate that you still need to find a reference for it, or check whether it makes sense.
+    - Alternate the bulk writing with short moments of zooming out. What have you written so far? Where is it going? Do not edit.
+    - Check in whether you need to update your “fil rouge”.
+    - At the end of each “BASE” subsection, there is a quick internal review moment. For 1 session, you will check in with yourself how your writing went, and check whether you need to update your fil rouge.
+
+###########
 Build phase
+###########
+
 Goal: Like the “BASE” phase, this phase also consists of several subsections. This time however, the focus is fundamentally different. You will primarily be removing text. The absolute core focus is on editing, while from time to time, you will still do some literature research or writing to add gaps.
 Metaphors:
-- Most Oscars in history were accompanied with Oscars in movie editing. Editing is a major part of writing.
+    - Most Oscars in history were accompanied with Oscars in movie editing. Editing is a major part of writing.
 Focus: Edit | Zoom out | Feedback
 Length: 2 – 3 months
 Tasks:
-- You will here start identifying your “writing idiosyncrasies”. From time to time, take 5 and write down what you think is very typical for your writing. It is nice to know and communicate with others what your writing identity is. This can also be helpful to share with those revising your text, so they know what not to change.
-- Plan more moments of zooming out. Remove your text. Review. Did you remove too much? With this task comes the necessity to shortly write down what you’ve noticed. This will guide whether you should be adding text again or reviewing literature again.
-- External feedback will play a bigger role in this phase. You’ve been working on your manuscript for a long time by now. Tunnel vision is a CAVEAT now.
-- Schedule a date for each “BUILD” subsection where you will submit your work for feedback. Intermediary deadlines. If you have co-authors on your manuscript, submit it after the first BUILD session. Rules for asking feedback:
-o Be specific on which you would like to have feedback
-o How would you like to receive feedback?
-o By when? Typically, 2 to 3 weeks is reasonable. This is a break time, time to relax, reflect.
-- Check in whether you need to update your “fil rouge”.
+    - You will here start identifying your “writing idiosyncrasies”. From time to time, take 5 and write down what you think is very typical for your writing. It is nice to know and communicate with others what your writing identity is. This can also be helpful to share with those revising your text, so they know what not to change.
+    - Plan more moments of zooming out. Remove your text. Review. Did you remove too much? With this task comes the necessity to shortly write down what you’ve noticed. This will guide whether you should be adding text again or reviewing literature again.
+    - External feedback will play a bigger role in this phase. You’ve been working on your manuscript for a long time by now. Tunnel vision is a CAVEAT now.
+    - Schedule a date for each “BUILD” subsection where you will submit your work for feedback. Intermediary deadlines. If you have co-authors on your manuscript, submit it after the first BUILD session. Rules for asking feedback:
+        o Be specific on which you would like to have feedback
+        o How would you like to receive feedback?
+        o By when? Typically, 2 to 3 weeks is reasonable. This is a break time, time to relax, reflect.
+    - Check in whether you need to update your “fil rouge”.
+
+####
 Peak
+####
+
 Goal: Here, you go into meticulous detail. You will perfect your manuscript and have a look at the details. To avoid perfectionism, also this phase is limited in space and time.
 Metaphors:
 Focus: Edit 
 Length: 2 weeks
 Tasks:
-- Read out loud (Was this Zinssner or the academic paper on how to write a paper?). This will make you spot small inconsistencies in your writing.
-- Make sure all references are correct, missing ones are filled in, …
-- Write the metadata. These include:
-o Abstract
-o (Author Contributions)
-o Open science statements
-o Acknowledgments
-o Etc.
+    - Read out loud (Was this Zinssner or the academic paper on how to write a paper?). This will make you spot small inconsistencies in your writing.
+    - Make sure all references are correct, missing ones are filled in, …
+    - Write the metadata. These include:
+        o Abstract
+        o (Author Contributions)
+        o Open science statements
+        o Acknowledgments
+        o Etc.
+
+####
 Race
+####
+
 Goal: This is a phase dedicated to time necessary to submit the manuscript. That can take some time for a journal for example. Some slack is built in. That is necessary for any buffer you might need when submitting, and realizing something is off. You start prepping your submit one week before the actual deadline.
 Focus: Metadata 
 Length: 1 week
 Metaphors:
-- From the Essentialism book: Disney said: “We do not finish, we release”. This is a mantra to keep you form perfectionism. If you went through the writing stages above, you will be fine.
+    - From the Essentialism book: Disney said: “We do not finish, we release”. This is a mantra to keep you form perfectionism. If you went through the writing stages above, you will be fine.
+
 Tasks:
-- Submit. In case of journal submission via a portal, make sure to take enough time to fill in metadata etc.
+    - Submit. In case of journal submission via a portal, make sure to take enough time to fill in metadata etc.
+
 General concepts:
-- Limit yourself to working on small sections at a time
-- Focus only on macro-structure, not microstructures such as grammar
-- Share with others for revisions
-- In total, 5-7 drafts would be reasonable. That accords with the internal and external feedback loops.
-- From own experience with Triathlon:
-o Make sure that you feel guilty if skipped --> Triathlon coach works well
-o Always make sure what to do. Knowing beforehand what to do kills procrastination
-o Do the training first in the morning. It will give you a sense of accomplishment and that the day is not completely stuffed
-o I need a logging system where I can see that I have done my exercise. Gives a sense of accomplishment too. Coachbox in this case.
-- Other triathlon:
-o There’s not just one type of periodization (linear). Maybe offer different paradigms that fit someone most? Some kind of template schedules.
-o https://www.sciencedirect.com/science/article/pii/S2095254615000678 
-o https://health.clevelandclinic.org/periodization-training 
-- Try to write keeping in mind that whoever reads your manuscript is easily annoyed, will stop reading quickly, has limited time, … Make sure to hook the reader, make it worth the time spent.
-- From sarnecka + own group experience: Write together (e.g. Pomodoro together).
-- At the end of each subsection of a phase, there is a week where the number of writing hours is less. You can either choose to reduce the number of hours per day, or skip a day of writing. Goal: To take a step back, get out of tunnel vision.
+    - Limit yourself to working on small sections at a time
+    - Focus only on macro-structure, not microstructures such as grammar
+    - Share with others for revisions
+    - In total, 5-7 drafts would be reasonable. That accords with the internal and external feedback loops.
+    - From own experience with Triathlon:
+        o Make sure that you feel guilty if skipped --> Triathlon coach works well
+        o Always make sure what to do. Knowing beforehand what to do kills procrastination
+        o Do the training first in the morning. It will give you a sense of accomplishment and that the day is not completely stuffed
+        o I need a logging system where I can see that I have done my exercise. Gives a sense of accomplishment too. Coachbox in this case.
+    - Other triathlon:
+        o There’s not just one type of periodization (linear). Maybe offer different paradigms that fit someone most? Some kind of template schedules.
+        o https://www.sciencedirect.com/science/article/pii/S2095254615000678
+        o https://health.clevelandclinic.org/periodization-training
+    - Try to write keeping in mind that whoever reads your manuscript is easily annoyed, will stop reading quickly, has limited time, … Make sure to hook the reader, make it worth the time spent.
+    - From sarnecka + own group experience: Write together (e.g. Pomodoro together).
+    - At the end of each subsection of a phase, there is a week where . You can either choose to reduce the number of hours per day, or skip a day of writing. Goal: To take a step back, get out of tunnel vision.
+
 References:
-- 
+    -
 
