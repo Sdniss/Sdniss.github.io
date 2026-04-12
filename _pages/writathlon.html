@@ -78,6 +78,22 @@ permalink: /writathlon/
     .atp-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
     .atp-table th { text-align: center; padding: 10px; border-bottom: 2px solid var(--secondary); font-size: 0.65rem; text-transform: uppercase; }
     .atp-table td { padding: 10px 5px; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .atp-scroll-container {
+        max-height: 400px; /* Adjust this value to your preferred height */
+        overflow-y: auto;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 8px;
+        position: relative;
+    }
+
+    /* Optional: Keep the table header visible while scrolling */
+    .atp-table thead th {
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 10;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);
+    }
     .streak-badge { background: var(--primary); color: white; padding: 12px; border-radius: 8px; text-align: center; margin: 1rem 0; font-weight: 600; }
 
     /* Coach UI */
