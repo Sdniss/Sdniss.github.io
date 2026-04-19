@@ -1,3 +1,21 @@
+- event: "Leuven Half Marathon"
+  date: 2026-04-19
+  location: "Leuven, BE"
+  type: "Half Marathon"
+  distance:
+    run: "21.097km"
+  link: "https://www.acn-timing.com/?lng=NL#/events/2156915396506687/ctx/20260419_leuven/generic/199034_2/detail/4275_2"
+  nr: "4275"
+  results:
+    total_time: "1:51:23"
+  description: "New shirts from our triathlon club! Very flashy, and thus convenient for supporters :)
+  Had some energy for a final sprint, and finished together with a club mate.
+  Beautiful weather and really amazing, enthusiastic supporters. Thanks!"
+  photos:
+    - "2026_Leuven_Half_Marathon_1.jpg"
+    - "2026_Leuven_Half_Marathon_2.jpg"
+    - "2026_Leuven_Half_Marathon_3.jpg"
+
 - event: "Challenge Almere-Amsterdam"
   date: 2025-09-13
   location: "Almere, NL"
