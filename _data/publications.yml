@@ -1,6 +1,23 @@
 section_title: "Publications"
 summary: "Lorem ipsum sit amet ..."
 entries:
+  - authors: "Van Laethem D, Costers L, Miravalle A, Alvarez E, Myers B, Boster A, Halawani HA, Dewil M, Cambron M, Grothe M, Denissen S, Bartz R, Sima D, Ribbens A, Smeets D and Nagels G"
+    year: 2026
+    title: "The relationship between objective and subjective cognitive performance and clinical and MRI disease burden in early multiple sclerosis"
+    journal: "Scientific Reports"
+    volume_issue: "TBD"
+    journal_metrics:
+      year: "2024"
+      if: "3.9"
+      q_factor: "Q1"
+    joint_first: false
+    #link: "TBD"
+    key_finding: "Completed upon publication (currently in press)"
+    #pdf: "/assets/pdf/publications/denissen-2026-federated.pdf"
+    #figure: "/assets/images/pub-figures/denissen-2026-federated.webp"
+    #figure-license: "CC BY 4.0"
+    #linkedin_post_link: "https://www.linkedin.com/posts/stijndenissen_federatedlearning-realworld-international-share-7441826504428285952-eSQt?utm_source=share&utm_medium=member_desktop&rcm=ACoAACWeMHoBUf4M7YGORqicoRFAyNZ2cV68jq0"
+
   - authors: "Denissen S, Laton J, Grothe M, Vaneckova M, Uher T, Kudrna M, Horáková D, Baijot J, Penner I-K, Kirsch M, Motýl J, De Vos M, Chén OY, Van Schependom J and Nagels G"
     year: 2026
     title: "Real-world federated learning for brain imaging scientists"
