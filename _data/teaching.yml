@@ -1,6 +1,14 @@
 section_title: "Teaching"
 summary: "I teach about clinical decision support systems (CDSS) to diverse clinical profiles including doctors, pharmacists, nurses and physiotherapists. My courses have a heavy emphasis on developing a strong background on artificial intelligence."
 entries:
+  - course: "AI applications in medicine"
+    summary: "Guest lecture entitled 'The Brain Clock and its neurological implications'. Please find the slideshow in the link below."
+    institution: "Vietnam National University"
+    end_date: "2026"
+    role: "Guest lecturer"
+    figure: "/assets/images/lectures/2026-04-20_brain_age_VNU_image.png"
+    link: "/assets/pdf/slides/2026-04-20_brain-age-VNU.pdf"
+
   - course: "Computational Neuroscience"
     summary: "Jury member for Bachelor projects on machine learning on EEG data"
     institution: "Vietnam National University"
