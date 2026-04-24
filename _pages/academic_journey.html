@@ -30,6 +30,12 @@ permalink: /academic_journey/
     <a href="{{ '/assets/pdf/stijn_denissen_cv.pdf' | relative_url }}" class="filter-btn" style="--btn-color: #d63031;">
        <i class="fa-solid fa-file-pdf"></i> Download Official CV
     </a>
+  <br><br>
+    <div class="language-tags">
+      {% for lang in site.data.languages.entries %}
+        <span class="lang-tag" title="{{ lang.level }}"><b>{{ lang.language }}</b>: {{ lang.level }}</span>
+      {% endfor %}
+    </div>
 </div>
 
 <div class="filter-wrapper">
@@ -156,14 +162,6 @@ permalink: /academic_journey/
 
   <div class="category-summary vision" data-cat="reviewer" style="display:none; text-align:center; max-width:800px; margin:0 auto;">
     {{ site.data.reviewer.summary }} <!-- Use " | size " to count number of entries -->
-  </div>
-
-  <div class="category-summary" data-cat="all" style="display:block;">
-    <div class="language-tags">
-      {% for lang in site.data.languages.entries %}
-        <span class="lang-tag" title="{{ lang.level }}"><b>{{ lang.language }}</b>: {{ lang.level }}</span>
-      {% endfor %}
-    </div>
   </div>
 </div>
 
