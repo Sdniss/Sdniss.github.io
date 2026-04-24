@@ -46,10 +46,31 @@ permalink: /academic_journey/
     <button class="filter-btn" data-filter="research_stays" style="--btn-color: #eb9534">Abroad</button>
     <button class="filter-btn" data-filter="community_engagement" style="--btn-color: #1a2c79">Community Engagement</button>
     <button class="filter-btn" data-filter="reviewer" style="--btn-color: #836953">Reviewer</button>
+    <button class="filter-btn" data-filter="international" style="--btn-color: #1289A7">
+      <i class="fa-solid fa-earth-americas"></i> Internationalisation
+    </button>
   </div>
 </div>
 
 <div id="category-summary-area" style="margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+
+  <section class="category-summary" data-cat="international" style="display:none; width: 100%;">
+    <div class="trajectory-column" style="margin-bottom: 20px; text-align: center;">
+      <h3><i class="fa-solid fa-network-wired"></i> Global Impact Layers</h3>
+      <p class="vision">Mapping the <b>iAIMS community</b> and the <b>Federated Learning (FL)</b> networks.<br>Please click country or center for more information.</p>
+
+      <div class="map-controls" style="margin: 15px 0;">
+        <label class="switch-label">
+          <input type="radio" name="mapLayer" checked onclick="updateMap('iaims')"> iAIMS Network
+        </label>
+        <label class="switch-label" style="margin-left: 20px;">
+          <input type="radio" name="mapLayer" onclick="updateMap('federated')"> FL Infrastructure
+        </label>
+      </div>
+    </div>
+
+    <div id="intl-map" style="height: 500px; border-radius: 20px; border: 1px solid #eee; z-index: 1;"></div>
+  </section>
 
   <section class="scholar-stats category-summary" data-cat="publications" style="display:none;">
     <div class="stats-card">
@@ -215,7 +236,208 @@ permalink: /academic_journey/
   {% endfor %}
 </div>
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+
 <script>
+const networkData = {
+  center: {{ site.data.internationalisation.center | jsonify }},
+  localNodes: {{ site.data.internationalisation.nodes | jsonify }}
+};
+
+let iaimsFinalCounts = {};
+let map;
+let countryLayer;
+let nodeLayer = L.layerGroup();
+
+/**
+ * Robust Fetcher: Gets member data from the i-AIMS GitHub Repo
+ * Uses the 'recursive' tree API to minimize requests and avoid rate limits.
+ */
+async function fetchIAIMSData() {
+  const repo = "i-AIMS/i-aims.github.io";
+  // Recursive tree fetch to get ALL filenames in one go
+  const treeUrl = `https://api.github.com/repos/${repo}/git/trees/main?recursive=1`;
+
+  try {
+    const response = await fetch(treeUrl);
+    const data = await response.json();
+
+    // 1. Filter for markdown files in the _members directory
+    const memberFiles = data.tree.filter(file =>
+      file.path.startsWith('_members/') && file.path.endsWith('.md')
+    );
+
+    console.log(`Syncing with iAIMS: Found ${memberFiles.length} members.`);
+
+    // 2. Fetch contents and parse countries
+    const fetchPromises = memberFiles.map(async (file) => {
+      try {
+        const rawUrl = `https://raw.githubusercontent.com/${repo}/main/${file.path}`;
+        const res = await fetch(rawUrl);
+        const text = await res.text();
+
+        // Extract country using a more robust Regex (handles quotes or spaces)
+        const countryMatch = text.match(/^country:\s*["']?([\w\s]+)["']?\s*$/m);
+
+        if (countryMatch && countryMatch[1]) {
+          let country = countryMatch[1].trim();
+
+          // Manual Overrides: Ensure names match the Leaflet GeoJSON exactly
+          if (country === "USA") country = "United States of America";
+          if (country === "UK") country = "United Kingdom";
+
+          iaimsFinalCounts[country] = (iaimsFinalCounts[country] || 0) + 1;
+        }
+      } catch (err) {
+        console.warn(`Skip ${file.path}:`, err);
+      }
+    });
+
+    await Promise.all(fetchPromises);
+    console.log("iAIMS Data Loaded:", iaimsFinalCounts);
+  } catch (error) {
+    console.error("GitHub Connection Failed:", error);
+  }
+}
+
+async function initMap() {
+  // If map already exists, just fix the size and update the view
+  if (map) {
+    console.log("--- Debug: Map already exists, calling invalidateSize ---");
+    setTimeout(() => {
+      map.invalidateSize();
+      // Ensure we show the currently selected layer
+      const active = document.querySelector('input[name="mapLayer"]:checked').value;
+      updateMap(active);
+    }, 400);
+    return;
+  }
+
+  // First time initialization
+  await fetchIAIMSData();
+
+  const worldBounds = L.latLngBounds(L.latLng(-90, -180), L.latLng(90, 180));
+  map = L.map('intl-map', {
+    maxBounds: worldBounds,
+    maxBoundsViscosity: 1.0,
+    minZoom: 2
+  }).setView([20, 0], 2);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    noWrap: true,
+    bounds: worldBounds
+  }).addTo(map);
+
+  nodeLayer.addTo(map);
+
+  // CRITICAL: Force Leaflet to detect the container size after it becomes visible
+  setTimeout(() => {
+    map.invalidateSize();
+    updateMap('iaims');
+  }, 500);
+}
+
+// Add this variable OUTSIDE the function (at the top of your script)
+// to keep track of the clicked country across multiple function calls
+let selectedLayer = null;
+
+async function updateMap(activeLayer) {
+  if (!map) return;
+
+  nodeLayer.clearLayers();
+  if (countryLayer) map.removeLayer(countryLayer);
+
+  // Reset the tracker when we switch main layers
+  selectedLayer = null;
+
+  if (activeLayer === 'iaims') {
+    const geoResp = await fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson');
+    const geoData = await geoResp.json();
+
+    countryLayer = L.geoJson(geoData, {
+      style: (feature) => {
+        const name = feature.properties.ADMIN || feature.properties.name || feature.properties.NAME || "Unknown";
+        const count = iaimsFinalCounts[name] || 0;
+
+        return {
+          fillColor: count > 0 ? '#1289A7' : 'transparent',
+          weight: count > 0 ? 1 : 0.5,
+          color: count > 0 ? '#fff' : '#ddd',
+          fillOpacity: 0.7
+        };
+      },
+      onEachFeature: (feature, layer) => {
+        const name = feature.properties.ADMIN || feature.properties.name || feature.properties.NAME || "Unknown";
+        const count = iaimsFinalCounts[name] || 0;
+
+        if (count > 0) {
+          layer.bindPopup(`<strong>${name}</strong><br>${count} member${count > 1 ? 's' : ''}`);
+
+          layer.on({
+
+            click: function (e) {
+              const l = e.target;
+
+              // If there was a previously selected country, reset its style
+              if (selectedLayer && selectedLayer !== l) {
+                countryLayer.resetStyle(selectedLayer);
+              }
+
+              // Apply the "Selected" style
+              l.setStyle({
+                fillOpacity: 0.9,
+                weight: 1,
+                color: '#111111'
+              });
+
+              // Open popup and update tracker
+              l.openPopup();
+              selectedLayer = l;
+
+              // Prevent map zoom (we just do nothing here regarding setView or fitBounds)
+              L.DomEvent.stopPropagation(e);
+            }
+          });
+        }
+      }
+    }).addTo(map);
+
+    // Reset everything if clicking the empty map background
+    map.on('click', function() {
+      if (selectedLayer) {
+        countryLayer.resetStyle(selectedLayer);
+        map.closePopup();
+        selectedLayer = null;
+      }
+    });
+
+  } else {
+    // Federated Learning View logic...
+    const centerPos = [networkData.center.lat, networkData.center.lng];
+    const centerName = networkData.center.name;
+
+    L.marker(centerPos, {
+      icon: L.divIcon({
+        className: 'center-marker',
+        html: '<i class="fa-solid fa-star" style="color: #fdcb6e; font-size: 20px;"></i>',
+        iconSize: [20, 20],
+        iconAnchor: [10, 10]
+      })
+    }).bindPopup(centerName).addTo(nodeLayer);
+
+    if (networkData.localNodes) {
+      networkData.localNodes.forEach(node => {
+        const nodePos = [node.lat, node.lng];
+        L.circleMarker(nodePos, { color: '#d63031', radius: 6, weight: 2}).bindPopup(node.name).addTo(nodeLayer);
+        L.polyline([centerPos, nodePos], { color: '#d63031', weight: 1.5, dashArray: '5, 10', opacity: 0.4 }).addTo(nodeLayer);
+      });
+    }
+  }
+}
+
+// 2. DOM Logic & Filtering
 document.addEventListener('DOMContentLoaded', function() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const items = document.querySelectorAll('.node-pill');
@@ -223,63 +445,55 @@ document.addEventListener('DOMContentLoaded', function() {
   const summaries = document.querySelectorAll('.category-summary');
 
   function applyFilter(filter) {
-    // 1. Toggle Active Class on Buttons
+    // Toggle Active Class on Buttons
     filterBtns.forEach(b => {
-      if (b.getAttribute('data-filter') === filter) {
-        b.classList.add('active');
-      } else {
-        b.classList.remove('active');
-      }
+      b.classList.toggle('active', b.getAttribute('data-filter') === filter);
     });
 
-    // 2. Filter Summaries
+    // Toggle Visibility of Category Summaries
     summaries.forEach(summary => {
-      if (summary.getAttribute('data-cat') === filter) {
-        summary.style.display = 'block';
-      } else {
-        summary.style.display = 'none';
-      }
+      summary.style.display = (summary.getAttribute('data-cat') === filter) ? 'block' : 'none';
     });
 
-    // 3. Filter Chronological Pills
+    // Toggle Visibility of Chronological Items
     items.forEach(item => {
       const category = item.getAttribute('data-category');
       item.style.display = (filter === 'all' || category === filter) ? 'inline-block' : 'none';
     });
 
-    // 4. Hide Empty Year Blocks
+    // Hide Year Blocks if they contain no visible items
     yearBlocks.forEach(block => {
       const visible = block.querySelectorAll('.node-pill:not([style*="display: none"])').length;
       block.style.display = (visible > 0) ? 'block' : 'none';
     });
+
+    // Special handling for the Map: Initialize/Resize when the filter is active
+    if (filter === 'international') {
+      setTimeout(initMap, 500); // Increased from 300
+    }
   }
 
-  // Handle Button Clicks & Update URL Hash
+  // Button Click Handler
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.getAttribute('data-filter');
       if (filter) {
-        // Update the URL hash without jumping the page
         window.history.pushState(null, null, `#${filter}`);
         applyFilter(filter);
       }
     });
   });
 
-  // Handle Initial Load and Browser Back/Forward
+  // URL Hash Handler (Handles direct links and browser navigation)
   function handleUrlHash() {
     const hash = window.location.hash.replace('#', '');
     const validFilters = Array.from(filterBtns).map(b => b.getAttribute('data-filter'));
-
-    if (hash && validFilters.includes(hash)) {
-      applyFilter(hash);
-    } else {
-      applyFilter('all');
-    }
+    const activeFilter = (hash && validFilters.includes(hash)) ? hash : 'all';
+    applyFilter(activeFilter);
   }
 
   window.addEventListener('hashchange', handleUrlHash);
-  handleUrlHash(); // Run on first load
+  handleUrlHash(); // Run on initial load
 });
 </script>
 
@@ -697,4 +911,18 @@ document.addEventListener('DOMContentLoaded', function() {
       background: #0077b5 !important; /* Official LinkedIn Blue */
       color: white !important;
     }
+
+  /* Ensure the center star isn't obscured by a default white box */
+  .center-marker { background: none !important; border: none !important; }
+  .switch-label { font-size: 0.9rem; font-weight: 700; cursor: pointer; color: #636e72; }
+  .switch-label input { margin-right: 5px; }
+  #intl-map {
+    background: #f8f9fa;
+    height: 500px;
+    width: 100%;
+    min-height: 500px;
+    display: block; /* Ensure it behaves as a block when its parent is shown */
+  }
+
+
 </style>

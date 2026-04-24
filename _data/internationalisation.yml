@@ -1,0 +1,36 @@
+center:
+  name: "AIMS lab, VUB"
+  lat: 50.88730417969158
+  lng: 4.306063368759931
+
+nodes:
+  - name: "Universitätsmedizin Greifswald"
+    lat: 54.08873517971303
+    lng: 13.404452996270404
+    networks: [ "federated" ]
+  - name: "First Faculty of Medicine, Charles University"
+    lat: 50.074588314554454
+    lng: 14.426482980739337
+    networks: ["federated"]
+  - name: "Multiple Sklerose Zentrum Dresden"
+    lat: 51.05354773621
+    lng: 13.780561399839337
+    networks: ["federated"]
+  - name: "Vita-Salute San Raffaele University"
+    lat: 45.50690134382049
+    lng: 9.266908470790451
+    networks: ["federated"]
+  - name: "University of Naples Federico II"
+    lat: 40.84545714865722
+    lng: 14.25774236871902
+    networks: ["federated"]
+  - name: "Aristotle University of Thessaloniki"
+    lat: 40.63271468196459
+    lng: 22.957310911038185
+    networks: ["federated"]
+  - name: "VNU University of Engineering and Technology"
+    lat: 21.038252457952215
+    lng: 105.78263846365662
+  - name: "Bach Mai hospital"
+    lat: 21.002959417326814
+    lng: 105.84081368476087
