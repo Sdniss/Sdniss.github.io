@@ -4,6 +4,17 @@ summary: >
   neuroscience, neurology, and artificial intelligence.
 
 reviews:
+  - name: "ECTRIMS 2025 abstract reviewer"
+    #publisher: "Multiple Sclerosis Journal"
+    summary: "Reviewing abstracts on AI and big data in MS for the 2025 ECTRIMS conference in Barcelona.
+    Abstracts are published as supplement in 'Multiple Sclerosis Journal'."
+    year: "2025"
+    link: "https://ectrims.eu/ectrims2025-abstracts/publication/"
+    #journal_metrics:
+    #  year: "2024"
+    #  if: "5.0"
+    #  q_factor: "Q1"
+
   - name: "Nature Translational Psychiatry"
     publisher: "Nature Portfolio"
     tags: ["Psychiatry", "Neuroscience"]
