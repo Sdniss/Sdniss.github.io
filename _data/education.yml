@@ -48,3 +48,12 @@ entries:
     end_date: "2015"
     cvitems:
       - "Grade: Cum Fructu"
+
+  - degree: "Gymnasium (high school)"
+    institution: "Gymnasium Beekvliet"
+    location: "Sint-Michielsgestel"
+    start_date: "2006"
+    end_date: "2012"
+    summary: "I completed the combined 'Nature and Technology' and 'Nature and Health' track.
+     My graduation project, in collaboration with Stijn Peels, was entitled 'The evolution of sound storage'.
+     We made our own version of a phonograph, introduced by Thomas Alva Edison in 1878. The project was awarded 8/10."
