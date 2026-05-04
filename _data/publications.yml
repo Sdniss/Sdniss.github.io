@@ -43,6 +43,15 @@ entries:
     link: "https://ieeexplore.ieee.org/document/11354869"
     key_finding: "This paper introduces a new federated learning method: 'PDD-FANs'. Using an ablation study with Byzantine attack, the method outperforms the state of the art in handling non-IID data."
 
+  - authors: "Xinguang Wang, Nguyen Linh Trung, Oliver Y. Chen, Alvaro Javier Vargas Guerrero, Quang Manh Doan, Tianzheng Hu, Stijn Denissen, Jeroen Van Schependom and Guy Nagels"
+    year: 2026
+    title: "Federated Adversarial Network (FAN): A Generative Proxy-Based, Defense-Enhanced, and Non-IID-Robust Federated Learning Method"
+    journal: "SSRN (preprint)"
+    joint_first: false
+    link: "http://dx.doi.org/10.2139/ssrn.6138578"
+    key_finding: "This preprint introduces the 'Federated Adversarial Network' (FAN), and proves its effectiveness especially in handling non-IID data."
+    figure: "/assets/images/pub-figures/Wang_2026_FAN_SSRN.png"
+
   - authors: "Sosa A, O’Neill KA, Billiet T, Chen J, Couvreur L, Denissen S, Lustberg M, Pehel S, Ribbens A and Krupp L"
     year: 2025
     title: "Incorporating measures of cognitive processing speed and brain volume in clinical management of pediatric onset MS"
