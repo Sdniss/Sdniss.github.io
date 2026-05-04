@@ -1,0 +1,7 @@
+section_title: "Open Science"
+summary: >
+  My passion for open science started early in my PhD career when I co-organised the OpenMR BeNeLux conference on open science in MRI research in 2021.
+  This experience taught me the possibilities of sharing code and tutorials for methodological pipelines, which I started deploying myself over the years.<br><br>
+  Notable contributions, besides this conference, include:<br>
+  [1] Actively sharing code via GitHub / PyPI and maintaining our lab's repository. An example is my <a href="https://github.com/AIMS-VUB/FLightcase">federated learning toolbox "FLightcase"</a>.<br><br>
+  [2] Deploying code in user-testable applications via Hugging Face; you can predict my brain age on my <a href="https://stijndenissen.me/">home page</a>.
