@@ -35,6 +35,7 @@ entries:
     end_date: "2021"
 
   - org: "NSE PhD Network"
+    title: "NSE PhD Network"
     role: "Board member"
     summary: "I co-organised events for the PhD student network in Natural Sciences & Engineering to stimulate connection between PhD students."
     location: "VUB"
