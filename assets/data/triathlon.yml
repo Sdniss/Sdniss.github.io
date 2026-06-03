@@ -1,3 +1,32 @@
+- event: "Sprint Triathlon Stein"
+  date: 2026-05-31
+  location: "Stein, NL"
+  type: "Sprint"
+  distance:
+    swim: "0.75km"
+    bike: "20km"
+    run: "5km"
+  results:
+    total_time: "01:55:37"
+    swim: "00:11:59"
+    t1: "00:04:01"
+    bike: "01:12:11"
+    t2: "00:02:10"
+    run: "00:25:14"
+  description: "Birthday Triathlon. Swift swim at pace 1:35 exiting the water 6th. Disaster stroke early on the bike which was entirely my own fault; there was a little hole in my outer tyre.
+  Fixed it once, drove for a couple of meters, flat tyre again. With some stickers I had in my repair kit, I covered the hole from the inside of the tyre, which seemed to hold for a while.
+  Stopped two times to check the tyre pressure, as it couldn't be too low (contact with floor) but neither too high (bulging of inner tyre outwards). Managed to finish the bike leg, and enjoyed a hilly run afterwards.
+  Little anecdote: 1 minute before T2 I took someone over. While in T2, I overheard the commentator mention that he had great news: the guy could still finish.
+  Close call for me as well.. Very proud of the first triathlon of my brother! He did great."
+  link: "https://my.raceresult.com/400362/#2_361F3C"
+  nr: "401"
+  photos:
+    - "2026_Triathlon_Stein_1.jpg"
+    - "2026_Triathlon_Stein_2.JPG"
+    - "2026_Triathlon_Stein_3.JPG"
+    - "2026_Triathlon_Stein_4.JPG"
+    - "2026_Triathlon_Stein_5.JPG"
+
 - event: "Leuven Half Marathon"
   date: 2026-04-19
   location: "Leuven, BE"
