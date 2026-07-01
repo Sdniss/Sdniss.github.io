@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writathlon | Step 1: Synced Focus</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #d1d1d1;
+            --accent-gold: #ffc107;
+            --font-main: 'Georgia', serif;
+            --line-height: 1.8;
+            --font-size: 1.4rem;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            overflow: hidden;
+        }
+
+        #fog-overlay {
+            position: fixed; inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle, transparent 25%, rgba(10, 10, 10, 0.85) 85%);
+            z-index: 10;
+            transition: background 2s ease;
+        }
+
+        #workspace {
+            height: 100vh; width: 100vw;
+            display: flex; flex-direction: column;
+            align-items: center; padding-top: 5vh;
+        }
+
+        #lantern {
+            width: 30px; height: 45px;
+            background: var(--accent-gold);
+            border-radius: 50% 50% 20% 20%;
+            box-shadow: 0 0 50px 15px rgba(255, 193, 7, 0.3);
+            margin-bottom: 40px;
+        }
+
+        #scroll-container {
+            position: relative;
+            width: 90%; max-width: 800px;
+            height: 70vh;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+        #scroll-container::-webkit-scrollbar { display: none; }
+
+        /* The trick: Absolute positioning both layers to identical coordinates */
+        .text-layer {
+            width: 100%;
+            min-height: 100%;
+            padding: 0; margin: 0;
+            font-size: var(--font-size);
+            line-height: var(--line-height);
+            font-family: var(--font-main);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            position: absolute;
+            top: 0; left: 0;
+        }
+
+        #writing-input {
+            background: transparent;
+            border: none;
+            color: transparent; /* Hide raw characters */
+            caret-color: var(--accent-gold); /* Keep cursor visible */
+            outline: none;
+            resize: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        #markdown-render {
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Essential Markdown Styles */
+        #markdown-render h1 { color: var(--accent-gold); font-size: 1.8rem; margin: 0; }
+        #markdown-render p { margin: 0; }
+        #markdown-render blockquote { border-left: 1px solid var(--accent-gold); padding-left: 1rem; margin: 0; font-style: italic; opacity: 0.7; }
+
+        #footer {
+            position: fixed; bottom: 20px;
+            color: #333; font-size: 0.7rem; letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="fog-overlay"></div>
+
+    <div id="workspace">
+        <div id="lantern"></div>
+
+        <div id="scroll-container">
+            <!-- Layers are stacked exactly on top of each other -->
+            <div id="markdown-render" class="text-layer"></div>
+            <textarea id="writing-input" class="text-layer" spellcheck="false" autofocus placeholder="Light the way..."></textarea>
+        </div>
+    </div>
+
+    <div id="footer">Kinetic Energy: <span id="wcount">0</span> words</div>
+
+    <script>
+        const input = document.getElementById('writing-input');
+        const render = document.getElementById('markdown-render');
+        const scrollBox = document.getElementById('scroll-container');
+        const fog = document.getElementById('fog-overlay');
+        const wCountDisp = document.getElementById('wcount');
+
+        let lastActive = Date.now();
+        let mistLevel = 0.85;
+
+        input.addEventListener('input', () => {
+            lastActive = Date.now();
+
+            // Sync content
+            const content = input.value;
+            // Add a hidden character at the end to ensure line-break tracking
+            render.innerHTML = marked.parse(content + (content.endsWith('\n') ? ' ' : ''));
+
+            // Sync height so the hidden textarea expands with the render
+            input.style.height = 'auto';
+            const newHeight = Math.max(scrollBox.clientHeight, input.scrollHeight);
+            input.style.height = newHeight + 'px';
+            render.style.height = newHeight + 'px';
+
+            // Auto-scroll to bottom as you type
+            scrollBox.scrollTo({ top: scrollBox.scrollHeight, behavior: 'smooth' });
+
+            // Word count
+            wCountDisp.innerText = content.trim() ? content.trim().split(/\s+/).length : 0;
+
+            // Interaction feedback
+            mistLevel = Math.max(0.1, mistLevel - 0.05);
+        });
+
+        function updateAtmosphere() {
+            const idle = Date.now() - lastActive;
+            if (idle > 8000) {
+                mistLevel = Math.min(0.95, mistLevel + 0.002);
+            }
+            fog.style.background = `radial-gradient(circle, transparent 25%, rgba(10, 10, 10, ${mistLevel}) 85%)`;
+            requestAnimationFrame(updateAtmosphere);
+        }
+
+        updateAtmosphere();
+    </script>
+</body>
+</html>
