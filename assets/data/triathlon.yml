@@ -1,3 +1,43 @@
+- event: "IronMan 70.3 Luxembourg"
+  date: 2026-07-14
+  location: "Remich, LU"
+  type: "Half distance"
+  distance:
+    bike: "90km"
+    run: "21.1"
+  results:
+    total_time: "05:21:44"
+    bike: "03:01:29"
+    t2: "00:09:00"
+    run: "02:06:15"
+  description: "Half distance triathlon during a heatwave. Swim got cancelled because of blue-green algae, so we started as if we had just exited the swim (without cap and goggles).
+  I was close to club buddy Roel Vanherrewegen for the first part, but had to let him go when the hills began. Beautiful scenery with some spicy hills. Started to get a bit nauseous along the course,
+  and unfortunately my bottle rack on the back dropped about 10km before T2 in a descent, along with my repair kit. Collected it, stuffed it under my aerobars and continued.
+  Took my time in T2 to refresh with a water bottle and add sunscreen for a second time, and started the run not feeling too great with a heavy stomach.
+  Unfortunately the nausea stayed during the run, probably also because of the heat. Refreshed at every supply zone with water and ice, and I was very grateful for the supporters spraying us with water.
+  Not my most competitive time, but with the preparation and intermittent sleeps, I am proud of the achievement!"
+  link: "https://www.ironman.com/races/im703-luxembourg/results"
+  nr: "2383"
+  photos:
+    - "2026_IM70.3_Lux_1.jpg"
+    - "2026_IM70.3_Lux_2.jpg"
+    - "2026_IM70.3_Lux_3.jpg"
+    - "2026_IM70.3_Lux_4.jpg"
+    - "2026_IM70.3_Lux_5.jpg"
+    - "2026_IM70.3_Lux_6.jpg"
+
+- event: "Mid Summer Long Distance Swim"
+  date: 2026-06-20
+  location: "Eijsden, NL"
+  type: "Swim"
+  distance:
+    swim: "12km"
+  results:
+    total_time: "03:36:31"
+  description: "No time registration, just a challenge to swim 12 kilometers (watch registered only 11,49km). First time marathon swimming, with speedy Raul behind me. Really felt like a good long meditation, fatigue kicked in only quite late. Had to let him go about halfway. Lovely organisation with a nice parking BBQ afterwards!"
+  photos:
+    - "2026_Grindgat_1.jpg"
+
 - event: "Sprint Triathlon Stein"
   date: 2026-05-31
   location: "Stein, NL"
