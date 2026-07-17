@@ -205,28 +205,28 @@ permalink: /
 
             // Connect to your space
             const client = await Client.connect("sdenisse/brainage");
-            await sleep(1000); // Simulate heavy I/O
+            await sleep(300); // Simulate heavy I/O
             el1.className = "step completed";
             el1.innerHTML = "✓ POST request sent to Hugging Face.";
 
             // Change "/predict_stijn_age" to "/predict" if you see an error here
             const result = await client.predict("/predict_stijn_age", {});
 
-            await sleep(1000); // Simulate heavy I/O
+            await sleep(300); // Simulate heavy I/O
             document.getElementById('step-2').className = "step completed";
             document.getElementById('step-2').innerHTML = "✓ Brain volume loaded.";
 
-            await sleep(2000); // Simulate heavy I/O
+            await sleep(600); // Simulate heavy I/O
             document.getElementById('step-3').className = "step completed";
             document.getElementById('step-3').innerHTML = "✓ Forward pass on Stijn's brain complete.";
 
             // STEP 4: Backward pass
-            await sleep(1000); // Simulate heavy I/O
+            await sleep(300); // Simulate heavy I/O
             document.getElementById('step-4').className = "step completed";
             document.getElementById('step-4').innerHTML = "✓ Gradients stored and image created";
 
             // STEP 5: Roger That
-            await sleep(1000); // Simulate heavy I/O
+            await sleep(300); // Simulate heavy I/O
             document.getElementById('step-5').className = "step completed";
             document.getElementById('step-5').innerHTML = "✓ JSON received and result decoded";
 
