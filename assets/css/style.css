@@ -617,6 +617,28 @@ article.post {
 .step.active { color: orange; }
 .step.completed { color: #2A9D8F; }
 
+/*
+Style for the new container
+Source:
+- https://stackoverflow.com/questions/10989238/how-to-center-image-horizontally-within-a-div-element
+- Gemma4 model (throughout repo)
+*/
+#image-container {
+    display: block;
+    margin: auto;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center;     /* Centers content vertically (if multiple things are in it) */
+    max-width: 90%;           /* Limits max width on large screens */
+}
+
+/* Style for the actual injected image tag */
+#image-container img {
+    max-width: 100%; /* Ensures the image never overflows its container */
+    height: auto;   /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional: Gives it a softer look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds depth */
+}
+
 #final-result {
     margin-top: 30px;
     text-align: center;

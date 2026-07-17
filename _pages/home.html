@@ -5,6 +5,8 @@ nav: home
 permalink: /
 ---
 
+<!-- Thanks to Gemma4 model local LLM -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
 
@@ -56,12 +58,16 @@ permalink: /
             <div id="step-1" class="step">○ Sending POST request to Hugging Face...</div>
             <div id="step-2" class="step">○ Remote server is loading Stijn's brain image...</div>
             <div id="step-3" class="step">○ 3D CNN Forward Pass on NIfTI volume ...</div>
-            <div id="step-4" class="step">○ Receiving JSON response & Decoding Result...</div>
+            <div id="step-4" class="step">○ GBP: Backward pass and storing gradient...</div>
+            <div id="step-5" class="step">○ Receiving JSON response & Decoding Result...</div>
         </div>
 
         <div id="final-result">
             <p style="color: #aaa; margin-bottom: 5px;">Brain Age</p>
             <div class="age-display"><span id="age-val">--</span></div>
+            <div id="image-container" style="margin-top: 20px; border: 1px solid #ddd; padding: 10px;">
+                <!-- The image element will be injected here by JavaScript -->
+            </div>
             <p style="color: orange; font-size: 11px; margin-top: 10px; letter-spacing: 1px;">CONNECTION SECURE • API 200 OK</p>
             <h3 align="left"; style="color: #aaa">A bit of background</h3>
             <p align="left"; style="color: #aaa; font-size: 16px">
@@ -214,15 +220,48 @@ permalink: /
             document.getElementById('step-3').className = "step completed";
             document.getElementById('step-3').innerHTML = "✓ Forward pass on Stijn's brain complete.";
 
-            // STEP 4: Roger That
+            // STEP 4: Backward pass
             await sleep(1000); // Simulate heavy I/O
             document.getElementById('step-4').className = "step completed";
-            document.getElementById('step-4').innerHTML = "✓ JSON received and result decoded";
+            document.getElementById('step-4').innerHTML = "✓ Gradients stored and image created";
+
+            // STEP 5: Roger That
+            await sleep(1000); // Simulate heavy I/O
+            document.getElementById('step-5').className = "step completed";
+            document.getElementById('step-5').innerHTML = "✓ JSON received and result decoded";
 
             // Show result
             const predictedAge = result.data[0];
             ageVal.innerText = typeof predictedAge === 'number' ? predictedAge.toFixed(2) : predictedAge;
 
+            // *********************************************
+            // ⭐ Image rendering logic: Keep this EXACTLY as you wrote it,
+            // but trust that Gradio filled the image container implicitly.
+            // *********************************************
+            const imageContainer = document.getElementById('image-container');
+            if (result.data[2]) {
+                let rawData = result.data[2];
+
+                // The code you provided previously:
+                if (typeof rawData === 'object' && rawData !== null) {
+                    console.warn("WARNING: Data received as Object. Attempting string coercion.");
+                    base64ImageString = String(rawData);
+                } else if (typeof rawData === 'string') {
+                    base64ImageString = rawData;
+                } else {
+                    // ... error handling
+                    return;
+                }
+
+                const imgElement = document.createElement('img');
+                imgElement.src = 'data:image/png;base64,' + base64ImageString;
+                imageContainer.appendChild(imgElement);
+            } else {
+                imageContainer.innerHTML = '<p style="color: #aaa;">Visualization not available.</p>';
+            }
+
+            resultDiv.style.display = "block";
+            btn.innerText = "Transmission Complete";
             resultDiv.style.display = "block";
             btn.innerText = "Transmission Complete";
 
