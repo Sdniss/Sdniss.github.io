@@ -2,6 +2,17 @@ section_title: "Extracurricular"
 summary: "I have always had a passion to support various initiatives on a voluntary basis.
 This was to ensure cultural enrichment during my time as a student up to leading the iAIMS community to guide AI research in the field of multiple sclerosis."
 entries:
+  - org: "ECTRIMS"
+    title: "AI and Digital Innovation Committee - ECTRIMS"
+    summary: "Based on my international engagement in the AI x MS debate, I was appointed co-chair of the newly established 'AI and Digital Innovation Committee' of ECTRIMS.
+    In synchrony with the iAIMS community I established (<a href='https://www.iaims.org'>iAIMS website</a>), this role allows me to be at the forefront of AI-related developments in the field of MS."
+    role: "co-chair"
+    link: "https://ectrims.eu/about-ectrims/governance/operational-committees/"
+    location: "International"
+    start_date: "2026"
+    end_date: "Ongoing"
+    #linkedin_post_link: ""
+    figure: "/assets/photos/ECTRIMS_website_screenshot_AIDIC.png"
   - org: "iAIMS"
     title: "iAIMS community"
     summary: "During the 2024 edition of ECTRIMS in Copenhagen, I sat down with Dr. Ceren Tozlu and my professor Prof. Guy Nagels as we observed a trend that technically-oriented researchers did not really find their way in the clinical ECTRIMS.
