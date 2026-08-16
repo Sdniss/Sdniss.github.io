@@ -1,0 +1,246 @@
+---
+layout: default
+title: Books & Writing
+nav: books
+permalink: /books/
+---
+
+<style>
+/* Custom styling for the books grid */
+.books-grid {
+  width: 95%;
+  max-width: 800px; /* Prevents the card from looking too stretched on large monitors */
+  margin: 1.5rem auto; /* 'auto' centers the element horizontally */
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.book-cover {
+  width: 100%;
+  height: 240px;
+  background-color: #f4f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-cover {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
+
+.status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.book-details {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.book-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.book-meta {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 0.75rem;
+}
+
+.book-description {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #2c3e50; /* Slightly darker tone for crisp readability */
+  border-left: 3px solid #856404; /* Theme-matching subtle accent line */
+  padding-left: 1rem;
+  margin: 1rem 0 1.25rem 0;
+}
+
+.btn-preorder {
+  display: inline-block;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn-preorder:hover {
+  background-color: #856404;
+  text-decoration: none;
+}
+
+.email-form {
+  display: flex;
+  gap: 10px;
+  max-width: 450px;
+  margin: 1rem auto;
+}
+
+.email-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.disclaimer-container {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.disclaimer-summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+  padding: 4px 0;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.disclaimer-summary:hover {
+  color: #2b547e;
+}
+
+.disclaimer-content {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  line-height: 1.4;
+}
+
+.disclaimer-content p {
+  margin: 0 0 0.5rem 0;
+}
+
+.disclaimer-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* https://stackoverflow.com/questions/14821087/what-is-the-right-way-to-create-a-horizontal-line-with-html-and-css */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+</style>
+
+<header style="text-align: center; padding: 40px 0;">
+  <h1 style="color: #264653; font-size: 2.5rem;"> Books & Writing </h1>
+  <p style="color: #777777; font-style: italic;">I found my love for writing in academia and keep exploring other things to write about. Please find my work below.</p>
+</header>
+
+<div class="books-grid">
+
+  <!-- Book Card 1: Children's Book (In Production) -->
+  <div class="book-card">
+    <div class="book-cover">
+      <span class="status-badge">🟡 In Production</span>
+      <!-- Replace src with your cover image path once available -->
+      <!-- <img src="/images/childrens-book-cover.jpg" alt="Book Cover Teaser"> -->
+      <div class="placeholder-cover">
+          <img src="/assets/images/pub-figures/troostwilg_cover_part.png" alt="Built with Spaces" width="200px">
+      </div>
+    </div>
+
+    <div class="book-details">
+      <h3 class="book-title">De Troostwilg</h3>
+      <div class="book-meta">
+        <strong>Target Audience:</strong> Ages 7–10 &bull;
+        <strong>Expected:</strong> Coming Soon &bull;
+        <strong>Language:</strong> Dutch 🇳🇱 &bull;
+        <strong>Publisher:</strong> Boekscout<br>
+        <strong>Illustrator:</strong> Renée de Wolf (<a style="color:#856404" href="https://www.eenmooimomentje.nl/">website</a>)
+      </div>
+
+      <p class="book-description">
+        In the garden stands a weeping willow whose branches sweep gracefully in all directions. One day, Eloise discovers that these aren’t just random movements. But trees can’t talk, can they?
+      </p>
+
+      <hr/>
+
+      <a style="margin:auto; display:block" href="https://www.boekscout.nl/" target="_blank" rel="noopener noreferrer">
+        <img width="200px" src="https://www.boekscout.nl/resources/image/logo/small.png" alt="Boekscout Logo" class="publisher-logo" />
+      </a>
+
+      <p>
+        <strong>One-time release notification</strong><br>
+        Please enter your mail address below to receive a one-time promotional email from the publisher upon release of the booklet.
+        Please consult the Privacy & Data Disclaimber below for more info.
+      </p>
+      <form action="https://formspree.io/f/meajlvpy" method="POST" class="email-form">
+        <input type="email" name="email" placeholder="Enter email address" required class="email-input" />
+        <button type="submit" class="btn-preorder">Submit</button>
+      </form>
+      <!-- Unfoldable Disclaimer -->
+      <details class="disclaimer-container">
+        <summary class="disclaimer-summary">Privacy & Data Disclaimer</summary>
+        <div class="disclaimer-content">
+          <p>
+            Publisher "Boekscout" is set to publish my book ‘De Troostwilg’. The publisher would like to send a promotional email to a select group of people who might be interested as soon as the book becomes available. This means you’ll be the first to know when it’s published.
+            <br><br>
+            If you would like to receive this promotional email from Boekscout, please enter your email address above.
+            <br><br>
+            The publisher has assured me that your email address will only be used to send out the promotional email for my book. You will therefore receive a single message from them.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
